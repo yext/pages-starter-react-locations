@@ -1,6 +1,6 @@
 node_modules/
 sites-rendered-output/
-# localData/
+localData/
 dist/
 .yext
 .artifact-output
