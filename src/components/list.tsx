@@ -1,3 +1,5 @@
+import React from 'react';
+
 type List = {
   name?: string;
   list: string[];

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { renderToString } from 'react-dom/server';
 import { reactWrapper } from '../wrapper';
@@ -7,7 +8,7 @@ export const config = {
   name: 'static',
 };
 
-export const getPath = (data: any) => {
+export const getPath = () => {
   return `static/${Math.random().toString()}`;
 };
 

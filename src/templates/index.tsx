@@ -1,3 +1,4 @@
+import React from 'react';
 import Banner from '../components/banner';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -53,7 +54,7 @@ export const getPath = (data: any) => {
 const Index = (props: any) => {
   const { document } = props;
   const { streamOutput } = document;
-  const { name, address, openTime, hours, mainPhone, _site, geocodedCoordinate, services, photoGallery } = streamOutput;
+  const { name, address, openTime, hours, mainPhone, _site, geocodedCoordinate, services } = streamOutput;
 
   return (
     <>
@@ -82,11 +83,6 @@ const Index = (props: any) => {
             </div>
           </div>
         </div>
-        {/* <div className="section">
-          <PhotoGallery photoGallery={photoGallery}></PhotoGallery>
-        </div> */}
-        {/* <div className="section">
-        </div> */}
         <Footer></Footer>
       </div>
     </>

@@ -1,3 +1,4 @@
+import React from 'react';
 import Cta from '../components/cta';
 
 type Address = {

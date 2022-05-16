@@ -1,3 +1,5 @@
+import React from 'react';
+
 type Thumbnail = {
   height: number;
   width: number;
@@ -15,15 +17,9 @@ type PhotoGallery = {
   photoGallery: Image[];
 };
 
-const renderImages = (photoGallery: PhotoGallery) => {
-  for (const [k, v] of Object.entries(photoGallery)) {
-    console.log();
-  }
-};
-
 const PhotoGallery = (props: PhotoGallery) => {
   const { photoGallery } = props;
-  renderImages(props);
+
   return (
     <div>
       {photoGallery.map((image, index) => (

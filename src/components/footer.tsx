@@ -1,27 +1,9 @@
-type Link = {
-  label: string;
-  url: string;
-};
-
-type Links = {
-  links: Link[];
-};
-
-// const formatLinks = (array: Links) => {
-//     return (
-//         array.forEach(link => {
-//             <>
-//                 <div>{link.label}.link({link.url})</div>
-//             </>
-//         })
-//     )
-// };
+import React from 'react';
 
 const Footer = () => {
   return (
     <footer className="">
       <div className="flex flex-col flex-wrap justify-center p-5 md:flex-row">
-        {/* <div>{formatLinks(links)}</div> */}
         <span className="inline-flex justify-center w-full mx-auto mt-2 mr-2 sm:ml-auto sm:mt-0 space-x-3">
           <a className="text-black hover:text-blue-500">
             <svg

@@ -1,3 +1,5 @@
+import React from 'react';
+
 type Coordinates = {
   latitude: string;
   longitude: string;
