@@ -34,11 +34,8 @@
     ]
   },
   "dependencies": {
-    "installDepsCmd": "npm install --production=false",
-    "requiredFiles": [
-      "package.json",
-      "package-lock.json"
-    ]
+    "installDepsCmd": "npm install",
+    "requiredFiles": ["package.json", "package-lock.json", ".npmrc"]
   },
   "buildArtifacts": {
     "buildCmd": "npm run directbuild"

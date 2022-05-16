@@ -6,12 +6,9 @@ import Contact from '../components/contact';
 import List from '../components/list';
 import Hours from '../components/hours';
 import StaticMap from '../components/static-map';
-import PhotoGallery from '../components/photo-gallery';
 import { reactWrapper } from '../wrapper';
 import { renderToString } from 'react-dom/server';
 import '../index.css';
-
-import { Trans, useTranslation } from 'react-i18next';
 
 export const config = {
   name: 'index',
@@ -53,11 +50,10 @@ export const getPath = (data: any) => {
   return `index/${data.document.streamOutput.uid.toString()}`;
 };
 
-const Index = ({ data }: { data: any }) => {
-  const { document } = data;
+const Index = (props: any) => {
+  const { document } = props;
   const { streamOutput } = document;
   const { name, address, openTime, hours, mainPhone, _site, geocodedCoordinate, services, photoGallery } = streamOutput;
-  const { t, i18n } = useTranslation();
 
   return (
     <>
@@ -70,8 +66,6 @@ const Index = ({ data }: { data: any }) => {
       <Banner name={name} address={address} openTime={openTime}>
         <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
           <div className="text-black text-base">Visit Us Today!</div>
-          <div className="text-black text-base"><Trans>hello world</Trans></div>
-          <div className="text-black text-base">{t('hello world')}</div>
           <Cta buttonText="Get Directions" url="http://google.com" style="primary-cta" />
         </div>
       </Banner>
