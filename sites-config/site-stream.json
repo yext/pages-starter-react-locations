@@ -1,0 +1,22 @@
+{
+  "$id": "site-entity",
+  "filter": {
+    "entityIds": [
+      "YFW"
+    ]
+  },
+  "source": "knowledgeGraph",
+  "fields": [
+    "name",
+    "c_header",
+    "c_footer",
+    "c_enableConversionTracking",
+    "c_googleAnalytics"
+  ],
+  "localization": {
+    "locales": [
+      "en"
+    ],
+    "primary": false
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "artifactStructure": {
+    "assets": [
+      {
+        "root": "dist/"
+      }
+    ],
+    "features": "sites-config/features.json",
+    "plugins": [
+      {
+        "pluginName": "Generator",
+        "sourceFiles": [
+          {
+            "root": "./node_modules/@yext/vite-plugin-yext-sites-ssg/plugin",
+            "pattern": "**/*.{ts,json}"
+          },
+          {
+            "root": ".yext/",
+            "pattern": "manifest.json"
+          },
+          {
+            "pattern": "dist/*.{js,json}"
+          },
+          {
+            "pattern": "dist/assets/server/*.js"
+          },
+          {
+            "pattern": "dist/assets/*.js"
+          }
+        ],
+        "event": "ON_PAGE_GENERATE",
+        "functionName": "Generate"
+      }
+    ]
+  },
+  "dependencies": {
+    "installDepsCmd": "npm install --production=false",
+    "requiredFiles": [
+      "package.json",
+      "package-lock.json"
+    ]
+  },
+  "buildArtifacts": {
+    "buildCmd": "npm run directbuild"
+  },
+  "livePreview": {
+    "serveSetupCmd": ":"
+  }
+}
