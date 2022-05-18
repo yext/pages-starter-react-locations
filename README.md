@@ -6,8 +6,8 @@ This repository provides a basic example of how to start developing a React site
 1. You must have access to the yext github organization: https://github.com/yext
 1. You must have access to the yext npm organization: https://www.npmjs.com/org/yext
 1. Have the Yext CLI installed: https://hitchhikers.yext.com/guides/cli-getting-started-resources/01-install-cli/
-1. Have Deno installed: https://deno.land/manual/getting_started/installation
-1. Have node installed, version 16 or later: https://nodejs.org/en/download/
+1. Have Deno installed, version 1.21.0 or later: https://deno.land/manual/getting_started/installation
+1. Have node installed, version 17 or later: https://nodejs.org/en/download/
 
     * It's recommend to use nvm: https://github.com/nvm-sh/nvm#installing-and-updating or via brew `brew install nvm`
 1. Optional: Have a Yext account (necessary for production builds, deploying on Yext Sites, and pulling local stream document data)
@@ -20,7 +20,7 @@ npm install
 ```
 
 ### Useful commands
-`yext init` - Authenticates usage with your Yext account
+`yext init` - Authenticates the Yext CLI with your Yext account
 
 `npm run dev` - runs your code against a local dev server using Vite
 * All stream documents come from the `localData` folder
@@ -44,7 +44,7 @@ npm install
 root
 └───localData
 └───sites-config
-│   │   ci_config.json
+│   │   ci.json
 └───src
 │   │   index.css
 │   │   wrapper.ts
@@ -61,7 +61,7 @@ Contains example stream documents that are used while local developing. By defau
 NOTE: You normally wouldn't want to check in the localData folder as it's only used for local dev. It is gitignored by default.
 
 ### sites-config
-Contains a single `ci_config.json` file. This file defines how the Yext CI system will build your project. It is not used during local dev; however, it is used when running a local production build (i.e. `yext sites build`).
+Contains a single `ci.json` file. This file defines how the Yext CI system will build your project. It is not used during local dev; however, it is used when running a local production build (i.e. `yext sites build`).
 
 NOTE: A `features.json` file will automatically be generated during CI build for you based on the `config`s defined in your templates.
 
