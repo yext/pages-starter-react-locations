@@ -6,7 +6,7 @@ import React from 'react';
 import { useState } from 'react';
 import { renderToString } from 'react-dom/server';
 import { reactWrapper } from '../wrapper';
-import fetch from 'cross-fetch';
+import fetch from 'fetch-everywhere';
 
 /**
  * Required only to define the name of this feature.
