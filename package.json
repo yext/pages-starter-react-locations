@@ -7,7 +7,6 @@
     "dev": "yss dev",
     "build": "yss build",
     "directbuild": "node --experimental-specifier-resolution=node node_modules/.bin/yss build",
-    "preview": "yss preview",
     "fmt": "prettier -w .",
     "lint": "eslint .",
     "clean": "rm -rf .artifact-output .yext/ dist/ localData sites-rendered-output"
