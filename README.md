@@ -86,9 +86,9 @@ A convenient function that handles the boilerplate of how to render the template
 NOTE: Future work may remove wrapper.ts and the need for a `render` function entirely.
 
 ### Everything else
-The rest of the files are basic config setup common to many other React projects. In this examples we've enabled:
+The rest of the files are basic config setup common to many other React projects. In this example we've enabled:
 
 1. Tailwind CSS (which includes PostCSS) - used for easy styling
 1. ESLint - catches errors in your code
 1. Prettier - formats your code
-1. TypeScript - Add typing to Javascript for a better developer experience
+1. TypeScript - adds typing to Javascript for a better developer experience
