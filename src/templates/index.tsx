@@ -73,7 +73,7 @@ export const config = {
  * take on the form: featureName/entityId
  */
 export const getPath = (data: any) => {
-  return `index/${data.document.streamOutput.uid.toString()}`;
+  return `index/${data.document.streamOutput.id.toString()}`;
 };
 
 /**
@@ -133,6 +133,6 @@ const Index = (props: any) => {
  * NOTE: Future changes will probably remove the need for this function and wrapper.ts.
  */
 export const render = (data: any) =>
-  reactWrapper(data, 'index', 'index.tsx', renderToString(<Index data={data} />), true);
+  reactWrapper(data, 'index', 'index.tsx', renderToString(<Index {...data} />), true);
 
 export default Index;

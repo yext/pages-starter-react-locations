@@ -71,6 +71,6 @@ const Static = (props: any) => {
  * NOTE: Future changes will probably remove the need for this function and wrapper.ts.
  */
 export const render = (data: any) =>
-  reactWrapper(data, 'static', 'static.tsx', renderToString(<Static data={data} />), true);
+  reactWrapper(data, 'static', 'static.tsx', renderToString(<Static {...data} />), true);
 
 export default Static;
