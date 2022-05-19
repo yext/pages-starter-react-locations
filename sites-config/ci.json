@@ -11,7 +11,7 @@
         "pluginName": "Generator",
         "sourceFiles": [
           {
-            "root": "./node_modules/@yext/vite-plugin-yext-sites-ssg/plugin",
+            "root": ".yext/plugin",
             "pattern": "**/*.{ts,json}"
           },
           {
