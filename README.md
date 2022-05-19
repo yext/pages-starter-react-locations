@@ -63,7 +63,7 @@ NOTE: You normally wouldn't want to check in the localData folder as it's only u
 ### sites-config
 Contains a single `ci.json` file. This file defines how the Yext CI system will build your project. It is not used during local dev; however, it is used when running a local production build (i.e. `yext sites build`).
 
-NOTE: A `features.json` file will automatically be generated during CI build for you based on the `config`s defined in your templates.
+NOTE: A `features.json` file will automatically be generated during CI build for you based on the `config`s defined in your templates. One has been checked in to this repo so that `yext sites generate-test-data` works out of the box. If this file doesn't exist then `yext sites build` will generate a new one.
 
 ### src
 #### components
