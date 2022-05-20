@@ -7,7 +7,6 @@ import { useState } from "react";
 import { renderToString } from "react-dom/server";
 import { reactWrapper } from "../wrapper";
 import fetch from "fetch-everywhere";
-import { PokemonData } from "../types/pokemon";
 import { Data } from "../types/data";
 import { Pokemon } from "pokenode-ts";
 
@@ -32,6 +31,14 @@ export const getPath = () => {
 };
 
 /**
+ * A local type for getStaticProps. This could live in src/types but it's generally
+ * best practice to keep unshared types local to their usage.
+ */
+interface PokemonData extends Data {
+  pokemon: Pokemon;
+}
+
+/**
  * Required only when data needs to be retrieved from an external (non-Knowledge Graph) source.
  * If the page is truly static this function is not necessary.
  *
@@ -51,7 +58,7 @@ export const getStaticProps = async (data: Data): Promise<PokemonData> => {
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
  */
-const Static = (props: PokemonData) => {
+const Static: React.FC<PokemonData> = (props: PokemonData) => {
   const { name } = props.pokemon;
 
   const [num, setNum] = useState<number>(0);

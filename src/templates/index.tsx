@@ -86,7 +86,7 @@ export const getPath = (data: Data) => {
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Index = (props: Data) => {
+const Index: React.FC<Data> = (props) => {
   const { document } = props;
   const { streamOutput } = document;
   const {
