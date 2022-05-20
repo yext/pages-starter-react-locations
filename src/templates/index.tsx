@@ -8,7 +8,7 @@
  * template for every eligible entity in your Knowledge Graph.
  */
 
-import React from "react";
+ import * as React from "react"
 import Banner from "../components/banner";
 import Header from "../components/header";
 import Footer from "../components/footer";

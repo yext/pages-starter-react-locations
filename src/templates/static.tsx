@@ -2,7 +2,7 @@
  * This is an example of how to create a static template that uses getStaticProps to retrieve data.
  */
 
-import React from "react";
+ import * as React from "react"
 import { useState } from "react";
 import { renderToString } from "react-dom/server";
 import { reactWrapper } from "../wrapper";
