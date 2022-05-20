@@ -65,6 +65,8 @@ root
 │   └───templates
 │       │   index.tsx
 │       │   static.tsx
+│   │
+│   └───types
 ```
 
 ### localData
@@ -93,6 +95,10 @@ Required. This is where your actual templates live. There are effectively two ty
 1. static templates: those that don't have an exported `config`. Furthermore, they may also export a `getStaticProps` function if external data is required.
 
 NOTE: It's not currently possible to generate multiple html files using a static template, even if `getStaticProps` returns arrayed data.
+
+#### types
+
+Here you can define any custom TypeScript types you need.
 
 #### index.css
 
