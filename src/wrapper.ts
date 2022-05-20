@@ -40,7 +40,7 @@ const getCssTags = (filepath: string, manifest: bundlerManifest, seen: Set<strin
 const getHydrationFilename = (name: string, data: any) => {
   const { __meta } = data;
   for (const [file, info] of Object.entries(__meta.manifest.bundlerManifest)) {
-    if (file !== `.yext/hydration_templates/${name}`) {
+    if (file !== `dist/hydration_templates/${name}`) {
       continue;
     }
     const originalFile = (info as ManifestInfo).file;
