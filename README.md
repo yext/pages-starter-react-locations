@@ -24,6 +24,9 @@ npm install
 
 `npm run dev` - runs your code against a local dev server using Vite
 * All stream documents come from the `localData` folder
+* You can visit either of these urls out of the box
+    * http://localhost:3000/index/123
+    * http://localhost:3000/static
 
 `npm run dev -- dynamic` - same as above except instead of using files from `localData` it will pull the document from Yext on the fly
 
