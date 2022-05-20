@@ -1,4 +1,9 @@
-export const reactWrapper = (data: any, filename: string, template: string, hydrate: boolean): string => {
+export const reactWrapper = (
+  data: any,
+  filename: string,
+  template: string,
+  hydrate: boolean
+): string => {
   return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -6,16 +11,23 @@ export const reactWrapper = (data: any, filename: string, template: string, hydr
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>React Page Usings Plugin</title>
         <script>window.__INITIAL__DATA__ = ${JSON.stringify(data)}</script>
-        ${getCssTags(`src/templates/${filename}`, data.__meta.manifest.bundlerManifest, new Set())
+        ${getCssTags(
+          `src/templates/${filename}`,
+          data.__meta.manifest.bundlerManifest,
+          new Set()
+        )
           .map((f) => `<link rel="stylesheet" href="/${f}"/>`)
           .filter((v, i, a) => a.indexOf(v) == i)
-          .join('\n')}
+          .join("\n")}
     </head>
     <body>
         <div id="reactele">${template}</div>${
     hydrate
-      ? `<script type="module" src="/assets/hydrate/${getHydrationFilename(filename, data)}.js" defer></script>`
-      : ''
+      ? `<script type="module" src="/assets/hydrate/${getHydrationFilename(
+          filename,
+          data
+        )}.js" defer></script>`
+      : ""
   }
     </body>
     </html>`;
@@ -24,7 +36,11 @@ export const reactWrapper = (data: any, filename: string, template: string, hydr
 type chunkName = string;
 type bundlerManifest = Record<chunkName, ManifestInfo>;
 
-const getCssTags = (filepath: string, manifest: bundlerManifest, seen: Set<string>) => {
+const getCssTags = (
+  filepath: string,
+  manifest: bundlerManifest,
+  seen: Set<string>
+) => {
   const entry = Object.entries(manifest).find(([file]) => file === filepath);
   if (!entry) {
     return [];
@@ -33,7 +49,9 @@ const getCssTags = (filepath: string, manifest: bundlerManifest, seen: Set<strin
 
   seen.add(file);
   const cssFiles = info.css || [];
-  (info.imports || []).flatMap((f) => getCssTags(f, manifest, seen)).forEach((f) => cssFiles.push(f));
+  (info.imports || [])
+    .flatMap((f) => getCssTags(f, manifest, seen))
+    .forEach((f) => cssFiles.push(f));
 
   return cssFiles;
 };
@@ -45,9 +63,9 @@ const getHydrationFilename = (name: string, data: any) => {
       continue;
     }
     const originalFile = (info as ManifestInfo).file;
-    const filenameIndex = originalFile.lastIndexOf('/') + 1;
+    const filenameIndex = originalFile.lastIndexOf("/") + 1;
     const filename = originalFile.substring(filenameIndex);
-    return filename.split('.').slice(0, -1).join('.');
+    return filename.split(".").slice(0, -1).join(".");
   }
 };
 

@@ -2,11 +2,11 @@
  * This is an example of how to create a static template that uses getStaticProps to retrieve data.
  */
 
-import React from 'react';
-import { useState } from 'react';
-import { renderToString } from 'react-dom/server';
-import { reactWrapper } from '../wrapper';
-import fetch from 'fetch-everywhere';
+import React from "react";
+import { useState } from "react";
+import { renderToString } from "react-dom/server";
+import { reactWrapper } from "../wrapper";
+import fetch from "fetch-everywhere";
 
 /**
  * Required only to define the name of this feature.
@@ -15,7 +15,7 @@ import fetch from 'fetch-everywhere';
  * the name of the template by default.
  */
 export const config = {
-  name: 'static',
+  name: "static",
 };
 
 /**
@@ -70,6 +70,7 @@ const Static = (props: any) => {
  *
  * NOTE: Future changes will probably remove the need for this function and wrapper.ts.
  */
-export const render = (data: any) => reactWrapper(data, 'static.tsx', renderToString(<Static {...data} />), true);
+export const render = (data: any) =>
+  reactWrapper(data, "static.tsx", renderToString(<Static {...data} />), true);
 
 export default Static;
