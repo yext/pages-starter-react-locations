@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
