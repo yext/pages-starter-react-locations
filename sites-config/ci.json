@@ -2,7 +2,8 @@
   "artifactStructure": {
     "assets": [
       {
-        "root": "dist/"
+        "root": "dist",
+        "pattern": "assets/**/*"
       }
     ],
     "features": "sites-config/features.json",
