@@ -11,21 +11,8 @@
         "pluginName": "Generator",
         "sourceFiles": [
           {
-            "root": ".yext/plugin",
-            "pattern": "**/*.{ts,json}"
-          },
-          {
-            "root": ".yext/",
-            "pattern": "manifest.json"
-          },
-          {
-            "pattern": "dist/*.{js,json}"
-          },
-          {
-            "pattern": "dist/assets/server/*.js"
-          },
-          {
-            "pattern": "dist/assets/*.js"
+            "root": "dist/plugin",
+            "pattern": "*{.ts,.json}"
           }
         ],
         "event": "ON_PAGE_GENERATE",
