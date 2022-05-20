@@ -14,7 +14,7 @@ This repository provides a basic example of how to start developing a React site
 
    - It's recommend to use nvm: https://github.com/nvm-sh/nvm#installing-and-updating or via brew `brew install nvm`
 
-1. Optional: Have a Yext account (necessary for production builds, deploying on Yext Sites, and pulling local stream document data via `yext sites generate-test-data`)
+1. Optional: Have a Yext account (necessary for production builds, deploying on Yext Sites, and pulling local stream document data via `yext sites generate-test-data`). This starter already comes with some localData that can be used for local dev without the need to init with a Yext account.
 
 ### Clone this repo and install dependencies
 
@@ -69,15 +69,15 @@ root
 
 ### localData
 
-Contains example stream documents that are used while local developing. By default this repo contains an example `foo.json` that works with the provided example templates. You can generate real stream documents specific to your Yext account via `yext sites generate-test-data`.
+Contains example stream documents that are used while local developing. By default this repo contains example files that work with the provided example templates. You can generate real stream documents specific to your Yext account via `yext sites generate-test-data`.
 
 NOTE: You normally wouldn't want to check in the localData folder as it's only used for local dev. It is gitignored by default.
 
 ### sites-config
 
-Contains a single `ci.json` file. This file defines how the Yext CI system will build your project. It is not used during local dev; however, it is used when running a local production build (i.e. `yext sites build`).
+Contains a single `ci.json` file. This file defines how the Yext CI system will build your project. It is not used during local dev. However, it is used when running a local production build (i.e. `yext sites build`).
 
-NOTE: A `features.json` file will automatically be generated during CI build for you based on the `config`s defined in your templates. One has been checked in to this repo so that `yext sites generate-test-data` works out of the box (assuming you've `yext init`'ed with your Yext account). If this file doesn't exist then `yext sites build` will generate a new one.
+NOTE: A `features.json` file will automatically be generated during CI build for you based on the `config`s defined in your templates. One has been checked in to this repo so that `yext sites generate-test-data` works out of the box (assuming you've `yext init`'ed with your Yext account). If this file doesn't exist then `yext sites build` will implicitly generate a new one when it calls `npm run directbuild` (defined in `sites-config/ci.json`).
 
 ### src
 
@@ -108,7 +108,7 @@ NOTE: Future work may remove wrapper.ts and the need for a `render` function ent
 
 The rest of the files are basic config setup common to many other React projects. In this example we've enabled:
 
-1. Tailwind CSS (which includes PostCSS) - used for easy styling
+1. Tailwind CSS (which leverages PostCSS) - used for easy styling
 1. ESLint - catches errors in your code
 1. Prettier - formats your code (you can add .prettierrc to override any default settings)
 1. TypeScript - adds typing to Javascript for a better developer experience
