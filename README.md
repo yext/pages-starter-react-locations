@@ -14,7 +14,7 @@ This repository provides a basic example of how to start developing a React site
 
    - It's recommend to use nvm: https://github.com/nvm-sh/nvm#installing-and-updating or via brew `brew install nvm`
 
-1. Optional: Have a Yext account (necessary for production builds, deploying on Yext Sites, and pulling local stream document data)
+1. Optional: Have a Yext account (necessary for production builds, deploying on Yext Sites, and pulling local stream document data via `yext sites generate-test-data`)
 
 ### Clone this repo and install dependencies
 
@@ -43,7 +43,7 @@ npm install
 
 `yext sites serve` - Runs a local server against your production-built files
 
-- It's recommended to build and serve before committing in order to test that a real production build won't have any issues. This is because a local dev build (via `npm run dev`) works differently from a production build.
+- It's recommended to `yext sites build` followed by `yext sites serve` before committing in order to test that a real production build won't have any issues. In practice, development builds (via `npm run dev`) and production builds compile and bundle assets differently. For local development, ES Modules are loaded directly by the browser, allowing fast iteration during local development and also allows for hot module replacement (HMR). Other things like CSS are also loaded directly by the browser, including linking to sourcemaps. During a production build all of the different files are compiled (via ESBuild for jsx/tsx) and minified, creating assets as small as possible so that the final html files load quickly when served to a user.
 
 `npm run fmt` - Automatically formats all code
 
@@ -77,7 +77,7 @@ NOTE: You normally wouldn't want to check in the localData folder as it's only u
 
 Contains a single `ci.json` file. This file defines how the Yext CI system will build your project. It is not used during local dev; however, it is used when running a local production build (i.e. `yext sites build`).
 
-NOTE: A `features.json` file will automatically be generated during CI build for you based on the `config`s defined in your templates. One has been checked in to this repo so that `yext sites generate-test-data` works out of the box. If this file doesn't exist then `yext sites build` will generate a new one.
+NOTE: A `features.json` file will automatically be generated during CI build for you based on the `config`s defined in your templates. One has been checked in to this repo so that `yext sites generate-test-data` works out of the box (assuming you've `yext init`'ed with your Yext account). If this file doesn't exist then `yext sites build` will generate a new one.
 
 ### src
 
