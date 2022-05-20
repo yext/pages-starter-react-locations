@@ -32,7 +32,7 @@ const getCssTags = (filepath: string, manifest: bundlerManifest, seen: Set<strin
   const [file, info] = entry;
 
   seen.add(file);
-  let cssFiles = info.css || [];
+  const cssFiles = info.css || [];
   (info.imports || []).flatMap((f) => getCssTags(f, manifest, seen)).forEach((f) => cssFiles.push(f));
 
   return cssFiles;
