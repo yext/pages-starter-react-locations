@@ -133,6 +133,6 @@ const Index = (props: any) => {
  * NOTE: Future changes will probably remove the need for this function and wrapper.ts.
  */
 export const render = (data: any) =>
-  reactWrapper(data, 'index', 'index.tsx', renderToString(<Index {...data} />), true);
+  reactWrapper(data, 'index.tsx', renderToString(<Index {...data} />), true);
 
 export default Index;

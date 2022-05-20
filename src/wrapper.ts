@@ -1,4 +1,4 @@
-export const reactWrapper = (data: any, name: string, filename: string, template: string, hydrate: boolean): string => {
+export const reactWrapper = (data: any, filename: string, template: string, hydrate: boolean): string => {
   return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -6,15 +6,23 @@ export const reactWrapper = (data: any, name: string, filename: string, template
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>React Page Usings Plugin</title>
         <script>window.__INITIAL__DATA__ = ${JSON.stringify(data)}</script>
-        ${getCssTags(`src/templates/${filename}`, data.__meta.manifest.bundlerManifest, new Set())
+        ${getCssTags(
+          `src/templates/${filename}`,
+          data.__meta.manifest.bundlerManifest,
+          new Set()
+        )
           .map((f) => `<link rel="stylesheet" href="/${f}"/>`)
-          .join('\n')}
+          .filter((v, i, a) => a.indexOf(v) == i)
+          .join("\n")}
     </head>
     <body>
         <div id="reactele">${template}</div>${
     hydrate
-      ? `<script type="module" src="/assets/hydrate/${getHydrationFilename(filename, data)}.js" defer></script>`
-      : ''
+      ? `<script type="module" src="/assets/hydrate/${getHydrationFilename(
+          filename,
+          data
+        )}.js" defer></script>`
+      : ""
   }
     </body>
     </html>`;
@@ -31,7 +39,7 @@ const getCssTags = (filepath: string, manifest: bundlerManifest, seen: Set<strin
   const [file, info] = entry;
 
   seen.add(file);
-  const cssFiles = info.css || [];
+  let cssFiles = info.css || [];
   (info.imports || []).flatMap((f) => getCssTags(f, manifest, seen)).forEach((f) => cssFiles.push(f));
 
   return cssFiles;
