@@ -4,5 +4,6 @@ localData/
 dist/
 .yext
 .artifact-output
+sites-config/features.json
 
 .DS_Store
