@@ -6,23 +6,16 @@ export const reactWrapper = (data: any, filename: string, template: string, hydr
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>React Page Usings Plugin</title>
         <script>window.__INITIAL__DATA__ = ${JSON.stringify(data)}</script>
-        ${getCssTags(
-          `src/templates/${filename}`,
-          data.__meta.manifest.bundlerManifest,
-          new Set()
-        )
+        ${getCssTags(`src/templates/${filename}`, data.__meta.manifest.bundlerManifest, new Set())
           .map((f) => `<link rel="stylesheet" href="/${f}"/>`)
           .filter((v, i, a) => a.indexOf(v) == i)
-          .join("\n")}
+          .join('\n')}
     </head>
     <body>
         <div id="reactele">${template}</div>${
     hydrate
-      ? `<script type="module" src="/assets/hydrate/${getHydrationFilename(
-          filename,
-          data
-        )}.js" defer></script>`
-      : ""
+      ? `<script type="module" src="/assets/hydrate/${getHydrationFilename(filename, data)}.js" defer></script>`
+      : ''
   }
     </body>
     </html>`;

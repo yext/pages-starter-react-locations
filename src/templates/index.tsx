@@ -3,7 +3,7 @@
  * The stream data originates from Yext's Knowledge Graph. When a template in
  * concert with a stream is built by the Yext Sites system, a static html page
  * is generated for every corresponding (based on the filter) stream document.
- * 
+ *
  * Another way to think about it is that a page will be generated using this
  * template for every eligible entity in your Knowledge Graph.
  */
@@ -25,7 +25,7 @@ import '../index.css';
  * Required when Knowledge Graph data is used for a template.
  */
 export const config = {
-  // The name of the feature. 
+  // The name of the feature.
   // NOTE: A future change may remove this and the feature name would use the name of the template by default.
   name: 'index',
   stream: {
@@ -68,7 +68,7 @@ export const config = {
 
 /**
  * Defines the path that the generated file will live at for production.
- * 
+ *
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
@@ -79,7 +79,7 @@ export const getPath = (data: any) => {
 /**
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct stream document defined by `config`.
- * 
+ *
  * There are a bunch of custom components being used from the src/components folder. These are
  * an example of how you could create your own. You can set up your folder structure for custom
  * components any way you'd like as long as it lives in the src folder (though you should not put
@@ -123,16 +123,14 @@ const Index = (props: any) => {
   );
 };
 
-
 /**
  * Defines how the plugin will render the template for the production build. This has no
  * impact on local dev.
- * 
+ *
  * A convenient function is currently defined in src/wrapper.ts.
- * 
+ *
  * NOTE: Future changes will probably remove the need for this function and wrapper.ts.
  */
-export const render = (data: any) =>
-  reactWrapper(data, 'index.tsx', renderToString(<Index {...data} />), true);
+export const render = (data: any) => reactWrapper(data, 'index.tsx', renderToString(<Index {...data} />), true);
 
 export default Index;
