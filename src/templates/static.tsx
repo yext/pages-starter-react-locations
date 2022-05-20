@@ -7,6 +7,9 @@ import { useState } from "react";
 import { renderToString } from "react-dom/server";
 import { reactWrapper } from "../wrapper";
 import fetch from "fetch-everywhere";
+import { PokemonData } from "../types/pokemon";
+import { Data } from "../types/data";
+import { Pokemon } from "pokenode-ts";
 
 /**
  * Required only to define the name of this feature.
@@ -37,9 +40,9 @@ export const getPath = () => {
  *
  * This example calls a public API and returns the data.
  */
-export const getStaticProps = async (data: any): Promise<any> => {
+export const getStaticProps = async (data: Data): Promise<PokemonData> => {
   const url = `https://pokeapi.co/api/v2/pokemon/1`;
-  const pokemon = await fetch(url).then((res) => res.json());
+  const pokemon = (await fetch(url).then((res: any) => res.json())) as Pokemon;
 
   return { ...data, pokemon };
 };
@@ -48,7 +51,7 @@ export const getStaticProps = async (data: any): Promise<any> => {
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
  */
-const Static = (props: any) => {
+const Static = (props: PokemonData) => {
   const { name } = props.pokemon;
 
   const [num, setNum] = useState<number>(0);
@@ -68,9 +71,9 @@ const Static = (props: any) => {
  *
  * A convenient function is currently defined in src/wrapper.ts.
  *
- * NOTE: Future changes will probably remove the need for this function and wrapper.ts.
+ * NOTE: Future changes may impact how this is used.
  */
-export const render = (data: any) =>
+export const render = (data: PokemonData) =>
   reactWrapper(data, "static.tsx", renderToString(<Static {...data} />), true);
 
 export default Static;

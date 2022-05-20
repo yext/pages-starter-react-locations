@@ -20,6 +20,7 @@ import StaticMap from "../components/static-map";
 import { reactWrapper } from "../wrapper";
 import { renderToString } from "react-dom/server";
 import "../index.css";
+import { Data } from "../types/data";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -72,7 +73,7 @@ export const config = {
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
-export const getPath = (data: any) => {
+export const getPath = (data: Data) => {
   return `index/${data.document.streamOutput.id.toString()}`;
 };
 
@@ -85,7 +86,7 @@ export const getPath = (data: any) => {
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Index = (props: any) => {
+const Index = (props: Data) => {
   const { document } = props;
   const { streamOutput } = document;
   const {
@@ -147,9 +148,9 @@ const Index = (props: any) => {
  *
  * A convenient function is currently defined in src/wrapper.ts.
  *
- * NOTE: Future changes will probably remove the need for this function and wrapper.ts.
+ * NOTE: Future changes may impact how this is used.
  */
-export const render = (data: any) =>
+export const render = (data: Data) =>
   reactWrapper(data, "index.tsx", renderToString(<Index {...data} />), true);
 
 export default Index;
