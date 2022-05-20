@@ -6,8 +6,8 @@ This repository provides a basic example of how to start developing a React site
 
 ### Prerequisites
 
-1. You must have access to the yext github organization: https://github.com/yext
-1. You must have access to the yext npm organization: https://www.npmjs.com/org/yext
+1. You must have access to the Yext Github organization: https://github.com/yext
+1. You must have access to the Yext NPM organization: https://www.npmjs.com/org/yext
 1. Have the Yext CLI installed: https://hitchhikers.yext.com/guides/cli-getting-started-resources/01-install-cli/
 1. Have Deno installed, version 1.21.0 or later: https://deno.land/manual/getting_started/installation
 1. Have node installed, version 17 or later: https://nodejs.org/en/download/
