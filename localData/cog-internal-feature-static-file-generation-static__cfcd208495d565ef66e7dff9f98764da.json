@@ -1,0 +1,17 @@
+{
+  "__": {
+    "name": "static",
+    "staticPage": {
+      "plugin": {}
+    },
+    "streamId": "",
+    "templateType": "JS"
+  },
+  "businessId": 0,
+  "key": "0:static:knowledgeGraph:0:en",
+  "locale": "en",
+  "meta": {
+    "locale": "en"
+  },
+  "siteId": 0
+}

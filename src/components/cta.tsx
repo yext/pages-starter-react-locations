@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 type Cta = {
   buttonText: string;
@@ -12,7 +12,9 @@ const Cta = (props: Cta) => {
   return (
     <a
       href={url}
-      className={`${style}` + ' py-4 px-6 text-base font-bold text-white rounded-lg'}
+      className={
+        `${style}` + " py-4 px-6 text-base font-bold text-white rounded-lg"
+      }
       target="_blank"
       rel="noopener noreferrer"
     >

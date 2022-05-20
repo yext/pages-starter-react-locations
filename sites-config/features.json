@@ -1,0 +1,52 @@
+{
+  "features": [
+    {
+      "name": "index",
+      "streamId": "products",
+      "templateType": "JS",
+      "entityPageSet": {
+        "plugin": {}
+      }
+    },
+    {
+      "name": "static",
+      "streamId": "",
+      "templateType": "JS",
+      "staticPage": {
+        "plugin": {}
+      }
+    }
+  ],
+  "streams": [
+    {
+      "$id": "products",
+      "source": "knowledgeGraph",
+      "destination": "pages",
+      "fields": [
+        "id",
+        "uid",
+        "meta",
+        "name",
+        "address",
+        "mainPhone",
+        "description",
+        "hours",
+        "photoGallery",
+        "slug",
+        "geocodedCoordinate",
+        "services",
+        "neighborhood",
+        "paymentOptions",
+        "c_relatedFAQs.question",
+        "c_relatedFAQs.answer"
+      ],
+      "filter": {
+        "entityTypes": ["location"]
+      },
+      "localization": {
+        "locales": ["en"],
+        "primary": false
+      }
+    }
+  ]
+}

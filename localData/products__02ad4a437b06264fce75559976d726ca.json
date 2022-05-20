@@ -4,7 +4,7 @@
       "plugin": {}
     },
     "name": "Locations",
-    "streamId": "sites-locationEntity",
+    "streamId": "products",
     "templateType": "JS"
   },
   "_site": {
@@ -137,7 +137,7 @@
       ]
     }
   },
-  "id": "foo",
+  "id": "123",
   "key": "0:Locations:knowledgeGraph:26771075:en",
   "locale": "en",
   "mainPhone": "+12129943900",
