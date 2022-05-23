@@ -108,7 +108,7 @@ Not required. In this example this sets up Tailwind CSS.
 
 A convenient function that handles the boilerplate of how to render the template during a production build. It is called in the `render` function of each template.
 
-NOTE: Future work may remove wrapper.ts and the need for a `render` function entirely.
+NOTE: Future changes may impact how this is used.
 
 ### Everything else
 
@@ -118,3 +118,7 @@ The rest of the files are basic config setup common to many other React projects
 1. ESLint - catches errors in your code
 1. Prettier - formats your code (you can add .prettierrc to override any default settings)
 1. TypeScript - adds typing to Javascript for a better developer experience
+
+## Temporary Changes / Additional Notes
+### .npmrc
+This file is necessary while this repository is private. You will need to add an environment variable called `NPM_TOKEN` in your branch settings in the Yext Sites UI. You can create the token via the https://npmjs.org 'Access Tokens' section.
