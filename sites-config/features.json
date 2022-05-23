@@ -31,14 +31,9 @@
         "mainPhone",
         "description",
         "hours",
-        "photoGallery",
         "slug",
         "geocodedCoordinate",
-        "services",
-        "neighborhood",
-        "paymentOptions",
-        "c_relatedFAQs.question",
-        "c_relatedFAQs.answer"
+        "services"
       ],
       "filter": {
         "entityTypes": ["location"]

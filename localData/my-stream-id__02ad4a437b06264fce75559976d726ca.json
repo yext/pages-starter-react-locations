@@ -4,7 +4,7 @@
       "plugin": {}
     },
     "name": "Locations",
-    "streamId": "products",
+    "streamId": "my-stream-id",
     "templateType": "JS"
   },
   "_site": {

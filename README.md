@@ -120,5 +120,7 @@ The rest of the files are basic config setup common to many other React projects
 1. TypeScript - adds typing to Javascript for a better developer experience
 
 ## Temporary Changes / Additional Notes
+
 ### .npmrc
+
 This file is necessary while this repository is private. You will need to add an environment variable called `NPM_TOKEN` in your branch settings in the Yext Sites UI. You can create the token via the https://npmjs.org 'Access Tokens' section. You will also need to export `NPM_TOKEN` in ~/.bash_profile locally as well (`npm login` doesn't seem to work when this file exists in the repo).
