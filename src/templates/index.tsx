@@ -46,14 +46,9 @@ export const config = {
       "mainPhone",
       "description",
       "hours",
-      "photoGallery",
       "slug",
       "geocodedCoordinate",
       "services",
-      "neighborhood",
-      "paymentOptions",
-      "c_relatedFAQs.question",
-      "c_relatedFAQs.answer",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
