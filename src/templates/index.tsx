@@ -29,6 +29,7 @@ export const config = {
   // The name of the feature.
   // NOTE: A future change may remove this and the feature name would use the name of the template by default.
   name: "index",
+  streamId: "my-stream-id",
   stream: {
     $id: "my-stream-id",
     // Required for now, but the plugin could set this automatically for you.
