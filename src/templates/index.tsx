@@ -10,7 +10,7 @@
 
 import * as React from "react";
 import Banner from "../components/banner";
-import Header from "../components/header";
+import Header, { Link } from "../components/header";
 import Footer from "../components/footer";
 import Cta from "../components/cta";
 import Contact from "../components/contact";
@@ -95,12 +95,27 @@ const Index: React.FC<Data> = (props) => {
     services,
   } = streamOutput;
 
+  const links: Link[] = [
+    {
+      label: "Home",
+      url: "/",
+    },
+    {
+      label: "About",
+      url: "/about.html",
+    },
+    {
+      label: "CatJam GIF",
+      url: "https://media.giphy.com/media/jpbnoe3UIa8TU8LM13/giphy.gif",
+    },
+  ];
+
   return (
     <>
       <div className="centered-container">
         <Header
           logo="https://cdn.fs.brandfolder.com/cache=expiry:604800/deY3VGFpSjC761Abjbfc"
-          links={_site.c_header}
+          links={links}
         ></Header>
       </div>
       <Banner name={name} address={address} openTime={openTime}>

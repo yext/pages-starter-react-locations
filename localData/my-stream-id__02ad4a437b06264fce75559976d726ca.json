@@ -29,20 +29,6 @@
         "value": "UA-96941330-8"
       }
     ],
-    "c_header": [
-      {
-        "label": "Home",
-        "uRL": "/"
-      },
-      {
-        "label": "About",
-        "uRL": "/about.html"
-      },
-      {
-        "label": "CatJam GIF",
-        "uRL": "https://media.giphy.com/media/jpbnoe3UIa8TU8LM13/giphy.gif"
-      }
-    ],
     "id": "YFW",
     "meta": {
       "entityType": {

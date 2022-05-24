@@ -1,7 +1,7 @@
 import React from "react";
 import Cta from "../components/cta";
 
-type Link = {
+export type Link = {
   label: string;
   url: string;
 };
