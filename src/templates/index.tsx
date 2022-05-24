@@ -30,7 +30,7 @@ export const config = {
   // NOTE: A future change may remove this and the feature name would use the name of the template by default.
   name: "index",
   stream: {
-    $id: "products",
+    $id: "my-stream-id",
     // Required for now, but the plugin could set this automatically for you.
     source: "knowledgeGraph",
     // Required for now, but the plugin could set this automatically for you.
