@@ -133,16 +133,18 @@ const Index: React.FC<Data> = (props) => {
           <div className="grid grid-cols-3 gap-x-10 gap-y-10">
             <div className="bg-gray-100 p-5 space-y-12">
               <Contact address={address} phone={mainPhone}></Contact>
-              <List list={services}></List>
+              {services && <List list={services}></List>}
             </div>
             <div className="col-span-2 pt-5 space-y-10">
               <div>
                 {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
               </div>
-              <StaticMap
-                latitude={geocodedCoordinate.latitude}
-                longitude={geocodedCoordinate.longitude}
-              ></StaticMap>
+              {geocodedCoordinate && (
+                <StaticMap
+                  latitude={geocodedCoordinate.latitude}
+                  longitude={geocodedCoordinate.longitude}
+                ></StaticMap>
+              )}
             </div>
           </div>
         </div>

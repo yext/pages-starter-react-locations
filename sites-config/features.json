@@ -2,7 +2,7 @@
   "features": [
     {
       "name": "index",
-      "streamId": "products",
+      "streamId": "my-stream-id",
       "templateType": "JS",
       "entityPageSet": {
         "plugin": {}
@@ -19,7 +19,7 @@
   ],
   "streams": [
     {
-      "$id": "products",
+      "$id": "my-stream-id",
       "source": "knowledgeGraph",
       "destination": "pages",
       "fields": [
