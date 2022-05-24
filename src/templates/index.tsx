@@ -29,8 +29,9 @@ export const config = {
   // The name of the feature.
   // NOTE: A future change may remove this and the feature name would use the name of the template by default.
   name: "index",
+  streamId: "my-stream-id",
   stream: {
-    $id: "products",
+    $id: "my-stream-id",
     // Required for now, but the plugin could set this automatically for you.
     source: "knowledgeGraph",
     // Required for now, but the plugin could set this automatically for you.
@@ -133,16 +134,18 @@ const Index: React.FC<Data> = (props) => {
           <div className="grid grid-cols-3 gap-x-10 gap-y-10">
             <div className="bg-gray-100 p-5 space-y-12">
               <Contact address={address} phone={mainPhone}></Contact>
-              <List list={services}></List>
+              {services && <List list={services}></List>}
             </div>
             <div className="col-span-2 pt-5 space-y-10">
               <div>
                 {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
               </div>
-              <StaticMap
-                latitude={geocodedCoordinate.latitude}
-                longitude={geocodedCoordinate.longitude}
-              ></StaticMap>
+              {geocodedCoordinate && (
+                <StaticMap
+                  latitude={geocodedCoordinate.latitude}
+                  longitude={geocodedCoordinate.longitude}
+                ></StaticMap>
+              )}
             </div>
           </div>
         </div>
