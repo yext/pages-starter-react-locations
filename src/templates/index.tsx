@@ -9,6 +9,7 @@
  */
 
 import * as React from "react";
+import { SimpleAnswersEvent, SitesAnalytics } from "../util/Analytics";
 import Banner from "../components/banner";
 import Header, { Link } from "../components/header";
 import Footer from "../components/footer";
@@ -86,6 +87,7 @@ const Index: React.FC<Data> = (props) => {
   const { document } = props;
   const { streamOutput } = document;
   const {
+    id,
     name,
     address,
     openTime,
@@ -111,6 +113,14 @@ const Index: React.FC<Data> = (props) => {
     },
   ];
 
+  const answersEvent = new SimpleAnswersEvent({
+    experienceKey: 'yext-inventory',
+    experienceVersion: 'PRODUCTION',
+    businessId: 2987593,
+  });
+
+  const sitesAnalytics = new SitesAnalytics();
+
   return (
     <>
       <div className="centered-container">
@@ -130,6 +140,11 @@ const Index: React.FC<Data> = (props) => {
         </div>
       </Banner>
       <div className="centered-container">
+        <div className="section">
+          <button onClick={() => answersEvent.fire()}>Answers analytics event</button>
+          <br/>
+          <button onClick={() => sitesAnalytics.click()}>Sites analytics event</button>
+        </div>
         <div className="section">
           <div className="grid grid-cols-3 gap-x-10 gap-y-10">
             <div className="bg-gray-100 p-5 space-y-12">
