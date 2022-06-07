@@ -17,7 +17,7 @@
           },
           {
             "root": "dist",
-            "pattern": "assets/{server,static}/**/*{.js,.css}"
+            "pattern": "assets/{server,static,renderer}/**/*{.js,.css}"
           }
         ],
         "event": "ON_PAGE_GENERATE",

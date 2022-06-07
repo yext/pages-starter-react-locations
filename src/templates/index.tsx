@@ -17,8 +17,6 @@ import Contact from "../components/contact";
 import List from "../components/list";
 import Hours from "../components/hours";
 import StaticMap from "../components/static-map";
-import { reactWrapper } from "../wrapper";
-import { renderToString } from "react-dom/server";
 import "../index.css";
 import { Data } from "../types/data";
 
@@ -29,7 +27,6 @@ export const config = {
   // The name of the feature.
   // NOTE: A future change may remove this and the feature name would use the name of the template by default.
   name: "index",
-  streamId: "my-stream-id",
   stream: {
     $id: "my-stream-id",
     // Required for now, but the plugin could set this automatically for you.
@@ -154,16 +151,5 @@ const Index: React.FC<Data> = (props) => {
     </>
   );
 };
-
-/**
- * Defines how the plugin will render the template for the production build. This has no
- * impact on local dev.
- *
- * A convenient function is currently defined in src/wrapper.ts.
- *
- * NOTE: Future changes may impact how this is used.
- */
-export const render = (data: Data) =>
-  reactWrapper(data, "index.tsx", renderToString(<Index {...data} />), true);
 
 export default Index;

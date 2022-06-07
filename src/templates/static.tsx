@@ -4,8 +4,6 @@
 
 import * as React from "react";
 import { useState } from "react";
-import { renderToString } from "react-dom/server";
-import { reactWrapper } from "../wrapper";
 import fetch from "fetch-everywhere";
 import { Data } from "../types/data";
 import { Pokemon } from "pokenode-ts";
@@ -69,16 +67,5 @@ const Static: React.FC<PokemonData> = (props: PokemonData) => {
     </>
   );
 };
-
-/**
- * Defines how the plugin will render the template for the production build. This has no
- * impact on local dev.
- *
- * A convenient function is currently defined in src/wrapper.ts.
- *
- * NOTE: Future changes may impact how this is used.
- */
-export const render = (data: PokemonData) =>
-  reactWrapper(data, "static.tsx", renderToString(<Static {...data} />), true);
 
 export default Static;
