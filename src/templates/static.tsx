@@ -7,16 +7,7 @@ import { useState } from "react";
 import fetch from "fetch-everywhere";
 import { Data } from "../types/data";
 import { Pokemon } from "pokenode-ts";
-
-/**
- * Required only to define the name of this feature.
- *
- * NOTE: A future change may remove this and the feature name would use
- * the name of the template by default.
- */
-export const config = {
-  name: "static",
-};
+import { Default, GetPath, GetStaticProps } from "@yext/yext-sites-scripts";
 
 /**
  * Defines the path that the generated file will live at for production.
@@ -24,7 +15,7 @@ export const config = {
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
-export const getPath = () => {
+export const getPath: GetPath<Data> = () => {
   return `static/${Math.random().toString()}`;
 };
 
@@ -43,7 +34,7 @@ type PokemonData = Data & { pokemon: Pokemon };
  *
  * This example calls a public API and returns the data.
  */
-export const getStaticProps = async (data: Data): Promise<PokemonData> => {
+ export const getStaticProps: GetStaticProps<PokemonData> = async (data) => {
   const url = `https://pokeapi.co/api/v2/pokemon/1`;
   const pokemon = (await fetch(url).then((res: any) => res.json())) as Pokemon;
 
@@ -54,8 +45,8 @@ export const getStaticProps = async (data: Data): Promise<PokemonData> => {
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
  */
-const Static: React.FC<PokemonData> = (props: PokemonData) => {
-  const { name } = props.pokemon;
+ const Static: Default<PokemonData> = (data) => {
+  const { name } = data.pokemon;
 
   const [num, setNum] = useState<number>(0);
 

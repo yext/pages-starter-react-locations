@@ -19,20 +19,16 @@ import Hours from "../components/hours";
 import StaticMap from "../components/static-map";
 import "../index.css";
 import { Data } from "../types/data";
+import { Default, GetPath, TemplateConfig } from "@yext/yext-sites-scripts";
 
 /**
  * Required when Knowledge Graph data is used for a template.
  */
-export const config = {
-  // The name of the feature.
-  // NOTE: A future change may remove this and the feature name would use the name of the template by default.
+export const config: TemplateConfig = {
+  // The name of the feature. If not set the name of this file will be used (without extension).
   name: "index",
   stream: {
     $id: "my-stream-id",
-    // Required for now, but the plugin could set this automatically for you.
-    source: "knowledgeGraph",
-    // Required for now, but the plugin could set this automatically for you.
-    destination: "pages",
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: [
@@ -66,7 +62,7 @@ export const config = {
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
-export const getPath = (data: Data) => {
+export const getPath: GetPath<Data> = (data) => {
   return `index/${data.document.streamOutput.id.toString()}`;
 };
 
@@ -79,7 +75,7 @@ export const getPath = (data: Data) => {
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Index: React.FC<Data> = (props) => {
+const Index: Default<Data> = (props) => {
   const { document } = props;
   const { streamOutput } = document;
   const {
