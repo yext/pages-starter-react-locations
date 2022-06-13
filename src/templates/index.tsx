@@ -18,15 +18,12 @@ import List from "../components/list";
 import Hours from "../components/hours";
 import StaticMap from "../components/static-map";
 import "../index.css";
-import { Data } from "../types/data";
-import { Default, GetPath, TemplateConfig } from "@yext/yext-sites-scripts";
+import { Data, Default, GetPath, TemplateConfig } from "@yext/yext-sites-scripts";
 
 /**
  * Required when Knowledge Graph data is used for a template.
  */
 export const config: TemplateConfig = {
-  // The name of the feature. If not set the name of this file will be used (without extension).
-  name: "index",
   stream: {
     $id: "my-stream-id",
     // Specifies the exact data that each generated document will contain. This data is passed in

@@ -5,9 +5,17 @@
 import * as React from "react";
 import { useState } from "react";
 import fetch from "fetch-everywhere";
-import { Data } from "../types/data";
 import { Pokemon } from "pokenode-ts";
-import { Default, GetPath, GetStaticProps } from "@yext/yext-sites-scripts";
+import { Data, Default, GetPath, GetStaticProps, TemplateConfig } from "@yext/yext-sites-scripts";
+
+/**
+ * Not required depending on 
+ */
+ export const config: TemplateConfig = {
+  // The name of the feature. If not set the name of this file will be used (without extension).
+  // Use this when you need to override the feature name.
+  name: "pokemon",
+};
 
 /**
  * Defines the path that the generated file will live at for production.
