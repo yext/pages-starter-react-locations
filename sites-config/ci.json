@@ -17,7 +17,7 @@
           },
           {
             "root": "dist",
-            "pattern": "assets/{server,static}/**/*{.js,.css}"
+            "pattern": "assets/{server,static,renderer}/**/*{.js,.css}"
           }
         ],
         "event": "ON_PAGE_GENERATE",
@@ -30,7 +30,7 @@
     "requiredFiles": ["package.json", "package-lock.json", ".npmrc"]
   },
   "buildArtifacts": {
-    "buildCmd": "npm run directbuild"
+    "buildCmd": "npm run build"
   },
   "livePreview": {
     "serveSetupCmd": ":"

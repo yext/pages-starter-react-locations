@@ -10,7 +10,6 @@
     },
     {
       "name": "static",
-      "streamId": "",
       "templateType": "JS",
       "staticPage": {
         "plugin": {}

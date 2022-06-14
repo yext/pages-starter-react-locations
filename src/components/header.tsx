@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import Cta from "../components/cta";
 
 export type Link = {

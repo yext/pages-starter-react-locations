@@ -4,19 +4,22 @@
 
 import * as React from "react";
 import { useState } from "react";
-import { renderToString } from "react-dom/server";
-import { reactWrapper } from "../wrapper";
 import fetch from "fetch-everywhere";
-import { Data } from "../types/data";
 import { Pokemon } from "pokenode-ts";
+import {
+  Data,
+  Default,
+  GetPath,
+  GetStaticProps,
+  TemplateConfig,
+} from "@yext/yext-sites-scripts";
 
 /**
- * Required only to define the name of this feature.
- *
- * NOTE: A future change may remove this and the feature name would use
- * the name of the template by default.
+ * Not required depending on your use case.
  */
-export const config = {
+export const config: TemplateConfig = {
+  // The name of the feature. If not set the name of this file will be used (without extension).
+  // Use this when you need to override the feature name.
   name: "static",
 };
 
@@ -26,7 +29,7 @@ export const config = {
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
-export const getPath = () => {
+export const getPath: GetPath<Data> = () => {
   return `static/${Math.random().toString()}`;
 };
 
@@ -45,7 +48,7 @@ type PokemonData = Data & { pokemon: Pokemon };
  *
  * This example calls a public API and returns the data.
  */
-export const getStaticProps = async (data: Data): Promise<PokemonData> => {
+export const getStaticProps: GetStaticProps<PokemonData> = async (data) => {
   const url = `https://pokeapi.co/api/v2/pokemon/1`;
   const pokemon = (await fetch(url).then((res: any) => res.json())) as Pokemon;
 
@@ -56,8 +59,8 @@ export const getStaticProps = async (data: Data): Promise<PokemonData> => {
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
  */
-const Static: React.FC<PokemonData> = (props: PokemonData) => {
-  const { name } = props.pokemon;
+const Static: Default<PokemonData> = (data) => {
+  const { name } = data.pokemon;
 
   const [num, setNum] = useState<number>(0);
 
@@ -69,16 +72,5 @@ const Static: React.FC<PokemonData> = (props: PokemonData) => {
     </>
   );
 };
-
-/**
- * Defines how the plugin will render the template for the production build. This has no
- * impact on local dev.
- *
- * A convenient function is currently defined in src/wrapper.ts.
- *
- * NOTE: Future changes may impact how this is used.
- */
-export const render = (data: PokemonData) =>
-  reactWrapper(data, "static.tsx", renderToString(<Static {...data} />), true);
 
 export default Static;
