@@ -23,6 +23,7 @@ import {
   Default,
   GetPath,
   TemplateConfig,
+  GetHeadConfig,
 } from "@yext/yext-sites-scripts";
 
 /**
@@ -74,7 +75,7 @@ export const getPath: GetPath<Data> = (data) => {
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
-export const getHeadConfig = (data: Data) => {
+export const getHeadConfig: GetHeadConfig<Data> = (data) => {
   return {
     title: data.document.streamOutput.name,
     charset: "UTF-8",
