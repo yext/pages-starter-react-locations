@@ -6,12 +6,18 @@ import * as React from "react";
 import { useState } from "react";
 import fetch from "fetch-everywhere";
 import { Pokemon } from "pokenode-ts";
-import { Data, Default, GetPath, GetStaticProps, TemplateConfig } from "@yext/yext-sites-scripts";
+import {
+  Data,
+  Default,
+  GetPath,
+  GetStaticProps,
+  TemplateConfig,
+} from "@yext/yext-sites-scripts";
 
 /**
  * Not required depending on your use case.
  */
- export const config: TemplateConfig = {
+export const config: TemplateConfig = {
   // The name of the feature. If not set the name of this file will be used (without extension).
   // Use this when you need to override the feature name.
   name: "static",
@@ -42,7 +48,7 @@ type PokemonData = Data & { pokemon: Pokemon };
  *
  * This example calls a public API and returns the data.
  */
- export const getStaticProps: GetStaticProps<PokemonData> = async (data) => {
+export const getStaticProps: GetStaticProps<PokemonData> = async (data) => {
   const url = `https://pokeapi.co/api/v2/pokemon/1`;
   const pokemon = (await fetch(url).then((res: any) => res.json())) as Pokemon;
 
@@ -53,7 +59,7 @@ type PokemonData = Data & { pokemon: Pokemon };
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
  */
- const Static: Default<PokemonData> = (data) => {
+const Static: Default<PokemonData> = (data) => {
   const { name } = data.pokemon;
 
   const [num, setNum] = useState<number>(0);
