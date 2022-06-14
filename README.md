@@ -58,7 +58,6 @@ root
 │   │   ci.json
 └───src
 │   │   index.css
-│   │   wrapper.ts
 │   │
 │   └───components
 │   │
@@ -103,12 +102,6 @@ Here you can define any custom TypeScript types you need.
 #### index.css
 
 Not required. In this example this sets up Tailwind CSS.
-
-#### wrapper.ts
-
-A convenient function that handles the boilerplate of how to render the template during a production build. It is called in the `render` function of each template.
-
-NOTE: Future changes may impact how this is used.
 
 ### Everything else
 
