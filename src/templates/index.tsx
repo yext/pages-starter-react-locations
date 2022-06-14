@@ -76,7 +76,7 @@ export const getPath: GetPath<Data> = (data) => {
  */
 export const getHeadConfig = (data: Data) => {
   return {
-    title: "Yext SSG",
+    title: data.document.streamOutput.name,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -99,8 +99,8 @@ export const getHeadConfig = (data: Data) => {
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Index: Default<Data> = (props) => {
-  const { document } = props;
+const Index: Default<Data> = (data) => {
+  const { document } = data;
   const { streamOutput } = document;
   const {
     name,
@@ -108,7 +108,6 @@ const Index: Default<Data> = (props) => {
     openTime,
     hours,
     mainPhone,
-    _site,
     geocodedCoordinate,
     services,
   } = streamOutput;
