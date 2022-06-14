@@ -9,7 +9,7 @@ import { Pokemon } from "pokenode-ts";
 import { Data, Default, GetPath, GetStaticProps, TemplateConfig } from "@yext/yext-sites-scripts";
 
 /**
- * Not required depending on 
+ * Not required depending on your use case.
  */
  export const config: TemplateConfig = {
   // The name of the feature. If not set the name of this file will be used (without extension).
