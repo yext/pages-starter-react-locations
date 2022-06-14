@@ -103,6 +103,10 @@ Here you can define any custom TypeScript types you need.
 
 Not required. In this example this sets up Tailwind CSS.
 
+### vite.config.js
+
+Vite is now a first class member of the starter! This file defines any custom Vite configuration you want, giving you full control over your setup. Specifically, it will allows users to pass additional configuration options to the vite-plugin-yext-sites-ssg plugin when they become more widely available.
+
 ### Everything else
 
 The rest of the files are basic config setup common to many other React projects. In this example we've enabled:
