@@ -2,26 +2,19 @@
  * This is an example of how to create a static template that uses getStaticProps to retrieve data.
  */
 
-import * as React from "react";
-import { useState } from "react";
-import fetch from "fetch-everywhere";
-import { Pokemon } from "pokenode-ts";
 import {
   Data,
   Default,
+  GetHeadConfig,
   GetPath,
   GetStaticProps,
-  TemplateConfig,
 } from "@yext/yext-sites-scripts";
-
-/**
- * Not required depending on your use case.
- */
-export const config: TemplateConfig = {
-  // The name of the feature. If not set the name of this file will be used (without extension).
-  // Use this when you need to override the feature name.
-  name: "static",
-};
+import fetch from "fetch-everywhere";
+import { Pokemon } from "pokenode-ts";
+import * as React from "react";
+import { useState } from "react";
+import Interactive from "../components/interactive";
+import Layout from "../components/layout";
 
 /**
  * Defines the path that the generated file will live at for production.
@@ -30,7 +23,7 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<Data> = () => {
-  return `static/${Math.random().toString()}`;
+  return `static-page`;
 };
 
 /**
@@ -55,6 +48,12 @@ export const getStaticProps: GetStaticProps<PokemonData> = async (data) => {
   return { ...data, pokemon };
 };
 
+export const getHeadConfig: GetHeadConfig<PokemonData> = ({ pokemon }) => {
+  return {
+    title: "My Static Page",
+  };
+};
+
 /**
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
@@ -65,11 +64,26 @@ const Static: Default<PokemonData> = (data) => {
   const [num, setNum] = useState<number>(0);
 
   return (
-    <>
-      <div>Hello from {name}</div>
-      <button onClick={() => setNum(num + 1)}>Click me</button>
-      Num: {num}
-    </>
+    <Layout>
+      <div className="prose">
+        <h1>Static Template</h1>
+        <p>
+          This is an example of a Static Template. This source code of this file
+          can be edited at <code>./src/static/tsx</code>
+        </p>
+
+        <Interactive />
+        <h3>
+          <code>getStaticProps</code>
+        </h3>
+        <p>
+          This example page also uses <code>getStaticProps</code> to hit an
+          external API on page load. In this case it's using the pokemon API.
+          Here are the abilities for pokemon #1.
+        </p>
+        <pre>{JSON.stringify(data.pokemon.abilities, null, 2)}</pre>
+      </div>
+    </Layout>
   );
 };
 
