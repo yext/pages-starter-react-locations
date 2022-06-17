@@ -132,7 +132,7 @@ const Index: Default<Data> = (data) => {
 
   return (
     <>
-      <CustomFieldDebuggerReactProvider component={Index} {...props}>
+      <CustomFieldDebuggerReactProvider component={Index} {...data}>
         <div className="centered-container">
           <Header
             logo="https://cdn.fs.brandfolder.com/cache=expiry:604800/deY3VGFpSjC761Abjbfc"
