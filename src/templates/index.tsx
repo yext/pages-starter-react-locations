@@ -19,10 +19,10 @@ import Hours from "../components/hours";
 import StaticMap from "../components/static-map";
 import "../index.css";
 import {
-  Data,
   Default,
   GetPath,
   TemplateConfig,
+  TemplateProps,
   GetHeadConfig,
   HeadConfig,
 } from "@yext/yext-sites-scripts";
@@ -66,8 +66,8 @@ export const config: TemplateConfig = {
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
-export const getPath: GetPath<Data> = (data) => {
-  return `index/${data.document.streamOutput.id.toString()}`;
+export const getPath: GetPath<TemplateProps> = (props) => {
+  return `index/${props.document.id.toString()}`;
 };
 
 /**
@@ -76,9 +76,9 @@ export const getPath: GetPath<Data> = (data) => {
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
-export const getHeadConfig: GetHeadConfig<Data> = (data): HeadConfig => {
+export const getHeadConfig: GetHeadConfig<TemplateProps> = (props): HeadConfig => {
   return {
-    title: data.document.streamOutput.name,
+    title: props.document.name,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -101,9 +101,8 @@ export const getHeadConfig: GetHeadConfig<Data> = (data): HeadConfig => {
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Index: Default<Data> = (data) => {
-  const { document } = data;
-  const { streamOutput } = document;
+const Index: Default<TemplateProps> = (props) => {
+  const { document } = props;
   const {
     name,
     address,
@@ -112,7 +111,7 @@ const Index: Default<Data> = (data) => {
     mainPhone,
     geocodedCoordinate,
     services,
-  } = streamOutput;
+  } = document;
 
   const links: Link[] = [
     {
