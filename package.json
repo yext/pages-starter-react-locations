@@ -1,14 +1,18 @@
 {
   "name": "yext-sites-starter",
-  "private": true,
   "version": "0.0.0",
+  "description": "An example repository to help users get started with React development on Yext Sites",
+  "author": "sumo@yext.com",
+  "license": "BSD-3-Clause",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "yss dev",
     "build": "vite build",
     "fmt": "prettier -w .",
     "lint": "eslint .",
-    "clean": "rm -rf .artifact-output .yext/ dist/ localData sites-rendered-output"
+    "clean": "rm -rf .artifact-output .yext/ dist/ localData sites-rendered-output",
+    "generate-notices": "generate-license-file --input package.json --output ./THIRD-PARTY-NOTICES --overwrite"
   },
   "engines": {
     "node": ">=17"
@@ -31,6 +35,7 @@
     "autoprefixer": "^10.4.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
+    "generate-license-file": "^1.3.0",
     "pokenode-ts": "^1.13.1",
     "postcss": "^8.4.12",
     "prettier": "^2.6.2",
