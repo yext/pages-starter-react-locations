@@ -7,11 +7,11 @@ import { useState } from "react";
 import fetch from "fetch-everywhere";
 import { Pokemon } from "pokenode-ts";
 import {
-  Data,
   Default,
   GetPath,
   GetStaticProps,
   TemplateConfig,
+  TemplateProps,
 } from "@yext/yext-sites-scripts";
 
 /**
@@ -29,7 +29,7 @@ export const config: TemplateConfig = {
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
-export const getPath: GetPath<Data> = () => {
+export const getPath: GetPath<TemplateProps> = () => {
   return `static/${Math.random().toString()}`;
 };
 
@@ -37,7 +37,7 @@ export const getPath: GetPath<Data> = () => {
  * A local type for getStaticProps. This could live in src/types but it's generally
  * best practice to keep unshared types local to their usage.
  */
-type PokemonData = Data & { pokemon: Pokemon };
+type PokemonData = TemplateProps & { pokemon: Pokemon };
 
 /**
  * Required only when data needs to be retrieved from an external (non-Knowledge Graph) source.
