@@ -9,7 +9,7 @@ import { Pokemon } from "pokenode-ts";
 import {
   Default,
   GetPath,
-  GetStaticProps,
+  TransformProps,
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
@@ -41,15 +41,16 @@ export const getPath: GetPath<TemplateProps> = () => {
 type PokemonData = TemplateProps & { pokemon: Pokemon };
 
 /**
- * Required only when data needs to be retrieved from an external (non-Knowledge Graph) source.
- * If the page is truly static this function is not necessary.
- *
+ * Used to either alter or augement the props passed into the template at render time.
  * This function will be run during generation and pass in directly as props to the default
  * exported function.
- *
- * This example calls a public API and returns the data.
+ * 
+ * This can be used when data needs to be retrieved from an external (non-Knowledge Graph) 
+ * source. This example calls a public API and returns the data.
+ * 
+ * If the page is truly static this function is not necessary.
  */
-export const getStaticProps: GetStaticProps<PokemonData> = async (data) => {
+export const transformProps: TransformProps<PokemonData> = async (data) => {
   const url = `https://pokeapi.co/api/v2/pokemon/1`;
   const pokemon = (await fetch(url).then((res: any) => res.json())) as Pokemon;
 
