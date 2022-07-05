@@ -21,6 +21,7 @@ import "../index.css";
 import {
   Default,
   GetPath,
+  GetRedirects,
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
@@ -70,6 +71,16 @@ export const config: TemplateConfig = {
 export const getPath: GetPath<TemplateProps> = (props) => {
   return `index/${props.document.id.toString()}`;
 };
+
+/**
+ * Defines a list of paths which will redirect to the path created by getPath.
+ *
+ * NOTE: This currently has no impact on the local dev path. Redirects will be setup on
+ * a new deploy.
+ */
+export const getRedirects: GetRedirects<TemplateProps> = (props) => {
+  return [`index-old/${props.document.id.toString()}`];
+}
 
 /**
  * This allows the user to define a function which will take in their template
