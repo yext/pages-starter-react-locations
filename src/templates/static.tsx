@@ -12,6 +12,7 @@ import {
   GetStaticProps,
   TemplateConfig,
   TemplateProps,
+  TemplateRenderProps,
 } from "@yext/yext-sites-scripts";
 
 /**
@@ -55,12 +56,15 @@ export const getStaticProps: GetStaticProps<PokemonData> = async (data) => {
   return { ...data, pokemon };
 };
 
+type PokemonRenderData = TemplateRenderProps & { pokemon: Pokemon };
+
 /**
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
  */
-const Static: Default<PokemonData> = (data) => {
-  const { name } = data.pokemon;
+const Static: Default<PokemonRenderData> = (data) => {
+  const { pokemon, path, relativePrefixToRoot } = data;
+  const { name } = pokemon;
 
   const [num, setNum] = useState<number>(0);
 

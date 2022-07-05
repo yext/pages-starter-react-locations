@@ -23,6 +23,7 @@ import {
   GetPath,
   TemplateConfig,
   TemplateProps,
+  TemplateRenderProps,
   GetHeadConfig,
   HeadConfig,
 } from "@yext/yext-sites-scripts";
@@ -101,8 +102,8 @@ export const getHeadConfig: GetHeadConfig<TemplateProps> = (props): HeadConfig =
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Index: Default<TemplateProps> = (props) => {
-  const { document } = props;
+const Index: Default<TemplateRenderProps> = (props) => {
+  const { document, path, relativePrefixToRoot } = props;
   const {
     name,
     address,
