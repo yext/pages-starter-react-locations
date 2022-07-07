@@ -41,7 +41,7 @@ export const config: TemplateConfig = {
   * If the page is truly static this function is not necessary.
   */
  export const transformProps: TransformProps<PokemonData> = async (data) => {
-   const url = `https://pokeapi.co/api/v2/pokemon/1`;
+   const url = import.meta.env.YEXT_PUBLIC_POKEMON_API_BASE_URL;
    const pokemon = (await fetch(url).then((res: any) => res.json())) as Pokemon;
  
    return { ...data, pokemon };
