@@ -13,7 +13,7 @@ import {
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
-} from "@yext/yext-sites-scripts";
+} from "@yext/sites-scripts";
 
 /**
  * Not required depending on your use case.
@@ -34,16 +34,16 @@ export const config: TemplateConfig = {
   * Used to either alter or augement the props passed into the template at render time.
   * This function will be run during generation and pass in directly as props to the default
   * exported function.
-  * 
-  * This can be used when data needs to be retrieved from an external (non-Knowledge Graph) 
+  *
+  * This can be used when data needs to be retrieved from an external (non-Knowledge Graph)
   * source. This example calls a public API and returns the data.
-  * 
+  *
   * If the page is truly static this function is not necessary.
   */
  export const transformProps: TransformProps<PokemonData> = async (data) => {
    const url = import.meta.env.YEXT_PUBLIC_POKEMON_API_BASE_URL;
    const pokemon = (await fetch(url).then((res: any) => res.json())) as Pokemon;
- 
+
    return { ...data, pokemon };
  };
 

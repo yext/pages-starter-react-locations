@@ -27,7 +27,7 @@ import {
   TemplateRenderProps,
   GetHeadConfig,
   HeadConfig,
-} from "@yext/yext-sites-scripts";
+} from "@yext/sites-scripts";
 
 /**
  * Required when Knowledge Graph data is used for a template.
