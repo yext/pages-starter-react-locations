@@ -1,13 +1,12 @@
 {
-  "name": "yext-sites-starter",
+  "name": "pages-starter-react-locations",
   "version": "0.0.0",
-  "description": "An example repository to help users get started with React development on Yext Sites",
+  "description": "An example repository to help users get started with React development on Yext Pages",
   "author": "sumo@yext.com",
   "license": "BSD-3-Clause",
-  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "yss dev",
+    "dev": "pages dev",
     "build": "vite build",
     "fmt": "prettier -w .",
     "lint": "eslint .",
@@ -18,20 +17,17 @@
     "node": ">=17"
   },
   "dependencies": {
-    "@yext/yext-sites-scripts": "0.0.23",
     "fetch-everywhere": "^1.0.5",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "typescript": "^4.6.2",
-    "vite": "^2.9.3"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
-    "@vitejs/plugin-react": "^1.2.0",
-    "@yext/vite-plugin-yext-sites-ssg": "0.0.12",
+    "@vitejs/plugin-react": "^2",
+    "@yext/pages": "1.0.0-beta.0",
     "autoprefixer": "^10.4.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
@@ -39,6 +35,8 @@
     "pokenode-ts": "^1.13.1",
     "postcss": "^8.4.12",
     "prettier": "^2.6.2",
-    "tailwindcss": "^3.0.23"
+    "tailwindcss": "^3.0.23",
+    "typescript": "^4.6.2",
+    "vite": "^3.0.2"
   }
 }

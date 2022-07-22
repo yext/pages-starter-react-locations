@@ -19,13 +19,15 @@ import Hours from "../components/hours";
 import StaticMap from "../components/static-map";
 import "../index.css";
 import {
-  Default,
+  Template,
   GetPath,
+  GetRedirects,
   TemplateConfig,
   TemplateProps,
+  TemplateRenderProps,
   GetHeadConfig,
   HeadConfig,
-} from "@yext/yext-sites-scripts";
+} from "@yext/pages";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -66,9 +68,19 @@ export const config: TemplateConfig = {
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
-export const getPath: GetPath<TemplateProps> = (props) => {
-  return `index/${props.document.id.toString()}`;
+export const getPath: GetPath<TemplateProps> = ({document}) => {
+  return `index/${document.id.toString()}`;
 };
+
+/**
+ * Defines a list of paths which will redirect to the path created by getPath.
+ *
+ * NOTE: This currently has no impact on the local dev path. Redirects will be setup on
+ * a new deploy.
+ */
+export const getRedirects: GetRedirects<TemplateProps> = ({document}) => {
+  return [`index-old/${document.id.toString()}`];
+}
 
 /**
  * This allows the user to define a function which will take in their template
@@ -76,9 +88,9 @@ export const getPath: GetPath<TemplateProps> = (props) => {
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
-export const getHeadConfig: GetHeadConfig<TemplateProps> = (props): HeadConfig => {
+export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefixToRoot, path, document}): HeadConfig => {
   return {
-    title: props.document.name,
+    title: document.name,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -101,8 +113,7 @@ export const getHeadConfig: GetHeadConfig<TemplateProps> = (props): HeadConfig =
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Index: Default<TemplateProps> = (props) => {
-  const { document } = props;
+const Index: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
     name,
     address,
