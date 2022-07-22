@@ -7,7 +7,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "yss dev",
+    "dev": "pages dev",
     "build": "vite build",
     "fmt": "prettier -w .",
     "lint": "eslint .",
