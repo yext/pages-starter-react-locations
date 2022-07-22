@@ -7,13 +7,13 @@ import { useState } from "react";
 import fetch from "fetch-everywhere";
 import { Pokemon } from "pokenode-ts";
 import {
-  Default,
+  Template,
   GetPath,
   TransformProps,
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
-} from "@yext/sites-scripts";
+} from "@yext/pages";
 
 /**
  * Not required depending on your use case.
@@ -25,7 +25,7 @@ export const config: TemplateConfig = {
 };
 
 /**
- * A local type for getStaticProps. This could live in src/types but it's generally
+ * A local type for transformProps. This could live in src/types but it's generally
  * best practice to keep unshared types local to their usage.
  */
  type PokemonData = TemplateProps & { pokemon: Pokemon };
@@ -63,8 +63,7 @@ type PokemonRenderData = TemplateRenderProps & { pokemon: Pokemon };
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
  */
-const Static: Default<PokemonRenderData> = (data) => {
-  const { pokemon, path, relativePrefixToRoot } = data;
+const Static: Template<PokemonRenderData> = ({relativePrefixToRoot, path, document, pokemon}) => {
   const { name } = pokemon;
 
   const [num, setNum] = useState<number>(0);
