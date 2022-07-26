@@ -28,7 +28,7 @@ const renderPrettyAddress = (address?: Address) => {
 };
 
 const Banner = (props: Banner) => {
-  const { name, address, openTime, children } = props;
+  const { name, address, children } = props;
 
   return (
     <>
@@ -36,7 +36,6 @@ const Banner = (props: Banner) => {
         <div className="flex-col space-y-10 text-center">
           <div>{name}</div>
           <div>{renderPrettyAddress(address)}</div>
-          <div>Open Until {openTime}</div>
         </div>
         {children}
       </div>
