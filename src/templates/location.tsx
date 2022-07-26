@@ -28,6 +28,7 @@ import {
   GetHeadConfig,
   HeadConfig,
 } from "@yext/pages";
+import PageLayout from "../components/page-layout";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -69,7 +70,7 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({document}) => {
-  return `index/${document.id.toString()}`;
+  return `location/${document.id.toString()}`;
 };
 
 /**
@@ -113,8 +114,9 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Index: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
+const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
+    _site,
     name,
     address,
     openTime,
@@ -124,29 +126,9 @@ const Index: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, docum
     services,
   } = document;
 
-  const links: Link[] = [
-    {
-      label: "Home",
-      url: "/",
-    },
-    {
-      label: "About",
-      url: "/about.html",
-    },
-    {
-      label: "CatJam GIF",
-      url: "https://media.giphy.com/media/jpbnoe3UIa8TU8LM13/giphy.gif",
-    },
-  ];
-
   return (
     <>
-      <div className="centered-container">
-        <Header
-          logo="https://cdn.fs.brandfolder.com/cache=expiry:604800/deY3VGFpSjC761Abjbfc"
-          links={links}
-        ></Header>
-      </div>
+    <PageLayout _site={_site}>
       <Banner name={name} address={address} openTime={openTime}>
         <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
           <div className="text-black text-base">Visit Us Today!</div>
@@ -175,12 +157,12 @@ const Index: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, docum
                 ></StaticMap>
               )}
             </div>
-          </div>
+          </div> 
         </div>
-        <Footer></Footer>
       </div>
+    </PageLayout>
     </>
   );
 };
 
-export default Index;
+export default Location;
