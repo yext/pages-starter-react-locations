@@ -19,8 +19,8 @@ This repository provides a basic example of how to start developing a React site
 ### Clone this repo and install dependencies
 
 ```shell
-git clone git@github.com:yext/site-starter-react-basic.git
-cd site-starter-react-basic
+git clone git@github.com:yext/pages-starter-react-locations.git
+cd pages-starter-react-locations
 npm install
 ```
 
