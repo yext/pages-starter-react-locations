@@ -10,8 +10,6 @@
 
 import * as React from "react";
 import Banner from "../components/banner";
-import Header, { Link } from "../components/header";
-import Footer from "../components/footer";
 import Cta from "../components/cta";
 import Contact from "../components/contact";
 import List from "../components/list";
@@ -69,7 +67,7 @@ export const config: TemplateConfig = {
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
-export const getPath: GetPath<TemplateProps> = ({document}) => {
+export const getPath: GetPath<TemplateProps> = ({ document }) => {
   return `location/${document.id.toString()}`;
 };
 
@@ -79,9 +77,9 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
  * NOTE: This currently has no impact on the local dev path. Redirects will be setup on
  * a new deploy.
  */
-export const getRedirects: GetRedirects<TemplateProps> = ({document}) => {
+export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
   return [`index-old/${document.id.toString()}`];
-}
+};
 
 /**
  * This allows the user to define a function which will take in their template
@@ -89,7 +87,11 @@ export const getRedirects: GetRedirects<TemplateProps> = ({document}) => {
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
-export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefixToRoot, path, document}): HeadConfig => {
+export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
+  relativePrefixToRoot,
+  path,
+  document,
+}): HeadConfig => {
   return {
     title: document.name,
     charset: "UTF-8",
@@ -114,7 +116,11 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
+const Location: Template<TemplateRenderProps> = ({
+  relativePrefixToRoot,
+  path,
+  document,
+}) => {
   const {
     _site,
     name,
@@ -128,39 +134,39 @@ const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, do
 
   return (
     <>
-    <PageLayout _site={_site}>
-      <Banner name={name} address={address} openTime={openTime}>
-        <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
-          <div className="text-black text-base">Visit Us Today!</div>
-          <Cta
-            buttonText="Get Directions"
-            url="http://google.com"
-            style="primary-cta"
-          />
-        </div>
-      </Banner>
-      <div className="centered-container">
-        <div className="section">
-          <div className="grid grid-cols-3 gap-x-10 gap-y-10">
-            <div className="bg-gray-100 p-5 space-y-12">
-              <Contact address={address} phone={mainPhone}></Contact>
-              {services && <List list={services}></List>}
-            </div>
-            <div className="col-span-2 pt-5 space-y-10">
-              <div>
-                {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
+      <PageLayout _site={_site}>
+        <Banner name={name} address={address} openTime={openTime}>
+          <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
+            <div className="text-black text-base">Visit Us Today!</div>
+            <Cta
+              buttonText="Get Directions"
+              url="http://google.com"
+              style="primary-cta"
+            />
+          </div>
+        </Banner>
+        <div className="centered-container">
+          <div className="section">
+            <div className="grid grid-cols-3 gap-x-10 gap-y-10">
+              <div className="bg-gray-100 p-5 space-y-12">
+                <Contact address={address} phone={mainPhone}></Contact>
+                {services && <List list={services}></List>}
               </div>
-              {geocodedCoordinate && (
-                <StaticMap
-                  latitude={geocodedCoordinate.latitude}
-                  longitude={geocodedCoordinate.longitude}
-                ></StaticMap>
-              )}
+              <div className="col-span-2 pt-5 space-y-10">
+                <div>
+                  {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
+                </div>
+                {geocodedCoordinate && (
+                  <StaticMap
+                    latitude={geocodedCoordinate.latitude}
+                    longitude={geocodedCoordinate.longitude}
+                  ></StaticMap>
+                )}
+              </div>
             </div>
-          </div> 
+          </div>
         </div>
-      </div>
-    </PageLayout>
+      </PageLayout>
     </>
   );
 };
