@@ -58,7 +58,7 @@ export const transformProps: TransformProps<ExternalImageData> = async (
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<ExternalImageData> = () => {
-  return `/index.html`;
+  return `index.html`;
 };
 
 type ExternalImageRenderData = TemplateRenderProps & {
