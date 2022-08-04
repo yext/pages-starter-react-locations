@@ -141,16 +141,18 @@ const Hours = (props: Hours) => {
 
   return (
     <>
-      <div className="text-xl font-semibold mb-4">{title}</div>
-      <table>
-        <thead className="sr-only">
-          <tr>
-            <th>Day of the Week</th>
-            <th>Hours</th>
-          </tr>
-        </thead>
-        {renderHours(hours)}
-      </table>
+      <div>
+        <div className="text-xl font-semibold mb-4">{title}</div>
+        <table>
+          <thead className="sr-only">
+            <tr>
+              <th>Day of the Week</th>
+              <th>Hours</th>
+            </tr>
+          </thead>
+          {renderHours(hours)}
+        </table>
+      </div>
     </>
   );
 };
