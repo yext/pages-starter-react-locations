@@ -26,7 +26,7 @@
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
     "@vitejs/plugin-react": "^2",
-    "@yext/pages": "file:../pages/packages/pages/yext-pages-1.0.0-beta.0.tgz",
+    "@yext/pages": "^1.0.0-beta.1",
     "autoprefixer": "^10.4.8",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.1",
