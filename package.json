@@ -17,7 +17,6 @@
     "node": ">=17"
   },
   "dependencies": {
-    "fetch-everywhere": "^1.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -27,7 +26,7 @@
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "@vitejs/plugin-react": "^2",
-    "@yext/pages": "1.0.0-beta.0",
+    "@yext/pages": "file:../pages/packages/pages/yext-pages-1.0.0-beta.0.tgz",
     "autoprefixer": "^10.4.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
