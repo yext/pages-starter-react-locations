@@ -73,7 +73,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
   });
   const childrenDivs = dm_directoryChildren.map((entity:any) => (
     <div>
-      <a key="uRL" href={entity.slug} className="font-bold text-2xl text-blue-700 hover:underline">
+      <a key="uRL" href={relativePrefixToRoot + entity.slug} className="font-bold text-2xl text-blue-700 hover:underline">
         {entity.c_addressRegionDisplayName} ({entity.dm_directoryChildrenCount})
       </a>
     </div>

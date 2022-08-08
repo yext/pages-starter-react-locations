@@ -84,7 +84,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
   const childrenDivs = dm_directoryChildren.map((entity:any) => (
     <div className="border rounded-lg drop-shadow-md bg-gray-100 space-y-6 p-3 h-60">
       <h2>
-        <a className="font-bold text-2xl text-blue-700 hover:underline" href={entity.slug}>{entity.name}</a>
+        <a className="font-bold text-2xl text-blue-700 hover:underline" href={relativePrefixToRoot + entity.slug}>{entity.name}</a>
       </h2>
       <div className="m-1 border"></div>
       <Address address={entity.address}></Address>
