@@ -1,6 +1,7 @@
 import * as React from "react";
 import PageLayout from "../components/PageLayout";
-import Banner from "../components/Banner";
+import Banner from "../components/banner";
+import BreadCrumbs from "../components/BreadCrumbs";
 import "../index.css";
 import {
   Template,
@@ -28,7 +29,8 @@ export const config: TemplateConfig = {
       "slug",
       "dm_directoryChildren.name",
       "dm_directoryChildren.slug",
-      "dm_directoryChildren.dm_directoryChildrenCount"
+      "dm_directoryChildren.dm_directoryChildrenCount",
+      "dm_directoryChildren.c_addressRegionDisplayName",
     ],
     localization: {
       locales: ["en"],
@@ -71,8 +73,8 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
   });
   const childrenDivs = dm_directoryChildren.map((entity:any) => (
     <div>
-      <a key="uRL" href={entity.slug} className="hover:underline">
-        {entity.name} ({entity.dm_directoryChildrenCount})
+      <a key="uRL" href={entity.slug} className="font-bold text-2xl text-blue-700 hover:underline">
+        {entity.c_addressRegionDisplayName} ({entity.dm_directoryChildrenCount})
       </a>
     </div>
   ));
@@ -81,11 +83,12 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
    return (
     <>
       <PageLayout _site={_site}>
-        <Banner text="Home Page"></Banner>
+        <Banner text={_site.name}></Banner>
         <div className="centered-container">
-          <div className="section space-y-10 px-10">
-              <h1 className="text-center">Welcome to {_site.name}!</h1>
-              <div className="grid sm:grid-cols-2 md:grid-cols-4">
+          <BreadCrumbs name="Home"></BreadCrumbs>
+          <div className="section space-y-14 px-10">
+              <h1 className="text-center">{_site.name} Locations</h1>
+              <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
                 {childrenDivs}
               </div>
           </div>

@@ -13,7 +13,7 @@ const Address = (props: any) => {
             <div>{address.line1}</div>
             {address.line2 && (<div>{address.line2}</div>)}
             <div>{address.city}, {address.region} {address.postalCode}</div>
-            <div>{address.countryCode}</div>
+            {/* <div>{address.countryCode}</div> */}
         </a>
       </div>
     </>

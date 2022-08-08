@@ -1,11 +1,12 @@
 import * as React from "react";
-import Banner from "../components/Banner";
+import Banner from "../components/banner";
 import Cta from "../components/Cta";
 import Address from "../components/Address";
 import PhotoGallery from "../components/PhotoGallery";
-import Hours from "../components/Hours";
+import Hours from "../components/hours";
 import Faqs from "../components/Faqs";
 import PageLayout from "../components/PageLayout";
+import BreadCrumbs from "../components/BreadCrumbs";
 import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input';
 import "../index.css";
 import {
@@ -34,9 +35,14 @@ export const config: TemplateConfig = {
       "slug",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
+      "dm_directoryParents.c_addressRegionDisplayName",
+      "dm_directoryParents.dm_directoryParents.name",
+      "dm_directoryParents.dm_directoryParents.slug",
+      "dm_directoryParents.dm_directoryParents.c_addressRegionDisplayName",
       "dm_directoryChildren.name",
-      "dm_directoryChildren.slug",
-      "dm_directoryChildren.dm_directoryChildrenCount"
+      "dm_directoryChildren.address",
+      "dm_directoryChildren.mainPhone",
+      "dm_directoryChildren.slug"
     ],
     localization: {
       locales: ["en"],
@@ -74,16 +80,37 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
     dm_directoryChildren
   } = document;
 
+  var sortedChildren = dm_directoryChildren.sort(function(a:any, b:any) {
+    var a = a.name;
+    var b = b.name;
+    return (a < b) ? -1 :(a > b) ? 1 : 0;
+  });
+  const childrenDivs = dm_directoryChildren.map((entity:any) => (
+    <div className="border rounded-lg drop-shadow-md bg-gray-100 space-y-6 p-3 h-60">
+      <h2>
+        <a className="font-bold text-2xl text-blue-700 hover:underline" href={entity.slug}>{entity.name}</a>
+      </h2>
+      <div className="m-1 border"></div>
+      <Address address={entity.address}></Address>
+      <div className="space-x-3">
+        <span>&#128222;</span>
+        <span>{formatPhoneNumber(entity.mainPhone)}</span>
+      </div>
+    </div>
+  ));
+
   return (
     <>
-      <PageLayout _site={_site} >
-        <Banner text={name}>
-          <div className="bg-white p-10 items-center text-center flex-col gap-y-4 rounded-lg drop-shadow-md">
-            <div className="text-black text-base">Visit Us Today!</div>
-            <Cta buttonText="Get Directions" url="http://google.com" style="primary-cta"/>
-          </div>
-        </Banner>
+      <PageLayout _site={_site}>
+        <Banner text={_site.name}></Banner>
         <div className="centered-container">
+          <BreadCrumbs name={name} parents={dm_directoryParents}></BreadCrumbs>
+          <div className="section space-y-14 px-10">
+              <h1 className="text-center">{_site.name} Locations - {name}</h1>
+              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {childrenDivs}
+              </div>
+          </div>
         </div>
       </PageLayout>
     </>

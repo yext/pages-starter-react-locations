@@ -1,11 +1,12 @@
 import * as React from "react";
-import Banner from "../components/Banner";
+import Banner from "../components/banner";
 import Cta from "../components/Cta";
 import Address from "../components/Address";
 import PhotoGallery from "../components/PhotoGallery";
-import Hours from "../components/Hours";
+import Hours from "../components/hours";
 import Faqs from "../components/Faqs";
 import PageLayout from "../components/PageLayout";
+import BreadCrumbs from "../components/BreadCrumbs";
 import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input';
 import "../index.css";
 import {
@@ -42,7 +43,14 @@ export const config: TemplateConfig = {
       "services",
       "covidMessaging",
       "c_featuredFAQs.question",
-      "c_featuredFAQs.answer"
+      "c_featuredFAQs.answer",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.dm_directoryParents.name",
+      "dm_directoryParents.dm_directoryParents.slug",
+      "dm_directoryParents.dm_directoryParents.c_addressRegionDisplayName",
+      "dm_directoryParents.dm_directoryParents.dm_directoryParents.name",
+      "dm_directoryParents.dm_directoryParents.dm_directoryParents.slug",
     ],
     localization: {
       locales: ["en"],
@@ -98,7 +106,8 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
     geocodedCoordinate,
     services,
     covidMessaging,
-    c_featuredFAQs
+    c_featuredFAQs,
+    dm_directoryParents,
   } = document;
 
   var formattedPhone = formatPhoneNumber(mainPhone);
@@ -113,6 +122,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
           </div>
         </Banner>
         <div className="centered-container">
+          <BreadCrumbs name={name} parents={dm_directoryParents}></BreadCrumbs>
           <div className="section">
               <div className="grid md:grid-cols-2 lg:grid-cols-3">
                 <div className="address-phone space-y-5">

@@ -1,31 +1,29 @@
 import * as React from "react";
 
-export type BreadcrumbItem = {
-  label: string;
-  href: string;
-};
-
-type Props = {
-  //Insert Props Here
-  className?: string;
-  items: BreadcrumbItem[];
-  pageTitle: string;
-};
-
-const BreadCrumbs = ({ className, items, pageTitle }: Props) => {
-  return (
-    <div className={("my-4")}>
-      <div className="flex">
-        {items.map((i) => (
-          <div className="flex">
-            <a href={i.href} className="">
-              {i.label}
-            </a>
-            <div className="px-2">/</div>
-          </div>
-        ))}
-        <div>{pageTitle}</div>
+const BreadCrumbs = (props:any) => {
+  const { name, parents } = props;
+  var breadcrumbs;
+  if (parents) {
+    parents[0].name = "Home";
+    parents.forEach((e:any) => {
+        if (e.c_addressRegionDisplayName) {
+          e.name = e.c_addressRegionDisplayName;
+        }
+      }
+    );
+  
+    breadcrumbs = parents.map((crumb:any) => (
+      <div className="space-x-2">
+        <a className="font-bold hover:underline" href={crumb.slug}>{crumb.name}</a>
+        <span>{'>'}</span>
       </div>
+    ));
+  }
+
+  return (
+    <div className="section flex gap-x-2">
+      {breadcrumbs}
+      {name}
     </div>
   );
 };

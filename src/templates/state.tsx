@@ -1,11 +1,12 @@
 import * as React from "react";
-import Banner from "../components/Banner";
+import Banner from "../components/banner";
 import Cta from "../components/Cta";
 import Address from "../components/Address";
 import PhotoGallery from "../components/PhotoGallery";
-import Hours from "../components/Hours";
+import Hours from "../components/hours";
 import Faqs from "../components/Faqs";
 import PageLayout from "../components/PageLayout";
+import BreadCrumbs from "../components/BreadCrumbs";
 import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input';
 import "../index.css";
 import {
@@ -30,6 +31,7 @@ export const config: TemplateConfig = {
       "uid",
       "meta",
       "name",
+      "c_addressRegionDisplayName",
       "slug",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
@@ -68,19 +70,37 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
  const State: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
     _site,
-    name
+    name,
+    c_addressRegionDisplayName,
+    dm_directoryParents,
+    dm_directoryChildren
   } = document;
+
+  var sortedChildren = dm_directoryChildren.sort(function(a:any, b:any) {
+    var a = a.name;
+    var b = b.name;
+    return (a < b) ? -1 :(a > b) ? 1 : 0;
+  });
+  const childrenDivs = dm_directoryChildren.map((entity:any) => (
+    <div>
+      <a key="uRL" href={entity.slug} className="font-bold text-2xl text-blue-700 hover:underline">
+        {entity.name} ({entity.dm_directoryChildrenCount})
+      </a>
+    </div>
+  ));
 
   return (
     <>
-      <PageLayout _site={_site} >
-        <Banner text={name}>
-          <div className="bg-white p-10 items-center text-center flex-col gap-y-4 rounded-lg drop-shadow-md">
-            <div className="text-black text-base">Visit Us Today!</div>
-            <Cta buttonText="Get Directions" url="http://google.com" style="primary-cta"/>
-          </div>
-        </Banner>
+      <PageLayout _site={_site}>
+        <Banner text={_site.name}></Banner>
         <div className="centered-container">
+          <BreadCrumbs name={name} parents={dm_directoryParents}></BreadCrumbs>
+          <div className="section space-y-14 px-10">
+              <h1 className="text-center">{_site.name} Locations - {c_addressRegionDisplayName}</h1>
+              <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
+                {childrenDivs}
+              </div>
+          </div>
         </div>
       </PageLayout>
     </>
