@@ -85,7 +85,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
       <PageLayout _site={_site}>
         <Banner text={_site.name}></Banner>
         <div className="centered-container">
-          <BreadCrumbs name="Home"></BreadCrumbs>
+          <BreadCrumbs name="Home" baseUrl={relativePrefixToRoot}></BreadCrumbs>
           <div className="section space-y-14 px-10">
               <h1 className="text-center">{_site.name} Locations</h1>
               <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">

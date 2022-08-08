@@ -122,7 +122,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
           </div>
         </Banner>
         <div className="centered-container">
-          <BreadCrumbs name={name} parents={dm_directoryParents}></BreadCrumbs>
+          <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot}></BreadCrumbs>
           <div className="section">
               <div className="grid md:grid-cols-2 lg:grid-cols-3">
                 <div className="address-phone space-y-5">

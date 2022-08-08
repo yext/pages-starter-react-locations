@@ -1,7 +1,7 @@
 import * as React from "react";
 
 const BreadCrumbs = (props:any) => {
-  const { name, parents } = props;
+  const { name, parents, baseUrl } = props;
   var breadcrumbs;
   if (parents) {
     parents[0].name = "Home";
@@ -14,7 +14,7 @@ const BreadCrumbs = (props:any) => {
   
     breadcrumbs = parents.map((crumb:any) => (
       <div className="space-x-2">
-        <a className="font-bold hover:underline" href={crumb.slug}>{crumb.name}</a>
+        <a className="font-bold hover:underline" href={baseUrl + crumb.slug}>{crumb.name}</a>
         <span>{'>'}</span>
       </div>
     ));

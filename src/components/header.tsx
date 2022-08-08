@@ -19,7 +19,7 @@ const Header = (props:any) => {
     <>
       <div className="centered-container">
         <nav className="py-3 flex items-center justify-between">
-          <a href="/index">
+          <a href="/index.html">
             <img src={logo.image.url} width="130" height="130"></img>
           </a>
           <div className="flex gap-x-10 text-lg font-semibold">{headerLinks}</div>
