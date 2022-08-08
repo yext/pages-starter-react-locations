@@ -1,6 +1,6 @@
 import * as React from "react";
 import PageLayout from "../components/PageLayout";
-import Banner from "../components/banner";
+import Banner from "../components/Banner";
 import BreadCrumbs from "../components/BreadCrumbs";
 import "../index.css";
 import {

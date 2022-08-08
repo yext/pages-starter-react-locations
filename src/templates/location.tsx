@@ -1,5 +1,5 @@
 import * as React from "react";
-import Banner from "../components/banner";
+import Banner from "../components/Banner";
 import Cta from "../components/Cta";
 import Address from "../components/Address";
 import PhotoGallery from "../components/PhotoGallery";
