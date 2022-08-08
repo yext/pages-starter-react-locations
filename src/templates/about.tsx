@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../index.css";
-import Banner from "../components/Banner";
+import Banner from "../components/banner";
 import PageLayout from "../components/PageLayout";
 import {
   Template,
