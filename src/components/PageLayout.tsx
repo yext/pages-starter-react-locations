@@ -1,8 +1,7 @@
 import * as React from "react";
-import BreadCrumbs, { BreadcrumbItem } from "./BreadCrumbs";
 import Img, { Image } from "./Img";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./header";
+import Footer from "./footer";
 
 type Props = {
     title?: string;
