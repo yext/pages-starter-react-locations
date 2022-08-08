@@ -41,7 +41,7 @@ export const config: TemplateConfig = {
  
  
 export const getPath: GetPath<TemplateProps> = ({document}) => {
-    return `index.html`;
+    return `/index.html`;
  };
  
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefixToRoot, path, document}): HeadConfig => {

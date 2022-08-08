@@ -41,7 +41,7 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({document}) => {
-  return `${document.slug.toString()}`;
+  return `/${document.slug.toString()}`;
 };
 
  export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefixToRoot, path, document}): HeadConfig => {
