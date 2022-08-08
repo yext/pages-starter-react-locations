@@ -1,6 +1,6 @@
 import * as React from "react";
-import Banner from "../components/Banner";
-import Cta from "../components/Cta";
+import Banner from "../components/banner";
+import Cta from "../components/cta";
 import Address from "../components/Address";
 import PhotoGallery from "../components/PhotoGallery";
 import Hours from "../components/hours";

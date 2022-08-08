@@ -1,5 +1,5 @@
 import * as React from "react";
-import Banner from "../components/Banner";
+import Banner from "../components/banner";
 import Address from "../components/Address";
 import PageLayout from "../components/PageLayout";
 import BreadCrumbs from "../components/BreadCrumbs";
