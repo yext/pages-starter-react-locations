@@ -88,7 +88,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
       <PageLayout _site={_site}>
         <Banner text={_site.name}></Banner>
         <div className="centered-container">
-          <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot}></BreadCrumbs>
+          <BreadCrumbs name={c_addressRegionDisplayName} parents={dm_directoryParents} baseUrl={relativePrefixToRoot}></BreadCrumbs>
           <div className="section space-y-14 px-10">
               <h1 className="text-center">{_site.name} Locations - {c_addressRegionDisplayName}</h1>
               <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
