@@ -6,7 +6,7 @@ const BreadCrumbs = (props:any) => {
   if (parents) {
     parents[0].name = "Home";
     parents.forEach((e:any) => {
-        if (e.c_addressRegionDisplayName) {
+        if (e.meta.entityType.id == "ce_state") {
           e.name = e.c_addressRegionDisplayName;
         }
       }

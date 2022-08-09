@@ -46,12 +46,8 @@ export const config: TemplateConfig = {
       "c_featuredFAQs.answer",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
+      "dm_directoryParents.meta.entityType",
       "dm_directoryParents.c_addressRegionDisplayName",
-      "dm_directoryParents.dm_directoryParents.name",
-      "dm_directoryParents.dm_directoryParents.slug",
-      "dm_directoryParents.dm_directoryParents.c_addressRegionDisplayName",
-      "dm_directoryParents.dm_directoryParents.dm_directoryParents.name",
-      "dm_directoryParents.dm_directoryParents.dm_directoryParents.slug",
     ],
     localization: {
       locales: ["en"],

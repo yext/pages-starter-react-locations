@@ -29,6 +29,7 @@ export const config: TemplateConfig = {
       "slug",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
+      "dm_directoryParents.meta.entityType",
       "dm_directoryChildren.name",
       "dm_directoryChildren.slug",
       "dm_directoryChildren.dm_directoryChildrenCount"
