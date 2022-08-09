@@ -112,7 +112,7 @@ const Menu: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, docume
 
   return (
     <>
-      <PageLayout _site={_site} >
+      <PageLayout>
         <div className="centered-container">
           <h1 className="text-4xl text-center font-bold">Menu Items</h1>
           <MenuSection title="Tacos" children={tacoDivs}/>

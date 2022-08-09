@@ -115,7 +115,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
 
   return (
     <>
-      <PageLayout _site={_site} >
+      <PageLayout >
         <Banner text={name}>
         </Banner>
         <div className="centered-container">

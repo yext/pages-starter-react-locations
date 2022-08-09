@@ -97,12 +97,12 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
 
   return (
     <>
-      <PageLayout _site={_site}>
-        <Banner text={_site.name}></Banner>
+      <PageLayout>
+        <Banner text="Turtlehead Tacos"></Banner>
         <div className="centered-container">
           <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot}></BreadCrumbs>
           <div className="section space-y-14 px-10">
-              <h1 className="text-center">{_site.name} Locations - {name}</h1>
+              <h1 className="text-center">Turtlehead Tacos Locations - {name}</h1>
               <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {childrenDivs}
               </div>

@@ -45,7 +45,7 @@ const About: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, docum
  
    return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout>
         <Banner text="About Page"></Banner>
         <div className="centered-container">
           <div className="section space-y-10 px-10">
