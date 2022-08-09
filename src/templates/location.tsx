@@ -117,10 +117,6 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
     <>
       <PageLayout _site={_site} >
         <Banner text={name}>
-          <div className="bg-white p-10 items-center text-center flex-col gap-y-4 rounded-lg drop-shadow-md">
-            <div className="text-black text-base">Visit Us Today!</div>
-            <Cta buttonText="Get Directions" url="http://google.com" style="primary-cta"/>
-          </div>
         </Banner>
         <div className="centered-container">
           <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot}></BreadCrumbs>
