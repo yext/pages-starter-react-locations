@@ -136,9 +136,6 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
               </div>
           </div>
           <div className="section">
-            {paymentOptions}
-          </div>
-          <div className="section">
             <PhotoGallery 
               photoGallery={photoGallery}
               height="300"
