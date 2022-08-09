@@ -63,7 +63,6 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
 
  const State: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
-    _site,
     name,
     c_addressRegionDisplayName,
     dm_directoryParents,

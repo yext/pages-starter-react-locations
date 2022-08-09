@@ -69,7 +69,6 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
 
  const City: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
-    _site,
     name,
     slug,
     dm_directoryParents,

@@ -63,7 +63,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
 
 const Menu: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
-   _site,
    name,
    richTextDescription,
    photoGallery,

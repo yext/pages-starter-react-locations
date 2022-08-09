@@ -39,9 +39,6 @@ import {
 };
 
 const About: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
-  const {
-    _site, 
-  } = document;
  
    return (
     <>
