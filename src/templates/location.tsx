@@ -39,6 +39,7 @@ export const config: TemplateConfig = {
       "hours",
       "photoGallery",
       "slug",
+      "paymentOptions",
       "geocodedCoordinate",
       "services",
       "covidMessaging",
@@ -104,8 +105,10 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
     covidMessaging,
     c_featuredFAQs,
     dm_directoryParents,
+    paymentOptions
   } = document;
 
+  console.log(paymentOptions);
   var formattedPhone = formatPhoneNumber(mainPhone);
 
   return (
@@ -131,6 +134,9 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
                   <p>{description}</p>
                 </div>
               </div>
+          </div>
+          <div className="section">
+            {paymentOptions}
           </div>
           <div className="section">
             <PhotoGallery 

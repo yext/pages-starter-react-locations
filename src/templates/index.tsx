@@ -66,8 +66,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
   } = document;
 
   var sortedChildren = dm_directoryChildren.sort(function(a:any, b:any) {
-    var a = a.name;
-    var b = b.name;
+    var a = a.name, b = b.name;
     return (a < b) ? -1 :(a > b) ? 1 : 0;
   });
   const childrenDivs = dm_directoryChildren.map((entity:any) => (
