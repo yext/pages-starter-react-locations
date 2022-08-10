@@ -2,6 +2,7 @@
  * This is an example of how to create a static template that uses getStaticProps to retrieve data.
  */
 import * as React from "react";
+import fetch from "fetch-everywhere";
 import "../index.css";
 import {
   Template,
@@ -14,7 +15,6 @@ import {
 import PageLayout from "../components/page-layout";
 import Card from "../components/card";
 import { ExternalImage } from "../types/ExternalImage";
-import { fetch } from "@yext/pages/util";
 
 /**
  * Not required depending on your use case.
