@@ -28,6 +28,7 @@ export const config: TemplateConfig = {
       "uid",
       "meta",
       "name",
+      "description",
       "slug",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
@@ -68,6 +69,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
  const City: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
     name,
+    description,
     slug,
     dm_directoryParents,
     dm_directoryChildren
@@ -99,7 +101,10 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
         <div className="centered-container">
           <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot}></BreadCrumbs>
           <div className="section space-y-14 px-10">
-              <h1 className="text-center">Turtlehead Tacos Locations - {name}</h1>
+              <div className="space-y-6">
+                <h1 className="text-center">Turtlehead Tacos Locations - {name}</h1>
+                <p className="text-2xl text-center">{description}</p>
+              </div>
               <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {childrenDivs}
               </div>

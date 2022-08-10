@@ -25,6 +25,7 @@ export const config: TemplateConfig = {
       "uid",
       "meta",
       "name",
+      "description",
       "c_addressRegionDisplayName",
       "slug",
       "dm_directoryParents.name",
@@ -65,6 +66,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
  const State: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
     name,
+    description,
     c_addressRegionDisplayName,
     dm_directoryParents,
     dm_directoryChildren
@@ -83,6 +85,13 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
     </div>
   ));
 
+  var updatedDescription;
+  if (description.includes("United States")) {
+    updatedDescription = description.replace("United States", "the United States");
+  } else {
+    updatedDescription = description;
+  }
+
   return (
     <>
       <PageLayout>
@@ -90,7 +99,10 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
         <div className="centered-container">
           <BreadCrumbs name={c_addressRegionDisplayName} parents={dm_directoryParents} baseUrl={relativePrefixToRoot}></BreadCrumbs>
           <div className="section space-y-14 px-10">
+            <div className="space-y-6">
               <h1 className="text-center">Turtlehead Tacos Locations - {c_addressRegionDisplayName}</h1>
+              <p className="text-2xl text-center">{updatedDescription}</p>
+            </div>
               <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
                 {childrenDivs}
               </div>
