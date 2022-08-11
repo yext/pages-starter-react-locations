@@ -1,6 +1,6 @@
 # SITE-STARTER-REACT-BASIC
 
-This repository provides a basic example of how to start developing a React site on the Yext Sites system.
+This repository provides a basic example of how to start developing a React site on the Yext Pages system.
 
 ## Getting Started
 
@@ -12,7 +12,7 @@ This repository provides a basic example of how to start developing a React site
 
    - It's recommend to use nvm: https://github.com/nvm-sh/nvm#installing-and-updating or via brew `brew install nvm`
 
-1. Optional: Have a Yext account (necessary for production builds, deploying on Yext Sites, and pulling local stream document data via `yext pages generate-test-data`). This starter already comes with some localData that can be used for local dev without the need to init with a Yext account.
+1. Optional: Have a Yext account (necessary for production builds, deploying on Yext Pages, and pulling local stream document data via `yext pages generate-test-data`). This starter already comes with some localData that can be used for local dev without the need to init with a Yext account.
 
 
 ### Clone this repo and install dependencies
@@ -119,4 +119,4 @@ The rest of the files are basic config setup common to many other React projects
 
 ### .npmrc
 
-This file is necessary while this repository is private. You will need to add an environment variable called `NPM_TOKEN` in your branch settings in the Yext Sites UI. You can create the token via the https://npmjs.org 'Access Tokens' section. You will also need to export `NPM_TOKEN` in ~/.bash_profile locally as well (`npm login` doesn't seem to work when this file exists in the repo).
+This file is necessary while this repository is private. You will need to add an environment variable called `NPM_TOKEN` in your branch settings in the Yext Pages UI. You can create the token via the https://npmjs.org 'Access Tokens' section. You will also need to export `NPM_TOKEN` in ~/.bash_profile locally as well (`npm login` doesn't seem to work when this file exists in the repo).
