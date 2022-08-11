@@ -108,7 +108,6 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
     paymentOptions
   } = document;
 
-  console.log(paymentOptions);
   var formattedPhone = formatPhoneNumber(mainPhone);
 
   return (
