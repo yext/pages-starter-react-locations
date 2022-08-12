@@ -77,6 +77,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
     var b = b.name;
     return (a < b) ? -1 :(a > b) ? 1 : 0;
   });
+  
   const childrenDivs = dm_directoryChildren.map((entity:any) => (
     <div>
       <a key="uRL" href={relativePrefixToRoot + entity.slug} className="font-bold text-2xl text-blue-700 hover:underline">
