@@ -82,7 +82,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
     <>
       <PageLayout>
         <Banner text="Turtlehead Tacos"></Banner>
-        <div className="centered-container bg-pink-500">
+        <div className="centered-container">
           <BreadCrumbs name="Home" baseUrl={relativePrefixToRoot}></BreadCrumbs>
           <div className="section space-y-14 px-10">
               <h1 className="text-center">Turtlehead Tacos Locations</h1>
