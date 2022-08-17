@@ -27,14 +27,14 @@ npm install
 
 `yext init` - Authenticates the Yext CLI with your Yext account
 
-`npm run dev` - runs your code against a local dev server using Vite
+`npm run dev -- local` - runs your code against a local dev server using Vite
 
 - All stream documents come from the `localData` folder
 - You can visit either of these urls out of the box
   - http://localhost:3000/index/123
   - http://localhost:3000/static
 
-`npm run dev -- dynamic` - same as above except instead of using files from `localData` it will pull the document from Yext on the fly
+`npm run dev` - same as above except instead of using files from `localData` it will pull the document from Yext on the fly
 
 `yext pages generate-test-data` - pull an example set of `localData` from your account
 
