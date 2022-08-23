@@ -7,7 +7,8 @@
   "type": "module",
   "scripts": {
     "dev": "pages dev",
-    "build": "vite build",
+    "build": "pages generate features && vite build",
+    "features": "pages generate features",
     "fmt": "prettier -w .",
     "lint": "eslint .",
     "clean": "rm -rf .artifact-output .yext/ dist/ localData sites-rendered-output",
