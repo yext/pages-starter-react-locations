@@ -14,7 +14,6 @@ This repository provides a basic example of how to start developing a React site
 
 1. Optional: Have a Yext account (necessary for production builds, deploying on Yext Pages, and pulling local stream document data via `yext pages generate-test-data`). This starter already comes with some localData that can be used for local dev without the need to init with a Yext account.
 
-
 ### Clone this repo and install dependencies
 
 ```shell
