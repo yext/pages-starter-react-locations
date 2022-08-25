@@ -30,7 +30,7 @@
     "requiredFiles": ["package.json", "package-lock.json", ".npmrc"]
   },
   "buildArtifacts": {
-    "buildCmd": "npm run build"
+    "buildCmd": "echo foo && npm run build"
   },
   "livePreview": {
     "serveSetupCmd": ":"

@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "dev": "pages dev",
-    "build": "pages generate features",
+    "build": "echo bar && pages generate features && vite build",
     "features": "pages generate features",
     "fmt": "prettier -w .",
     "lint": "eslint .",
