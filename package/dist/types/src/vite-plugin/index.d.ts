@@ -1,1 +1,0 @@
-export { yextSSG } from "./plugin";
