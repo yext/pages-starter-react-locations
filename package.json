@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "pages dev",
     "build": "echo bar && pages generate features && vite build",
-    "foo": "pages foo",
+    "foo": "foo",
     "features": "pages generate features",
     "fmt": "prettier -w .",
     "lint": "eslint .",
