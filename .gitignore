@@ -7,5 +7,6 @@ dist/
 sites-config/features.json
 *.local
 notes.txt
+.env
 
 .DS_Store
