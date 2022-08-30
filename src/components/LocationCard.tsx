@@ -17,7 +17,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
       <p className="mt-1 text-xs italic text-slate-500">{metersToMiles(result.distanceFromFilter ?? 0)} mi</p>
       <a
         target="_blank"
-        href={`/location/${result.id}`}
+        href={`${result.rawData.slug}`}
         className="text-xs text-blue-700 hover:underline">
         View Location Website
       </a>
