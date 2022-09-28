@@ -6,8 +6,11 @@
   "license": "BSD-3-Clause",
   "type": "module",
   "scripts": {
-    "dev": "pages dev",
-    "build": "vite build",
+    "dev": "vite build && yext pages generate-test-data && pages dev",
+    "build:local": "vite build",
+    "build": "vite build && yext pages generate-test-data && yext pages generate",
+    "build:serve": "vite build && yext pages generate-test-data && yext pages generate && yext pages serve",
+    "serve": "yext pages serve",
     "features": "pages generate features",
     "fmt": "prettier -w .",
     "lint": "eslint .",

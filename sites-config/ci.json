@@ -27,10 +27,14 @@
   },
   "dependencies": {
     "installDepsCmd": "npm install",
-    "requiredFiles": ["package.json", "package-lock.json", ".npmrc"]
+    "requiredFiles": [
+      "package.json",
+      "package-lock.json",
+      ".npmrc"
+    ]
   },
   "buildArtifacts": {
-    "buildCmd": "npm run build"
+    "buildCmd": "npm run build:local"
   },
   "livePreview": {
     "serveSetupCmd": ":"
