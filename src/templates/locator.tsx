@@ -1,7 +1,10 @@
 import * as React from "react";
 import "../index.css";
 import { GetPath, Template, TemplateProps, TemplateRenderProps } from "@yext/pages";
-import { SearchHeadlessProvider } from "@yext/search-headless-react";
+import { 
+  SearchHeadlessProvider,
+  provideHeadless
+} from "@yext/search-headless-react"; 
 import { FilterSearch, VerticalResults, ResultsCount } from "@yext/search-ui-react";
 import { Location } from "../types/search/locations";
 import MapboxMap from "../components/MapboxMap";
@@ -13,18 +16,18 @@ export const getPath: GetPath<TemplateProps> = () => {
   return `/locator`;
 };
 
+const searcher = provideHeadless({
+  apiKey: (import.meta.env.YEXT_PUBLIC_SEARCH_API_KEY),
+  experienceKey: "turtlehead-tacos-locator",
+  verticalKey: "locations",
+  locale: "en",
+});
+
 const Locator: Template<TemplateRenderProps> = () => {
   return (
     <>
       <PageLayout>
-        <SearchHeadlessProvider
-            experienceKey="turtlehead-tacos-locator"
-            locale="en"
-            apiKey={import.meta.env.YEXT_PUBLIC_SEARCH_API_KEY}
-            verticalKey="locations"
-            experienceVersion="PRODUCTION"
-            sessionTrackingEnabled={true}
-        >
+        <SearchHeadlessProvider searcher={searcher}>
             <div className="w-full h-screen flex flex-col max-h-screen">
             <div className="flex flex-row w-full h-full overflow-y-auto">
                 <div className="w-1/3 h-full bg-slate-50 border-r border-slate-300 shadow-md overflow-auto">
