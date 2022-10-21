@@ -19,6 +19,14 @@ export const render = (data: any): string => {
    * For more information about robots.txt, check out this resource: https://developers.google.com/search/docs/advanced/robots/intro
    * An emtpty robots.txt will NOT prevent any pages from being crawled.
    */
+  
+  
 
-  return ``;
+  return `
+    User-agent: Googlebot
+    Disallow: /nogooglebot/
+    
+    User-agent: *
+    Allow: /
+  `;
 };
