@@ -1,0 +1,13 @@
+{
+  "$id": "ce_menu.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Menu-default",
+  "entityType": "ce_menu",
+  "fields": [
+    "c_relatedMenuItems",
+    "photoGallery",
+    "richTextDescription",
+    "slug"
+  ],
+  "required": []
+}

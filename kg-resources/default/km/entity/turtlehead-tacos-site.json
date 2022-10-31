@@ -1,0 +1,46 @@
+{
+  "$id": "turtlehead-tacos-site",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_footer": [
+      {
+        "label": "Privacy Policy",
+        "uRL": "/privacy-policy"
+      },
+      {
+        "label": "Copyright/Legal Info",
+        "uRL": "/copyright"
+      }
+    ],
+    "c_header": [
+      {
+        "label": "About",
+        "uRL": "/about"
+      },
+      {
+        "label": "Menu",
+        "uRL": "/menu"
+      }
+    ],
+    "instagramHandle": "turtleheadtacos",
+    "logo": {
+      "image": {
+        "height": 150,
+        "thumbnails": [
+          {
+            "height": 150,
+            "url": "https://a.mktgcdn.com/p/8esDUBrhKJnkaVztLihLsC3quv_5BjLFG9L6MJ0adcs/150x150.png",
+            "width": 150
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/8esDUBrhKJnkaVztLihLsC3quv_5BjLFG9L6MJ0adcs/150x150.png",
+        "width": 150
+      }
+    },
+    "name": "Turtlehead Tacos",
+    "twitterHandle": "turtleheadtacos"
+  },
+  "entityType": "ce_site",
+  "labels": []
+}

@@ -1,0 +1,50 @@
+{
+  "$id": "tacos-adobada",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_itemCategory": "TACOS",
+    "c_relatedMenu": [
+      "menu"
+    ],
+    "name": "Adobada",
+    "photoGallery": [
+      {
+        "description": "[[name]]",
+        "details": "[[name]]",
+        "image": {
+          "alternateText": "[[name]]",
+          "height": 1066,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/SbVyq9KIoctIa1LIyiGKuD9rERmZWh86Z70B2EeFHe4/1600x1066.jpg",
+          "thumbnails": [
+            {
+              "height": 1066,
+              "url": "http://a.mktgcdn.com/p/FKHBta5r5dkHQk8Rte-0YY4lVr-w6IxMDUsUWhhGkd4/1600x1066.jpg",
+              "width": 1600
+            },
+            {
+              "height": 412,
+              "url": "http://a.mktgcdn.com/p/FKHBta5r5dkHQk8Rte-0YY4lVr-w6IxMDUsUWhhGkd4/619x412.jpg",
+              "width": 619
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/FKHBta5r5dkHQk8Rte-0YY4lVr-w6IxMDUsUWhhGkd4/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/FKHBta5r5dkHQk8Rte-0YY4lVr-w6IxMDUsUWhhGkd4/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/FKHBta5r5dkHQk8Rte-0YY4lVr-w6IxMDUsUWhhGkd4/1600x1066.jpg",
+          "width": 1600
+        }
+      }
+    ],
+    "richTextDescription": "Marinated pork"
+  },
+  "entityType": "ce_menuItem",
+  "labels": []
+}

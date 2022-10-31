@@ -1,0 +1,50 @@
+{
+  "$id": "drinks-horchata",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_itemCategory": "DRINKS",
+    "c_relatedMenu": [
+      "menu"
+    ],
+    "name": "Horchata",
+    "photoGallery": [
+      {
+        "description": "[[name]]",
+        "details": "[[name]]",
+        "image": {
+          "alternateText": "[[name]]",
+          "height": 800,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/5u0Q1aSsX1AyLvQz5VU2dvwbyQBfAMJPIie5w3PHoqw/1200x800.jpg",
+          "thumbnails": [
+            {
+              "height": 800,
+              "url": "http://a.mktgcdn.com/p/mYJtIG8ni3lpLTAaR8zEuFRV5ZoM4TK63IKs0Lip4CE/1200x800.jpg",
+              "width": 1200
+            },
+            {
+              "height": 413,
+              "url": "http://a.mktgcdn.com/p/mYJtIG8ni3lpLTAaR8zEuFRV5ZoM4TK63IKs0Lip4CE/619x413.jpg",
+              "width": 619
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/mYJtIG8ni3lpLTAaR8zEuFRV5ZoM4TK63IKs0Lip4CE/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/mYJtIG8ni3lpLTAaR8zEuFRV5ZoM4TK63IKs0Lip4CE/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/mYJtIG8ni3lpLTAaR8zEuFRV5ZoM4TK63IKs0Lip4CE/1200x800.jpg",
+          "width": 1200
+        }
+      }
+    ],
+    "richTextDescription": "Sweet rice milk beverage flavored with cinnamon, vanilla, and sugar."
+  },
+  "entityType": "ce_menuItem",
+  "labels": []
+}
