@@ -1,0 +1,222 @@
+{
+  "$id": "location2",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "New York",
+      "countryCode": "US",
+      "line1": "1281 Lexington Avenue",
+      "postalCode": "10028",
+      "region": "NY"
+    },
+    "c_featuredFAQs": [
+      "faq-1",
+      "faq-2"
+    ],
+    "categoryIds": [
+      "152"
+    ],
+    "covidMessaging": "We are open!",
+    "description": "[[name]] is a taco restaurant chain located in [[address.city]], [[address.region]]. We\u0027re serving all your favorite menu items, from classic tacos and burritos, to new favorites like the Turtlehead Taco Ultimate Taco and Cheesy Turtlehead Deluxe. Order ahead online or on the mobile app for pick up at the restaurant or get it delivered.",
+    "emails": [
+      "turtlehead@tacos.com"
+    ],
+    "facebookPageUrl": "https://www.facebook.com/YextInc/",
+    "hours": {
+      "friday": {
+        "openIntervals": [
+          {
+            "end": "19:00",
+            "start": "10:00"
+          }
+        ]
+      },
+      "holidayHours": [
+        {
+          "date": "2022-12-25",
+          "isClosed": true
+        },
+        {
+          "date": "2023-07-04",
+          "isClosed": true
+        }
+      ],
+      "monday": {
+        "openIntervals": [
+          {
+            "end": "19:00",
+            "start": "10:00"
+          }
+        ]
+      },
+      "saturday": {
+        "openIntervals": [
+          {
+            "end": "20:00",
+            "start": "08:00"
+          }
+        ]
+      },
+      "sunday": {
+        "isClosed": true
+      },
+      "thursday": {
+        "openIntervals": [
+          {
+            "end": "19:00",
+            "start": "10:00"
+          }
+        ]
+      },
+      "tuesday": {
+        "openIntervals": [
+          {
+            "end": "19:00",
+            "start": "10:00"
+          }
+        ]
+      },
+      "wednesday": {
+        "openIntervals": [
+          {
+            "end": "19:00",
+            "start": "10:00"
+          }
+        ]
+      }
+    },
+    "instagramHandle": "turtleheadtacos",
+    "logo": {
+      "image": {
+        "height": 150,
+        "sourceUrl": "https://a.mktgcdn.com/p-sandbox/8esDUBrhKJnkaVztLihLsC3quv_5BjLFG9L6MJ0adcs/150x150.png",
+        "thumbnails": [
+          {
+            "height": 150,
+            "url": "http://a.mktgcdn.com/p/8esDUBrhKJnkaVztLihLsC3quv_5BjLFG9L6MJ0adcs/150x150.png",
+            "width": 150
+          },
+          {
+            "height": 94,
+            "url": "http://a.mktgcdn.com/p/8esDUBrhKJnkaVztLihLsC3quv_5BjLFG9L6MJ0adcs/94x94.png",
+            "width": 94
+          }
+        ],
+        "url": "http://a.mktgcdn.com/p/8esDUBrhKJnkaVztLihLsC3quv_5BjLFG9L6MJ0adcs/150x150.png",
+        "width": 150
+      }
+    },
+    "mainPhone": "+12129943900",
+    "name": "Turtlehead Tacos",
+    "neighborhood": "86th and Madison",
+    "paymentOptions": [
+      "AMERICANEXPRESS",
+      "APPLEPAY",
+      "BITCOIN",
+      "CASH",
+      "CHECK",
+      "MASTERCARD",
+      "PAYPAL",
+      "VISA"
+    ],
+    "photoGallery": [
+      {
+        "image": {
+          "height": 800,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/bckB9EpFMkXJBThYD3w9JiQjOP2Q6km_NdzZmKd62FM/1200x800.jpg",
+          "thumbnails": [
+            {
+              "height": 800,
+              "url": "http://a.mktgcdn.com/p/EOfw4a7y-p7RwzI8oosYqgfE_gJuOIKx5tuGMa2uPOA/1200x800.jpg",
+              "width": 1200
+            },
+            {
+              "height": 413,
+              "url": "http://a.mktgcdn.com/p/EOfw4a7y-p7RwzI8oosYqgfE_gJuOIKx5tuGMa2uPOA/619x413.jpg",
+              "width": 619
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/EOfw4a7y-p7RwzI8oosYqgfE_gJuOIKx5tuGMa2uPOA/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/EOfw4a7y-p7RwzI8oosYqgfE_gJuOIKx5tuGMa2uPOA/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/EOfw4a7y-p7RwzI8oosYqgfE_gJuOIKx5tuGMa2uPOA/1200x800.jpg",
+          "width": 1200
+        }
+      },
+      {
+        "image": {
+          "height": 408,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/nM67PaSJJlogn1TFjLr575ufdtCZ0_VIXBdtoWGamWU/612x408.jpg",
+          "thumbnails": [
+            {
+              "height": 408,
+              "url": "http://a.mktgcdn.com/p/fmIYfJlt1p_XnjNI82SvWCff9eX8RWFI8jc78FH_bgo/612x408.jpg",
+              "width": 612
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/fmIYfJlt1p_XnjNI82SvWCff9eX8RWFI8jc78FH_bgo/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/fmIYfJlt1p_XnjNI82SvWCff9eX8RWFI8jc78FH_bgo/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/fmIYfJlt1p_XnjNI82SvWCff9eX8RWFI8jc78FH_bgo/612x408.jpg",
+          "width": 612
+        }
+      },
+      {
+        "image": {
+          "height": 1706,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/rjS0OWPo6jkdBXem26-Lmf2B_8C8VTJxguuU44n2Zi0/2560x1706.jpg",
+          "thumbnails": [
+            {
+              "height": 1706,
+              "url": "http://a.mktgcdn.com/p/dEj7z6VxDoOpWmw1XyT2MxDAEsMaHDBNslgmhZGl4TE/2560x1706.jpg",
+              "width": 2560
+            },
+            {
+              "height": 1266,
+              "url": "http://a.mktgcdn.com/p/dEj7z6VxDoOpWmw1XyT2MxDAEsMaHDBNslgmhZGl4TE/1900x1266.jpg",
+              "width": 1900
+            },
+            {
+              "height": 413,
+              "url": "http://a.mktgcdn.com/p/dEj7z6VxDoOpWmw1XyT2MxDAEsMaHDBNslgmhZGl4TE/619x413.jpg",
+              "width": 619
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/dEj7z6VxDoOpWmw1XyT2MxDAEsMaHDBNslgmhZGl4TE/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/dEj7z6VxDoOpWmw1XyT2MxDAEsMaHDBNslgmhZGl4TE/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/dEj7z6VxDoOpWmw1XyT2MxDAEsMaHDBNslgmhZGl4TE/2560x1706.jpg",
+          "width": 2560
+        }
+      }
+    ],
+    "priceRange": "TWO",
+    "slug": "[[entityId]]-[[neighborhood]]",
+    "timezone": "America/New_York",
+    "twitterHandle": "turtleheadtacos"
+  },
+  "entityType": "location",
+  "labels": []
+}

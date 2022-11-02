@@ -1,0 +1,50 @@
+{
+  "$id": "quesadillas-carne-asada",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_itemCategory": "QUESADILLAS",
+    "c_relatedMenu": [
+      "menu"
+    ],
+    "name": "Carne Asada",
+    "photoGallery": [
+      {
+        "description": "[[name]]",
+        "details": "[[name]]",
+        "image": {
+          "alternateText": "[[name]]",
+          "height": 848,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/bhNgpYfiXBkaZf0SR5VlGtoAYehc8PHNocc32WwBQFc/1272x848.jpg",
+          "thumbnails": [
+            {
+              "height": 848,
+              "url": "http://a.mktgcdn.com/p/GuhjKTvgTqVTi377m_GyNtVNGJjOICcjwziLF8cbRGY/1272x848.jpg",
+              "width": 1272
+            },
+            {
+              "height": 413,
+              "url": "http://a.mktgcdn.com/p/GuhjKTvgTqVTi377m_GyNtVNGJjOICcjwziLF8cbRGY/619x413.jpg",
+              "width": 619
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/GuhjKTvgTqVTi377m_GyNtVNGJjOICcjwziLF8cbRGY/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/GuhjKTvgTqVTi377m_GyNtVNGJjOICcjwziLF8cbRGY/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/GuhjKTvgTqVTi377m_GyNtVNGJjOICcjwziLF8cbRGY/1272x848.jpg",
+          "width": 1272
+        }
+      }
+    ],
+    "richTextDescription": "Grilled steak"
+  },
+  "entityType": "ce_menuItem",
+  "labels": []
+}

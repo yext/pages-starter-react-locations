@@ -1,0 +1,7 @@
+{
+  "$id": "ce_menuItem",
+  "$schema": "https://schema.yext.com/config/km/entity-type/v2",
+  "description": "",
+  "displayName": "Menu Item",
+  "pluralDisplayName": "Menu Items"
+}

@@ -1,0 +1,50 @@
+{
+  "$id": "drinks-aguas-frescas",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_itemCategory": "DRINKS",
+    "c_relatedMenu": [
+      "menu"
+    ],
+    "name": "Aguas Frescas",
+    "photoGallery": [
+      {
+        "description": "[[name]]",
+        "details": "[[name]]",
+        "image": {
+          "alternateText": "[[name]]",
+          "height": 800,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/7IjRoyrYPaWTA4jWqQXT-ZzHGUuHikEFQP78VFa-EJY/1200x800.jpg",
+          "thumbnails": [
+            {
+              "height": 800,
+              "url": "http://a.mktgcdn.com/p/3R4yeHuplbjjG63bDG1qSf0cHbA8VTg5VjiMpgWF9y0/1200x800.jpg",
+              "width": 1200
+            },
+            {
+              "height": 413,
+              "url": "http://a.mktgcdn.com/p/3R4yeHuplbjjG63bDG1qSf0cHbA8VTg5VjiMpgWF9y0/619x413.jpg",
+              "width": 619
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/3R4yeHuplbjjG63bDG1qSf0cHbA8VTg5VjiMpgWF9y0/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/3R4yeHuplbjjG63bDG1qSf0cHbA8VTg5VjiMpgWF9y0/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/3R4yeHuplbjjG63bDG1qSf0cHbA8VTg5VjiMpgWF9y0/1200x800.jpg",
+          "width": 1200
+        }
+      }
+    ],
+    "richTextDescription": "Fresh water"
+  },
+  "entityType": "ce_menuItem",
+  "labels": []
+}

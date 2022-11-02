@@ -1,0 +1,50 @@
+{
+  "$id": "drinks-jarritos",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_itemCategory": "DRINKS",
+    "c_relatedMenu": [
+      "menu"
+    ],
+    "name": "Jarritos",
+    "photoGallery": [
+      {
+        "description": "[[name]]",
+        "details": "[[name]]",
+        "image": {
+          "alternateText": "[[name]]",
+          "height": 1000,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/sQHlVwH6OydziPP-0Uh9mzvY_n4XEs5ZWG-Ejqss2yw/1500x1000.jpg",
+          "thumbnails": [
+            {
+              "height": 1000,
+              "url": "http://a.mktgcdn.com/p/D3UZ6s4LP41ClGJf5BCMeE4nWkTK3S-oOSQ1qFBjsnA/1500x1000.jpg",
+              "width": 1500
+            },
+            {
+              "height": 413,
+              "url": "http://a.mktgcdn.com/p/D3UZ6s4LP41ClGJf5BCMeE4nWkTK3S-oOSQ1qFBjsnA/619x413.jpg",
+              "width": 619
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/D3UZ6s4LP41ClGJf5BCMeE4nWkTK3S-oOSQ1qFBjsnA/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/D3UZ6s4LP41ClGJf5BCMeE4nWkTK3S-oOSQ1qFBjsnA/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/D3UZ6s4LP41ClGJf5BCMeE4nWkTK3S-oOSQ1qFBjsnA/1500x1000.jpg",
+          "width": 1500
+        }
+      }
+    ],
+    "richTextDescription": "Jarritos: fruit punch, grapefruit, guava, passion fruit, strawberry, tamarind, lime, Mexican Cola, Watermelon, Mango, Mandarin, Pineapple"
+  },
+  "entityType": "ce_menuItem",
+  "labels": []
+}

@@ -1,0 +1,50 @@
+{
+  "$id": "quesadillas-pollo-asado",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_itemCategory": "QUESADILLAS",
+    "c_relatedMenu": [
+      "menu"
+    ],
+    "name": "Pollo Asado",
+    "photoGallery": [
+      {
+        "description": "[[name]]",
+        "details": "[[name]]",
+        "image": {
+          "alternateText": "[[name]]",
+          "height": 1000,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/VWv5yI0Q99VAZDh3rLee7NpC2zb1XHLdmILSVO8qijY/1500x1000.jpg",
+          "thumbnails": [
+            {
+              "height": 1000,
+              "url": "http://a.mktgcdn.com/p/KNqE0zEzWxoW4j90G0Q-qtEpN9wB19G1Pt7nhDZBWBs/1500x1000.jpg",
+              "width": 1500
+            },
+            {
+              "height": 413,
+              "url": "http://a.mktgcdn.com/p/KNqE0zEzWxoW4j90G0Q-qtEpN9wB19G1Pt7nhDZBWBs/619x413.jpg",
+              "width": 619
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/KNqE0zEzWxoW4j90G0Q-qtEpN9wB19G1Pt7nhDZBWBs/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/KNqE0zEzWxoW4j90G0Q-qtEpN9wB19G1Pt7nhDZBWBs/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/KNqE0zEzWxoW4j90G0Q-qtEpN9wB19G1Pt7nhDZBWBs/1500x1000.jpg",
+          "width": 1500
+        }
+      }
+    ],
+    "richTextDescription": "Grilled chicken"
+  },
+  "entityType": "ce_menuItem",
+  "labels": []
+}

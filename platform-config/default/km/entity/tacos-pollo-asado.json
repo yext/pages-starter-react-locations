@@ -1,0 +1,50 @@
+{
+  "$id": "tacos-pollo-asado",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_itemCategory": "TACOS",
+    "c_relatedMenu": [
+      "menu"
+    ],
+    "name": "Pollo Asado",
+    "photoGallery": [
+      {
+        "description": "[[name]]",
+        "details": "[[name]]",
+        "image": {
+          "alternateText": "[[name]]",
+          "height": 800,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/tTcYo7gU24jiU8EaOmxPU_rbSwi45mPEbBk7HGSte38/1200x800.jpg",
+          "thumbnails": [
+            {
+              "height": 800,
+              "url": "http://a.mktgcdn.com/p/LKLOdXD5aK5yVKy-w5dTcmeQN1E1K7EUwhuZpUb6FOI/1200x800.jpg",
+              "width": 1200
+            },
+            {
+              "height": 413,
+              "url": "http://a.mktgcdn.com/p/LKLOdXD5aK5yVKy-w5dTcmeQN1E1K7EUwhuZpUb6FOI/619x413.jpg",
+              "width": 619
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/LKLOdXD5aK5yVKy-w5dTcmeQN1E1K7EUwhuZpUb6FOI/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/LKLOdXD5aK5yVKy-w5dTcmeQN1E1K7EUwhuZpUb6FOI/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/LKLOdXD5aK5yVKy-w5dTcmeQN1E1K7EUwhuZpUb6FOI/1200x800.jpg",
+          "width": 1200
+        }
+      }
+    ],
+    "richTextDescription": "Grilled chicken"
+  },
+  "entityType": "ce_menuItem",
+  "labels": []
+}

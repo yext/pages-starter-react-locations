@@ -1,0 +1,50 @@
+{
+  "$id": "tacos-carne-asada",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_itemCategory": "TACOS",
+    "c_relatedMenu": [
+      "menu"
+    ],
+    "name": "Carne Asada",
+    "photoGallery": [
+      {
+        "description": "[[name]]",
+        "details": "[[name]]",
+        "image": {
+          "alternateText": "[[name]]",
+          "height": 933,
+          "sourceUrl": "https://a.mktgcdn.com/p-sandbox/IMmK5B8kcQ8kq7If1buZ6sOhY_QnoeRNHH6JnydKYl0/1399x933.jpg",
+          "thumbnails": [
+            {
+              "height": 933,
+              "url": "http://a.mktgcdn.com/p/X8lwlDaONtMpPMkmWWjLbRALObZEvIKieKbTCWxdkG8/1399x933.jpg",
+              "width": 1399
+            },
+            {
+              "height": 413,
+              "url": "http://a.mktgcdn.com/p/X8lwlDaONtMpPMkmWWjLbRALObZEvIKieKbTCWxdkG8/619x413.jpg",
+              "width": 619
+            },
+            {
+              "height": 400,
+              "url": "http://a.mktgcdn.com/p/X8lwlDaONtMpPMkmWWjLbRALObZEvIKieKbTCWxdkG8/600x400.jpg",
+              "width": 600
+            },
+            {
+              "height": 131,
+              "url": "http://a.mktgcdn.com/p/X8lwlDaONtMpPMkmWWjLbRALObZEvIKieKbTCWxdkG8/196x131.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/X8lwlDaONtMpPMkmWWjLbRALObZEvIKieKbTCWxdkG8/1399x933.jpg",
+          "width": 1399
+        }
+      }
+    ],
+    "richTextDescription": "Grilled steak"
+  },
+  "entityType": "ce_menuItem",
+  "labels": []
+}
