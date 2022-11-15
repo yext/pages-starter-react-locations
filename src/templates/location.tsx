@@ -26,6 +26,7 @@ import Hours from "../components/hours";
 import List from "../components/list";
 import PageLayout from "../components/page-layout";
 import StaticMap from "../components/static-map";
+import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
 
 /**
@@ -87,7 +88,7 @@ export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
 
 /**
  * This allows the user to define a function which will take in their template
- * data and procude a HeadConfig object. When the site is generated, the HeadConfig
+ * data and produce a HeadConfig object. When the site is generated, the HeadConfig
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
@@ -108,6 +109,14 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: document.description,
         },
       },
+      {
+        type: "link",
+        attributes: {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: Favicon
+        },
+      }
     ],
   };
 };
