@@ -7,6 +7,8 @@ import "../index.css";
 import {
   Template,
   GetPath,
+  GetHeadConfig,
+  HeadConfig,
   TransformProps,
   TemplateConfig,
   TemplateProps,
@@ -15,6 +17,7 @@ import {
 import PageLayout from "../components/page-layout";
 import Card from "../components/card";
 import { ExternalImage } from "../types/ExternalImage";
+import Favicon from "../public/yext-favicon.ico";
 
 /**
  * Not required depending on your use case.
@@ -64,6 +67,43 @@ export const getPath: GetPath<ExternalImageData> = () => {
 type ExternalImageRenderData = TemplateRenderProps & {
   externalImage: ExternalImage;
 };
+
+
+/**
+ * This allows the user to define a function which will take in their template
+ * data and procude a HeadConfig object. When the site is generated, the HeadConfig
+ * will be used to generate the inner contents of the HTML document's <head> tag.
+ * This can include the title, meta tags, script tags, etc.
+ */
+ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
+  relativePrefixToRoot,
+  path,
+  document,
+}): HeadConfig => {
+  return {
+    title: "Static Page Example",
+    charset: "UTF-8",
+    viewport: "width=device-width, initial-scale=1",
+    tags: [
+      {
+        type: "meta",
+        attributes: {
+          name: "description",
+          content: "Static page example meta description.",
+        },
+      },
+      {
+        type: "link",
+        attributes: {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: Favicon
+        },
+      }
+    ],
+  };
+};
+
 
 /**
  * This is the main template. It can have any name as long as it's the default export.
