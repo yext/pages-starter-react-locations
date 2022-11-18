@@ -27,27 +27,32 @@ const Header = () => {
   ));
 
   return (
-    <>
+    <div className="bg-gray-50">
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
-          <img
-            src="https://cdn.fs.brandfolder.com/cache=expiry:604800/deY3VGFpSjC761Abjbfc"
-            width="50"
-            height="50"
-          ></img>
-          <div className="text-2xl font-semibold">Turtlehead Tacos</div>
-          <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
-          <div className="space-x-5">
-            <Cta buttonText="Order Pickup" url="#" style="primary-cta"></Cta>
-            <Cta
-              buttonText="Order Delivery"
-              url="#"
-              style="secondary-cta"
-            ></Cta>
+          <div className="flex gap-x-4 items-center">
+            <img
+              src="https://cdn.fs.brandfolder.com/cache=expiry:604800/deY3VGFpSjC761Abjbfc"
+              width="50"
+              height="50"
+            ></img>
+            <div className="flex gap-x-4 text-sm font-semibold text-body">
+              {linkDoms}
+            </div>
+          </div>
+          <div className="space-x-5"></div>
+          <div className="flex gap-x-4">
+            <div className=" h-12 pt-4 ">
+              <Cta
+                buttonText="Order Online"
+                url="#"
+                style="text-white bg-orange shadow-xl"
+              ></Cta>
+            </div>
           </div>
         </nav>
       </div>
-    </>
+    </div>
   );
 };
 

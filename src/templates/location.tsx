@@ -20,8 +20,7 @@ import {
 } from "@yext/pages";
 import * as React from "react";
 import Banner from "../components/banner";
-import Contact from "../components/contact";
-import Cta from "../components/cta";
+import Details from "../components/details";
 import Hours from "../components/hours";
 import List from "../components/list";
 import PageLayout from "../components/page-layout";
@@ -144,38 +143,32 @@ const Location: Template<TemplateRenderProps> = ({
     mainPhone,
     geocodedCoordinate,
     services,
+    description,
   } = document;
 
   return (
     <>
       <PageLayout _site={_site}>
-        <Banner name={name} address={address} openTime={openTime}>
-          <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
-            <div className="text-black text-base">Visit Us Today!</div>
-            <Cta
-              buttonText="Get Directions"
-              url="http://google.com"
-              style="primary-cta"
-            />
-          </div>
-        </Banner>
+        <Banner name={name} address={address} />
         <div className="centered-container">
           <div className="section">
-            <div className="grid grid-cols-3 gap-x-10 gap-y-10">
-              <div className="bg-gray-100 p-5 space-y-12">
-                <Contact address={address} phone={mainPhone}></Contact>
+            <div className="grid grid-cols-2 gap-x-10 gap-y-10">
+              <div className="bg-gray-100 p-2">
+                <Details address={address} phone={mainPhone}></Details>
                 {services && <List list={services}></List>}
               </div>
-              <div className="col-span-2 pt-5 space-y-10">
-                <div>
-                  {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
-                </div>
-                {geocodedCoordinate && (
-                  <StaticMap
-                    latitude={geocodedCoordinate.latitude}
-                    longitude={geocodedCoordinate.longitude}
-                  ></StaticMap>
-                )}
+              <div className="bg-gray-100 p-2">
+                {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
+              </div>
+              {geocodedCoordinate && (
+                <StaticMap
+                  latitude={geocodedCoordinate.latitude}
+                  longitude={geocodedCoordinate.longitude}
+                ></StaticMap>
+              )}
+              <div className="bg-gray-100 p-2">
+                <div className="text-xl font-semibold">{`About ${name}`}</div>
+                <p className="pt-4">{description}</p>
               </div>
             </div>
           </div>
