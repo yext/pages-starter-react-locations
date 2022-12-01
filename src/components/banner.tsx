@@ -1,17 +1,6 @@
 import * as React from "react";
 
-export type Address = {
-  line1: string;
-  city: string;
-  region: string;
-  postalCode: string;
-  countryCode: string;
-};
-
 type Banner = {
-  name?: string;
-  address?: Address;
-  currentTemperture?: number;
   children?: React.ReactNode;
 };
 

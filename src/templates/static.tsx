@@ -82,7 +82,11 @@ const Static: Template<ExternalImageRenderData> = ({
   return (
     <>
       <PageLayout>
-        <Banner name="Turtlehead Tacos" />
+        <Banner>
+          <h1 className="text-white text-3xl font-semibold">
+            Turtlehead Tacos
+          </h1>
+        </Banner>
         <div className="centered-container">
           <div className="text-5xl font-bold text-orange p-10 flex items-center justify-center flex-col gap-x-14 gap-y-10 md:flex-row">
             <h1>Our Story</h1>
