@@ -2,10 +2,13 @@ import * as React from "react";
 
 const Footer = () => {
   return (
-    <footer className="">
+    // taiwind classes for a footer that will be at the bottom of the page if the content is short
+    // or at the bottom of the content if the content is long
+    // <footer className="bg-gray-800 text-white text-center text-xs p-3 absolute bottom-0 w-full">
+    <footer className="bg-gray-800 text-white text-center text-xs p-3 w-full mt-auto">
       <div className="flex flex-col flex-wrap justify-center p-5 md:flex-row">
         <span className="inline-flex justify-center w-full mx-auto mt-2 mr-2 sm:ml-auto sm:mt-0 space-x-3">
-          <a className="text-black hover:text-blue-500">
+          <a className="hover:text-blue-500">
             <svg
               fill="currentColor"
               strokeLinecap="round"
@@ -17,7 +20,7 @@ const Footer = () => {
               <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
             </svg>
           </a>
-          <a className="text-black hover:text-blue-500">
+          <a className="hover:text-blue-500">
             <svg
               fill="currentColor"
               strokeLinecap="round"
@@ -29,7 +32,7 @@ const Footer = () => {
               <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
             </svg>
           </a>
-          <a className="text-black hover:text-blue-500">
+          <a className="hover:text-blue-500">
             <svg
               fill="none"
               stroke="currentColor"
@@ -43,7 +46,7 @@ const Footer = () => {
               <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
             </svg>
           </a>
-          <a className="text-black hover:text-blue-500">
+          <a className="hover:text-blue-500">
             <svg
               fill="currentColor"
               stroke="currentColor"
@@ -64,10 +67,7 @@ const Footer = () => {
       </div>
       <div className="w-full px-8 mt-4 rounded-b-lg bg-blueGray-50">
         <div className="container inline-flex flex-col flex-wrap items-center px-5 py-6 mx-auto sm:flex-row">
-          <p className="mx-auto text-sm text-center text-black sm:text-left ">
-            {" "}
-            © 2021{" "}
-          </p>
+          <p className="mx-auto text-sm text-center  sm:text-left "> © 2021 </p>
         </div>
       </div>
     </footer>
