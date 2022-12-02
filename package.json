@@ -7,6 +7,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run build:local && yext pages generate-test-data && pages dev",
+    "dev:no-prod-url": "npm run build:local && yext pages generate-test-data && pages dev --prod-url false",
     "build:local": "vite build",
     "build": "yext pages build && yext pages generate-test-data && yext pages render",
     "build:serve": "npm run build && yext pages serve",
