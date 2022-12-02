@@ -1,4 +1,5 @@
 import * as React from "react";
+import tacosUrl from "../assets/images/tacos-1.avif";
 
 type Banner = {
   photoUrl?: string;
@@ -8,9 +9,7 @@ type Banner = {
 const Banner = (props: Banner) => {
   const { photoUrl, children } = props;
 
-  const backgroundImageUrl = photoUrl
-    ? photoUrl
-    : "/src/assets/images/tacos-1.avif";
+  const backgroundImageUrl = photoUrl ? photoUrl : tacosUrl;
 
   return (
     <>
