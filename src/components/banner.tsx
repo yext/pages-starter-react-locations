@@ -10,7 +10,7 @@ const Banner = (props: Banner) => {
 
   const backgroundImageUrl = photoUrl
     ? photoUrl
-    : "src/assets/images/tacos-1.avif";
+    : "/src/assets/images/tacos-1.avif";
 
   return (
     <>
