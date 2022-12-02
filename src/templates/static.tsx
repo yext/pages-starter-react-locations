@@ -15,6 +15,10 @@ import {
 import PageLayout from "../components/page-layout";
 import Favicon from "../public/yext-favicon.ico";
 import Banner from "../components/banner";
+import SearchExperience from "../components/search/search-experience";
+import { SearchBar } from "@yext/search-ui-react";
+import { provideHeadless, SandboxEndpoints } from "@yext/search-headless-react";
+import EntityPreviews from "../components/search/EntityPreviews";
 
 /**
  * Not required depending on your use case.
@@ -70,22 +74,39 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
+const entityPreviewSearcher = provideHeadless({
+  apiKey: "797c677bfccd5cea5e3a63f9ec67928a",
+  experienceKey: "turtlehead",
+  locale: "en",
+  endpoints: SandboxEndpoints,
+  headlessId: "entity-preview-searcher",
+});
+
 /**
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
  */
-const Static: Template<ExternalImageRenderData> = ({
+const Static: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
   document,
 }) => {
   return (
-    <>
+    <SearchExperience>
       <PageLayout>
         <Banner>
           <h1 className="text-white text-3xl font-semibold">
             Turtlehead Tacos
           </h1>
+          <SearchBar
+            customCssClasses={{ searchBarContainer: "mt-6" }}
+            hideRecentSearches
+            visualAutocompleteConfig={{
+              entityPreviewSearcher,
+              renderEntityPreviews: EntityPreviews,
+              includedVerticals: ["locations"],
+            }}
+          />
         </Banner>
         <div className="centered-container">
           <div className="text-5xl font-bold text-orange p-10 flex items-center justify-center flex-col gap-x-14 gap-y-10 md:flex-row">
@@ -107,7 +128,7 @@ const Static: Template<ExternalImageRenderData> = ({
           </div>
         </div>
       </PageLayout>
-    </>
+    </SearchExperience>
   );
 };
 
