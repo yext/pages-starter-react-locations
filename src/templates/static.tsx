@@ -16,7 +16,7 @@ import PageLayout from "../components/page-layout";
 import Favicon from "../public/yext-favicon.ico";
 import Banner from "../components/banner";
 import SearchExperience from "../components/search/search-experience";
-import { SearchBar } from "@yext/search-ui-react";
+import { FilterSearch, OnSelectParams, SearchBar } from "@yext/search-ui-react";
 import { provideHeadless, SandboxEndpoints } from "@yext/search-headless-react";
 import EntityPreviews from "../components/search/EntityPreviews";
 
@@ -82,6 +82,28 @@ const entityPreviewSearcher = provideHeadless({
   headlessId: "entity-preview-searcher",
 });
 
+const reviewsPath =
+  "https://streams-sbx.yext.com/v2/accounts/me/api/locationByNeighborhood";
+
+export const fetchSlugForLocationByNeighborhood = async (
+  neighborhood: string
+) => {
+  const requestString = `${reviewsPath}?api_key=0ba9ba83014a28b9c446292127846451&v=20221114&neighborhood=${neighborhood}`;
+
+  try {
+    const resp = await fetch(requestString);
+    const locationsResponse = await resp.json();
+    if (locationsResponse?.response?.docs.length > 0) {
+      const locationSlug = locationsResponse.response.docs[0].slug;
+
+      // change the path to the location page with window.location
+      window.location.href = `/${locationSlug}`;
+    }
+  } catch (e) {
+    return Promise.reject(e);
+  }
+};
+
 /**
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
@@ -93,6 +115,14 @@ const Static: Template<TemplateRenderProps> = ({
 }: TemplateRenderProps) => {
   const _site = document._site;
 
+  const handleFilterSelect = (params: OnSelectParams) => {
+    fetchSlugForLocationByNeighborhood(params.newDisplayName).then(
+      (response) => {
+        console.log(response);
+      }
+    );
+  };
+
   return (
     <SearchExperience>
       <PageLayout>
@@ -100,14 +130,29 @@ const Static: Template<TemplateRenderProps> = ({
           <h1 className="text-white text-3xl font-semibold">
             Turtlehead Tacos
           </h1>
-          <SearchBar
+          {/* <SearchBar
             customCssClasses={{ searchBarContainer: "mt-6" }}
             hideRecentSearches
             visualAutocompleteConfig={{
               entityPreviewSearcher,
               renderEntityPreviews: EntityPreviews,
               includedVerticals: ["locations"],
+              entityPreviewsDebouncingTime: 0,
             }}
+          /> */}
+          <FilterSearch
+            customCssClasses={{
+              highlighted: "text-orange font-semibold",
+              nonHighlighted: "text-black",
+              option: "text-left",
+            }}
+            searchFields={[
+              {
+                entityType: "location",
+                fieldApiName: "neighborhood",
+              },
+            ]}
+            onSelect={handleFilterSelect}
           />
         </Banner>
         <div className="centered-container">
