@@ -90,11 +90,13 @@ const Static: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
   document,
-}) => {
+}: TemplateRenderProps) => {
+  const _site = document._site;
+
   return (
     <SearchExperience>
       <PageLayout>
-        <Banner>
+        <Banner coverPhoto={_site.c_coverPhoto}>
           <h1 className="text-white text-3xl font-semibold">
             Turtlehead Tacos
           </h1>
