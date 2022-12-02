@@ -74,15 +74,17 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
  */
-const Static: Template<ExternalImageRenderData> = ({
+const Static: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
   document,
-}) => {
+}: TemplateRenderProps) => {
+  const _site = document._site;
+
   return (
     <>
       <PageLayout>
-        <Banner>
+        <Banner coverPhoto={_site.c_coverPhoto}>
           <h1 className="text-white text-3xl font-semibold">
             Turtlehead Tacos
           </h1>

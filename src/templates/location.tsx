@@ -52,6 +52,7 @@ export const config: TemplateConfig = {
       "slug",
       "geocodedCoordinate",
       "services",
+      "c_coverPhoto",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -180,16 +181,19 @@ const Location: Template<LocationRenderData> = ({
     geocodedCoordinate,
     services,
     description,
+    c_coverPhoto,
   } = document;
 
   const currentTemperture = externalWeather.current_weather?.temperature
     ? Math.round(externalWeather.current_weather?.temperature * 1.8 + 32)
     : null;
 
+  const coverPhoto = c_coverPhoto ? c_coverPhoto : _site?.c_coverPhoto;
+
   return (
     <>
       <PageLayout>
-        <Banner>
+        <Banner coverPhoto={coverPhoto}>
           <div>
             <h1 className="text-white text-3xl font-semibold">{name}</h1>
             {address && (
