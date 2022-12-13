@@ -25,6 +25,7 @@ import Hours from "../components/hours";
 import List from "../components/list";
 import PageLayout from "../components/page-layout";
 import StaticMap from "../components/static-map";
+import HelperTool from "../components/helper-tool";
 import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
 
@@ -148,7 +149,7 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout _site={_site} document={document}>
         <Banner name={name} address={address} />
         <div className="centered-container">
           <div className="section">
