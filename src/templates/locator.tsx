@@ -30,13 +30,14 @@ const searcher = provideHeadless({
 const Locator: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
     path,
-    document
+    document,
+    __meta
   }) => {
   const { _site } = document;
   
   return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout _site={_site} templateData={{__meta, document}}>
         <SearchHeadlessProvider searcher={searcher}>
             <div className="w-full h-screen flex flex-col max-h-screen">
             <div className="flex flex-row w-full h-full overflow-y-auto">

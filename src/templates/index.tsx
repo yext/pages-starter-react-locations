@@ -60,7 +60,12 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
   };
 };
 
-  const Index: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
+  const Index: Template<TemplateRenderProps> = ({
+    relativePrefixToRoot,
+    path,
+    document,
+    __meta
+  }) => {
   const {
     _site,
     dm_directoryChildren    
@@ -81,7 +86,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
 
    return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout _site={_site} templateData={{__meta, document}}>
         <div className="centered-container">
           <BreadCrumbs name="Home" baseUrl={relativePrefixToRoot} />
           <div className="section space-y-14 px-10">

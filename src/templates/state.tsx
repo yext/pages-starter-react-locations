@@ -63,7 +63,12 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
 };
 
 
- const State: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
+ const State: Template<TemplateRenderProps> = ({
+  relativePrefixToRoot,
+  path,
+  document,
+  __meta
+}) => {
   const {
     _site,
     name,
@@ -96,7 +101,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
 
   return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout _site={_site} templateData={{__meta, document}}>
         <div className="centered-container">
           <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot} />
           <div className="section space-y-14 px-10">

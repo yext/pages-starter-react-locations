@@ -62,7 +62,12 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
   };
 };
 
-const Menu: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
+const Menu: Template<TemplateRenderProps> = ({
+    relativePrefixToRoot,
+    path,
+    document,
+    __meta
+  }) => {
   const {
     _site,
     name,
@@ -113,7 +118,7 @@ const Menu: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, docume
 
   return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout _site={_site} templateData={{__meta, document}}>
         <div className="centered-container">
           <h1 className="section text-4xl text-center font-bold">Menu Items</h1>
           <MenuSection title="Tacos" children={tacoDivs}/>

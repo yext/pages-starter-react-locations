@@ -21,7 +21,6 @@ import {
   HeadConfig,
 } from "@yext/pages";
 
-
 export const config: TemplateConfig = {
   stream: {
     $id: "locations",
@@ -44,6 +43,7 @@ export const config: TemplateConfig = {
       "geocodedCoordinate",
       "services",
       "covidMessaging",
+      "c_featuredFAQs.id",
       "c_featuredFAQs.question",
       "c_featuredFAQs.answer",
       "dm_directoryParents.name",
@@ -106,7 +106,8 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
  const Location: Template<TemplateRenderProps> = ({
     relativePrefixToRoot,
     path,
-    document
+    document,
+    __meta
   }) => {
   const {
     _site,
@@ -130,7 +131,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout _site={_site} templateData={{__meta, document}}>
         <div className="centered-container">
           <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot} />
           <div className="section">

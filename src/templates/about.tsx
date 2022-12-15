@@ -41,13 +41,14 @@ import {
 const About: Template<TemplateRenderProps> = ({
     relativePrefixToRoot,
     path,
-    document
+    document,
+    __meta
   }) => {
   const { _site } = document;
  
    return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout _site={_site} templateData={{__meta, document}}>
         <Banner text="About Page"></Banner>
         <div className="centered-container">
           <div className="section space-y-10 px-10">

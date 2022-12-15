@@ -1,6 +1,6 @@
 import * as React from "react";
 import Cta from "./cta";
-import { Image } from "@yext/pages/components";
+import { Image, Link } from "@yext/pages/components";
 
 const navigation = [
   { name: 'Home', href: '/index.html' },
@@ -29,27 +29,37 @@ export default function Header({_site}) {
             </div>
           </div>
           <div className="ml-10 space-x-4">
-            <a
-              href="#"
-              key="sign-in"
-              className="inline-block rounded-md border border-transparent bg-green-800 py-2 px-4 text-base font-medium text-white hover:bg-opacity-75"
-            >
-              Sign in
-            </a>
-            <a
-              href="#"
-              key="sign-up"
-              className="inline-block rounded-md border border-transparent bg-white py-2 px-4 text-base font-medium text-green-900 hover:bg-indigo-50"
-            >
-              Sign up
-            </a>
+            <Link
+                key="sign-in"
+                href="#"
+                className="inline-block rounded-md border border-transparent bg-green-800 py-2 px-4 text-base font-medium text-white hover:bg-opacity-75"
+                rel="noopener noreferrer"
+                eventName={`cta Click: sign-in`}
+              >
+                Sign In
+              </Link> 
+            <Link
+                key="sign-up"
+                href="#"
+                className="inline-block rounded-md border border-transparent bg-white py-2 px-4 text-base font-medium text-green-900 hover:bg-indigo-50"
+                rel="noopener noreferrer"
+                eventName={`cta Click: sign-up`}
+              >
+                Sign Up
+              </Link> 
           </div>
         </div>
         <div className="flex flex-wrap justify-center space-x-6 py-4 lg:hidden">
           {navigation.map((link) => (
-            <a key={link.name} href={link.href} className="text-base font-medium text-white hover:text-indigo-50">
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-base font-medium text-white hover:text-indigo-50"
+              rel="noopener noreferrer"
+                  eventName={`cta Click: ${link.name}`}
+            >
               {link.name}
-            </a>
+            </Link> 
           ))}
         </div>
       </nav>
