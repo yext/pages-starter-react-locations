@@ -62,6 +62,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
 
   const Index: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
+    _site,
     dm_directoryChildren    
   } = document;
 
@@ -80,16 +81,16 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
 
    return (
     <>
-      <PageLayout>
-        <Banner text="Turtlehead Tacos"></Banner>
+      <PageLayout _site={_site}>
         <div className="centered-container">
-          <BreadCrumbs name="Home" baseUrl={relativePrefixToRoot}></BreadCrumbs>
+          <BreadCrumbs name="Home" baseUrl={relativePrefixToRoot} />
           <div className="section space-y-14 px-10">
               <h1 className="text-center">Turtlehead Tacos Locations</h1>
               <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
                 {childrenDivs}
               </div>
           </div>
+          <Banner text="Index Page" />
         </div>
       </PageLayout>
     </>

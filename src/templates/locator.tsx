@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../index.css";
-import { GetPath, Template, TemplateProps, TemplateRenderProps } from "@yext/pages";
+import { GetPath, Template, TemplateProps, TemplateRenderProps, TemplateConfig } from "@yext/pages";
 import { 
   SearchHeadlessProvider,
   provideHeadless
@@ -12,8 +12,12 @@ import MapPin from "../components/MapPin";
 import LocationCard from "../components/LocationCard";
 import PageLayout from "../components/PageLayout";
 
+export const config: TemplateConfig = {
+  name: "locator",
+};
+
 export const getPath: GetPath<TemplateProps> = () => {
-  return `/locator`;
+  return `locator`;
 };
 
 const searcher = provideHeadless({
@@ -23,17 +27,23 @@ const searcher = provideHeadless({
   locale: "en",
 });
 
-const Locator: Template<TemplateRenderProps> = () => {
+const Locator: Template<TemplateRenderProps> = ({
+  relativePrefixToRoot,
+    path,
+    document
+  }) => {
+  const { _site } = document;
+  
   return (
     <>
-      <PageLayout>
+      <PageLayout _site={_site}>
         <SearchHeadlessProvider searcher={searcher}>
             <div className="w-full h-screen flex flex-col max-h-screen">
             <div className="flex flex-row w-full h-full overflow-y-auto">
                 <div className="w-1/3 h-full bg-slate-50 border-r border-slate-300 shadow-md overflow-auto">
                 <div className="sticky top-0 z-20 bg-slate-50 border-b border-slate-300">
                     <h3 className="m-2 font-semibold text-slate-900">
-                    Find a Location
+                      Find a Location
                     </h3>
                     <FilterSearch
                     customCssClasses={{

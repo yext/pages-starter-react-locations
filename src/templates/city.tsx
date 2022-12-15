@@ -32,7 +32,7 @@ export const config: TemplateConfig = {
       "slug",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
-      "dm_directoryParents.meta.entityType",
+      "dm_directoryParents.meta",
       "dm_directoryParents.c_addressRegionDisplayName",
       "dm_directoryChildren.name",
       "dm_directoryChildren.address",
@@ -68,6 +68,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
 
  const City: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
+    _site,
     name,
     description,
     slug,
@@ -96,8 +97,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
 
   return (
     <>
-      <PageLayout>
-        <Banner text="Turtlehead Tacos"></Banner>
+      <PageLayout _site={_site}>
         <div className="centered-container">
           <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot}></BreadCrumbs>
           <div className="section space-y-14 px-10">
@@ -109,6 +109,7 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
                 {childrenDivs}
               </div>
           </div>
+          <Banner text="City Page"/>
         </div>
       </PageLayout>
     </>

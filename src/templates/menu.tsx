@@ -1,6 +1,7 @@
 import * as React from "react";
 import PageLayout from "../components/PageLayout";
 import MenuSection from "../components/MenuSection";
+import Banner from "../components/banner";
 import "../index.css";
 import {
   Template,
@@ -63,11 +64,12 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
 
 const Menu: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
-   name,
-   richTextDescription,
-   photoGallery,
-   slug,
-   c_relatedMenuItems,
+    _site,
+    name,
+    richTextDescription,
+    photoGallery,
+    slug,
+    c_relatedMenuItems,
   } = document;
 
   const tacos = [], quesadillas = [], drinks = []; 
@@ -111,12 +113,13 @@ const Menu: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, docume
 
   return (
     <>
-      <PageLayout>
+      <PageLayout _site={_site}>
         <div className="centered-container">
-          <h1 className="text-4xl text-center font-bold">Menu Items</h1>
+          <h1 className="section text-4xl text-center font-bold">Menu Items</h1>
           <MenuSection title="Tacos" children={tacoDivs}/>
           <MenuSection title="Quesadillas" children={quesadillaDivs}/>
           <MenuSection title="Drinks" children={drinkDivs}/>
+          <Banner text="Our Menu"/>
         </div>
       </PageLayout>
     </>

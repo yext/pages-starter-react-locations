@@ -6,8 +6,12 @@
   "license": "BSD-3-Clause",
   "type": "module",
   "scripts": {
-    "dev": "pages dev",
-    "build": "vite build",
+    "dev": "npm run build:local && yext pages generate-test-data && pages dev",
+    "build:local": "vite build",
+    "build": "yext pages build && yext pages generate-test-data && yext pages render",
+    "build:serve": "npm run build && yext pages serve",
+    "serve": "yext pages serve",
+    "features": "pages generate features",
     "fmt": "prettier -w .",
     "lint": "eslint .",
     "clean": "rm -rf .artifact-output .yext/ dist/ localData sites-rendered-output",
@@ -17,10 +21,12 @@
     "node": ">=17"
   },
   "dependencies": {
-    "@headlessui/react": "^1.6.6",
+    "@headlessui/react": "^1.7.5",
+    "@heroicons/react": "^2.0.13",
     "@types/mapbox-gl": "^2.7.5",
     "@yext/analytics": "^0.2.0",
     "@yext/search-ui-react": "^1.0.0",
+    "classnames": "^2.3.2",
     "fetch-everywhere": "^1.0.5",
     "mapbox-gl": "^2.10.0",
     "markdown-to-jsx": "^7.1.7",
@@ -29,12 +35,13 @@
     "react-phone-number-input": "^3.2.3"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.8",
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "@vitejs/plugin-react": "^2",
-    "@yext/pages": "1.0.0-beta.4",
+    "@yext/pages": "1.0.0-beta.14",
     "autoprefixer": "^10.4.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",

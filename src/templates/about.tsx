@@ -38,11 +38,16 @@ import {
   };
 };
 
-const About: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
+const About: Template<TemplateRenderProps> = ({
+    relativePrefixToRoot,
+    path,
+    document
+  }) => {
+  const { _site } = document;
  
    return (
     <>
-      <PageLayout>
+      <PageLayout _site={_site}>
         <Banner text="About Page"></Banner>
         <div className="centered-container">
           <div className="section space-y-10 px-10">

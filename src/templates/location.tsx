@@ -8,6 +8,7 @@ import Faqs from "../components/Faqs";
 import PageLayout from "../components/PageLayout";
 import BreadCrumbs from "../components/BreadCrumbs";
 import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input';
+import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
 import {
   Template,
@@ -47,7 +48,7 @@ export const config: TemplateConfig = {
       "c_featuredFAQs.answer",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
-      "dm_directoryParents.meta.entityType",
+      "dm_directoryParents.meta",
       "dm_directoryParents.c_addressRegionDisplayName",
     ],
     localization: {
@@ -64,7 +65,7 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({document}) => {
-  return `${document.slug.toString()}`;
+  return document.slug;
 };
 
 /**
@@ -73,7 +74,11 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
- export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefixToRoot, path, document}): HeadConfig => {
+export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
+  relativePrefixToRoot,
+  path,
+  document
+}): HeadConfig => {
   return {
     title: document.name,
     charset: "UTF-8",
@@ -85,13 +90,26 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
           description: document.description,
         },
       },
+      {
+        type: "link",
+        attributes: {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: Favicon
+        },
+      }
     ],
   };
 };
 
 
- const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
+ const Location: Template<TemplateRenderProps> = ({
+    relativePrefixToRoot,
+    path,
+    document
+  }) => {
   const {
+    _site,
     name,
     address,
     description,
@@ -112,38 +130,29 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
 
   return (
     <>
-      <PageLayout >
-        <Banner text={name}>
-        </Banner>
+      <PageLayout _site={_site}>
         <div className="centered-container">
-          <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot}></BreadCrumbs>
+          <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot} />
           <div className="section">
               <div className="grid md:grid-cols-2 lg:grid-cols-3">
                 <div className="address-phone space-y-5">
                   <h2 className="text-xl font-semibold mb-4">Address</h2>
-                  <Address address={address}></Address>
+                  <Address address={address} />
                   <div className="space-x-3">
                     <span>&#128222;</span>
                     <span>{formattedPhone}</span>
                   </div>
                 </div>
-                <Hours title="Hours" hours={hours}></Hours>
+                <Hours title="Hours" hours={hours} />
                 <div className="description">
                   <div className="text-xl font-semibold mb-4">About {name} - {neighborhood}</div>
                   <p>{description}</p>
                 </div>
               </div>
           </div>
-          <div className="section">
-            <PhotoGallery 
-              photoGallery={photoGallery}
-              height="300"
-              width="450"
-              ></PhotoGallery>
-          </div>
-          <div className="section">
-            <Faqs faqs={c_featuredFAQs}></Faqs>
-          </div>
+          <PhotoGallery photoGallery={photoGallery} />
+          <Faqs faqs={c_featuredFAQs} />
+          <Banner text="Location Page"/>
         </div>
       </PageLayout>
     </>
