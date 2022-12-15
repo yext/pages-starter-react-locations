@@ -3,6 +3,7 @@ import Banner from "../components/banner";
 import PageLayout from "../components/PageLayout";
 import BreadCrumbs from "../components/BreadCrumbs";
 import "../index.css";
+import Favicon from "../public/yext-favicon.ico";
 import {
   Template,
   GetPath,
@@ -58,6 +59,14 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
           description: document.description,
         },
       },
+      {
+        type: "link",
+        attributes: {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: Favicon
+        },
+      }
     ],
   };
 };

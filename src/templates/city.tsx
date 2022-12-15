@@ -4,6 +4,7 @@ import Address from "../components/Address";
 import PageLayout from "../components/PageLayout";
 import BreadCrumbs from "../components/BreadCrumbs";
 import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input';
+import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
 import {
   Template,
@@ -62,6 +63,14 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
           description: document.description,
         },
       },
+      {
+        type: "link",
+        attributes: {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: Favicon
+        },
+      }
     ],
   };
 };

@@ -2,6 +2,7 @@ import * as React from "react";
 import PageLayout from "../components/PageLayout";
 import Banner from "../components/banner";
 import BreadCrumbs from "../components/BreadCrumbs";
+import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
 import {
   Template,
@@ -56,6 +57,14 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
           description: "This is a description for the Turtlehead Tacos directory home page.",
         },
       },
+      {
+        type: "link",
+        attributes: {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: Favicon
+        },
+      }
     ],
   };
 };

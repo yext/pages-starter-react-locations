@@ -13,18 +13,24 @@ export default function Header({_site}) {
   return (
     <header className="bg-orange-500">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex w-full items-center justify-between border-b border-green-800 py-6 lg:border-none">
+        <div className="flex w-full items-center justify-between border-b border-green-800 py-6 md:border-none">
           <div className="flex items-center">
             <a href="/index.html">
               <span className="sr-only">Turtlehead Tacos</span>
               {/* <img className="w-auto rounded-lg shadow-md" src={Logo} height="30" width="30" /> */}
               <Image className="rounded-lg drop-shadow-md" image={_site.logo.image} layout="fixed" width={100} height={100}/>
             </a>
-            <div className="ml-10 hidden space-x-8 lg:block">
+            <div className="ml-10 hidden space-x-8 md:block">
               {navigation.map((link) => (
-                <a key={link.name} href={link.href} className="text-base font-medium text-white hover:text-indigo-50">
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-base font-medium text-white hover:text-indigo-50"
+                  rel="noopener noreferrer"
+                      eventName={`cta Click: ${link.name}`}
+                >
                   {link.name}
-                </a>
+                </Link> 
               ))}
             </div>
           </div>
@@ -49,7 +55,7 @@ export default function Header({_site}) {
               </Link> 
           </div>
         </div>
-        <div className="flex flex-wrap justify-center space-x-6 py-4 lg:hidden">
+        <div className="flex flex-wrap justify-center space-x-6 py-4 md:hidden">
           {navigation.map((link) => (
             <Link
               key={link.name}

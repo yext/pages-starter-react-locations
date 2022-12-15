@@ -2,6 +2,7 @@ import * as React from "react";
 import "../index.css";
 import Banner from "../components/banner";
 import PageLayout from "../components/PageLayout";
+import Favicon from "../public/yext-favicon.ico";
 import {
   Template,
   GetPath,
