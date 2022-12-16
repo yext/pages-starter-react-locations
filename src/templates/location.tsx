@@ -102,7 +102,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-
  const Location: Template<TemplateRenderProps> = ({
     relativePrefixToRoot,
     path,

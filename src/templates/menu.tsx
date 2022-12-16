@@ -14,6 +14,7 @@ import {
   GetHeadConfig,
   HeadConfig,
 } from "@yext/pages";
+import { Image } from "@yext/pages/components"
 
 export const config: TemplateConfig = {
   stream: {
@@ -39,6 +40,9 @@ export const config: TemplateConfig = {
     localization: {
       locales: ["en"],
       primary: false,
+    },
+    transform: {
+      replaceOptionValuesWithDisplayNames: ["c_relatedMenuItems.c_itemCategory"]
     },
   },
 };
@@ -89,40 +93,46 @@ const Menu: Template<TemplateRenderProps> = ({
   const tacos = [], quesadillas = [], drinks = []; 
   
   c_relatedMenuItems.forEach((item) => {
-   if (item.c_itemCategory == "TACOS") {
+   if (item.c_itemCategory == "Tacos") {
      tacos.push(item);
-   } else if (item.c_itemCategory == "QUESADILLAS") {
+   } else if (item.c_itemCategory == "Quesadillas") {
      quesadillas.push(item);
    } else {
      drinks.push(item)
    }
   });
 
-  const tacoDivs = tacos.map((item:any) => (
-   <a href={item.slug}>
-     <div className="card p-5 border-2 rounded-xl space-y-3 bg-gray-100 drop-shadow-md">
-       <img src={item.photoGallery[0].image.url} className="rounded-xl w-100 h-auto"/>
+  const tacoDivs = tacos.map((item:any, key:number) => (
+     <div key={key} className="card p-5 border-2 rounded-xl space-y-3 bg-gray-100 drop-shadow-md">
+       <Image
+        className="rounded-xl w-100 h-auto"
+        image={item.photoGallery[0].image}
+        layout="fill"
+        />
        <div className="name pt-2 text-2xl text-center font-bold">{item.name}</div>
      </div>
-   </a>
  ));
 
-  const quesadillaDivs = quesadillas.map((item:any) => (
-   <a href={item.slug}>
-     <div className="card p-5 border-2 rounded-xl space-y-3 bg-gray-100 drop-shadow-md">
-       <img src={item.photoGallery[0].image.url} className="rounded-xl w-100 h-auto"/>
+  const quesadillaDivs = quesadillas.map((item:any, key:number) => (
+     <div key={key} className="card p-5 border-2 rounded-xl space-y-3 bg-gray-100 drop-shadow-md">
+       <Image
+        className="rounded-xl w-100 h-auto"
+        image={item.photoGallery[0].image}
+        layout="fill"
+        />
        <div className="name pt-2 text-2xl text-center font-bold">{item.name}</div>
      </div>
-   </a>
  ));
 
-  const drinkDivs = drinks.map((item:any) => (
-   <a href={item.slug}>
-     <div className="card p-5 border-2 rounded-xl space-y-3 bg-gray-100 drop-shadow-md">
-       <img src={item.photoGallery[0].image.url} className="rounded-xl w-100 h-auto"/>
+  const drinkDivs = drinks.map((item:any, key:number) => (
+     <div key={key} className="card p-5 border-2 rounded-xl space-y-3 bg-gray-100 drop-shadow-md">
+       <Image
+        className="rounded-xl w-100 h-auto"
+        image={item.photoGallery[0].image}
+        layout="fill"
+        />
        <div className="name pt-2 text-2xl text-center font-bold">{item.name}</div>
      </div>
-   </a>
  ));
 
   return (

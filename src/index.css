@@ -18,6 +18,10 @@ h2 {
   @apply mt-8 mb-16;
 }
 
+.skeleton {
+  @apply bg-gray-300 animate-pulse rounded-sm;
+}
+
 .primary-cta {
   @apply bg-sky-500 hover:bg-sky-600;
 }
