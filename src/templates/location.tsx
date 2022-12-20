@@ -146,10 +146,14 @@ const Location: Template<TemplateRenderProps> = ({
     description,
   } = document;
 
+  // @ts-expect-error global variables
+  console.log(YEXT_PUBLIC_EXTERNAL_IMAGE_API_BASE_URL, YEXT_PUBLIC_KEY);
+
   return (
     <>
       <PageLayout _site={_site}>
-        <Banner name={name} address={address} />
+        {/* @ts-expect-error global variables */}
+        <Banner name={name + " - " + YEXT_PUBLIC_KEY} address={address} />
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-2 gap-x-10 gap-y-10">
