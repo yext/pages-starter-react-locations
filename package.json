@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run build:local && yext pages generate-test-data && pages dev",
-    "build:local": "vite build",
+    "build:local": "vite build  -- ${YEXT_PUBLIC_KEY}",
     "build": "yext pages build && yext pages generate-test-data && yext pages render",
     "build:serve": "npm run build && yext pages serve",
     "serve": "yext pages serve",
