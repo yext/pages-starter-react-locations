@@ -34,7 +34,7 @@
     ]
   },
   "buildArtifacts": {
-    "buildCmd": "npm run build:local --YEXT_PUBLIC_KEY 'my test'"
+    "buildCmd": "npm run build:local -- --YEXT_PUBLIC_KEY='my test'"
   },
   "livePreview": {
     "serveSetupCmd": ":"
