@@ -116,7 +116,7 @@ const DayRow = (props: DayRow) => {
 
   return (
     <tr className={isToday ? "bg-gray-200 font-bold" : ""}>
-      <td className="capitalize text-left pl-1 pr-4">
+      <td className="pl-1 pr-4 text-left capitalize">
         <span>{dayName}</span>
       </td>
       {!day.isClosed && (
@@ -141,7 +141,7 @@ const Hours = (props: Hours) => {
 
   return (
     <>
-      <div className="text-xl font-semibold mb-4">{title}</div>
+      <div className="mb-4 text-xl font-semibold">{title}</div>
       <table>
         <thead className="sr-only">
           <tr>

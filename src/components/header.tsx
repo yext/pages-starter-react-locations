@@ -29,14 +29,14 @@ const Header = () => {
   return (
     <div className="bg-gray-50">
       <div className="centered-container">
-        <nav className="py-6 flex items-center justify-between">
-          <div className="flex gap-x-4 items-center">
+        <nav className="flex items-center justify-between py-6">
+          <div className="flex items-center gap-x-4">
             <img
               src="https://cdn.fs.brandfolder.com/cache=expiry:604800/deY3VGFpSjC761Abjbfc"
               width="50"
               height="50"
             ></img>
-            <div className="flex gap-x-4 text-sm font-semibold text-body">
+            <div className="text-body flex gap-x-4 text-sm font-semibold">
               {linkDoms}
             </div>
           </div>
