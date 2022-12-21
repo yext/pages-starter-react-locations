@@ -37,7 +37,8 @@ export const config: TemplateConfig = {
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: [
-      "id",
+      // @ts-expect-error env
+      YEXT_PUBLIC_ID,
       "uid",
       "meta",
       "name",
@@ -149,7 +150,8 @@ const Location: Template<TemplateRenderProps> = ({
   return (
     <>
       <PageLayout _site={_site}>
-        <Banner name={name + " - " + import.meta.env.YEXT_PUBLIC_KEY} address={address} />
+        {/* @ts-expect-error env */}
+        <Banner name={`${name} YEXT_PUBLIC_KEY ${YEXT_PUBLIC_ID}`} address={address} />
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-2 gap-x-10 gap-y-10">
