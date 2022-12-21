@@ -34,7 +34,7 @@
     ]
   },
   "buildArtifacts": {
-    "buildCmd": "YEXT_PUBLIC_KEY=${YEXT_PUBLIC_KEY} npm run build:local"
+    "buildCmd": "YEXT_PUBLIC_KEY=Tristan npm run build:local"
   },
   "livePreview": {
     "serveSetupCmd": ":"
