@@ -151,7 +151,7 @@ const Location: Template<TemplateRenderProps> = ({
     <>
       <PageLayout _site={_site}>
         {/* @ts-expect-error env */}
-        <Banner name={`${name} YEXT_PUBLIC_KEY ${YEXT_PUBLIC_ID}`} address={address} />
+        <Banner name={`${name} YEXT_PUBLIC_KEY ${document[YEXT_PUBLIC_ID]}`} address={address} />
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-2 gap-x-10 gap-y-10">
