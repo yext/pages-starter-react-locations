@@ -47,8 +47,8 @@ type ExternalImageData = TemplateProps & { externalImage: ExternalImage };
 export const transformProps: TransformProps<ExternalImageData> = async (
   data
 ) => {
-  // @ts-expect-error env
-  const url = YEXT_PUBLIC_EXTERNAL_IMAGE_API_BASE_URL + "/2";
+  // @ ts-expect-error env
+  const url = import.meta.env.YEXT_PUBLIC_EXTERNAL_IMAGE_API_BASE_URL + "/2";
   const externalImage = (await fetch(url).then((res: any) =>
     res.json()
   )) as ExternalImage;
