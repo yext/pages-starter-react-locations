@@ -6,9 +6,7 @@ export default defineConfig(() => {
   console.log("defineConfig()");
   process.on('unhandledRejection', (reason, promise) => {
     console.log("tris")
-    console.log(reason)
-    console.log("tan")
-    process.exit(1);
+    throw reason;
   })
   process.on('uncaughtException', (reason) => {
     console.log("timb")
