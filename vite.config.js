@@ -5,9 +5,9 @@ import yextSSG from "@yext/pages/vite-plugin";
 export default defineConfig(() => {
   console.log("defineConfig()");
   process.on('unhandledRejection', (reason, promise) => {
-    console.log("tris")
-    throw reason;
-  })
+    console.log(process.env);
+    process.exit(1);
+  });
   process.on('uncaughtException', (reason) => {
     console.log("timb")
     console.log(reason)
