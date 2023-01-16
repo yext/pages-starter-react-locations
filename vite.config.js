@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 import yextSSG from "@yext/pages/vite-plugin";
 
 export default defineConfig({
-  base: "https://devrelativeprefixtopath-brightly--radical--smelt-pgsdemo-com.preview.pagescdn.com/",
+  base: "/subdirectory",
   plugins: [react(), yextSSG()],
 });
