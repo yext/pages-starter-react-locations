@@ -4,5 +4,6 @@ import yextSSG from "@yext/pages/vite-plugin";
 
 export default defineConfig({
   base: "/subdirectory",
+  appType: 'mpa',
   plugins: [react(), yextSSG()],
 });
