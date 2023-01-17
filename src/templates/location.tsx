@@ -149,7 +149,7 @@ const Location: Template<TemplateRenderProps> = ({
   return (
     <>
       <PageLayout _site={_site}>
-        <Banner name={name} address={address} />
+        <Banner name={name} address={address} relativePrefixToRoot={relativePrefixToRoot} />
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-2 gap-x-10 gap-y-10">
