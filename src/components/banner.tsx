@@ -32,17 +32,17 @@ const Banner = (props: Banner) => {
   return (
     <>
       <div
-        className={`relative z-10 w-full bg-cover bg-center h-96 bg-[url(/src/assets/images/tacos-1.avif)] `}
+        className={`relative z-10 h-96 w-full bg-[url(/src/assets/images/tacos-1.avif)] bg-cover bg-center `}
       >
         <div className="absolute left-0 right-0 flex flex-col items-center ">
-          <div className="w-96 my-8 rounded-xl bg-amber-500 border-8 shadow-xl border-amber-600 px-4 py-2 text-center">
+          <div className="my-8 w-96 rounded-xl border-8 border-amber-600 bg-amber-500 px-4 py-2 text-center shadow-xl">
             <div>
-              <h1 className="text-white text-3xl font-semibold">{name}</h1>
-              <p className="text-lg pt-2 text-white font-semibold">
+              <h1 className="text-3xl font-semibold text-white">{name}</h1>
+              <p className="pt-2 text-lg font-semibold text-white">
                 {renderPrettyAddress(address)}
               </p>
             </div>
-            <div className="flex pt-4 justify-between">
+            <div className="flex justify-between pt-4">
               <Cta
                 buttonText="Order Pickup"
                 url="#"

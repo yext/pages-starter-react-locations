@@ -68,14 +68,13 @@ type ExternalImageRenderData = TemplateRenderProps & {
   externalImage: ExternalImage;
 };
 
-
 /**
  * This allows the user to define a function which will take in their template
  * data and produce a HeadConfig object. When the site is generated, the HeadConfig
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
- export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
+export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
   document,
@@ -95,15 +94,14 @@ type ExternalImageRenderData = TemplateRenderProps & {
       {
         type: "link",
         attributes: {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: Favicon
+          rel: "icon",
+          type: "image/x-icon",
+          href: Favicon,
         },
-      }
+      },
     ],
   };
 };
-
 
 /**
  * This is the main template. It can have any name as long as it's the default export.
@@ -121,7 +119,7 @@ const Static: Template<ExternalImageRenderData> = ({
     <>
       <PageLayout _site={_site}>
         <div className="centered-container">
-          <div className="bg-red-900 text-5xl font-bold text-white p-10 flex items-center justify-center flex-col gap-x-14 gap-y-10 md:flex-row">
+          <div className="flex flex-col items-center justify-center gap-x-14 gap-y-10 bg-red-900 p-10 text-5xl font-bold text-white md:flex-row">
             <h1>Welcome to Turtlehead Tacos</h1>
           </div>
           <div className="space-y-5">
