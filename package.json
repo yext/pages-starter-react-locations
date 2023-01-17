@@ -31,7 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "@vitejs/plugin-react": "^2.1.0",
-    "@yext/pages": "https://github.com/yext/pages/raw/dev/relativePrefixToRoot/packages/pages/yext-pages-1.0.0-beta.155.tgz",
+    "@yext/pages": "https://github.com/yext/pages/raw/dev/relativePrefixToRoot/packages/pages/yext-pages-1.0.0-beta.154.tgz",
     "autoprefixer": "^10.4.8",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.7",
