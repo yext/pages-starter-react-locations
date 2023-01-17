@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import yextSSG from "@yext/pages/vite-plugin";
 
 export default defineConfig({
-  base: "../",
+  base: "",
   plugins: [react(), yextSSG()],
   build: {
     build: {
