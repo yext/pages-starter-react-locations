@@ -25,7 +25,7 @@ import Hours from "../components/hours";
 import List from "../components/list";
 import PageLayout from "../components/page-layout";
 import StaticMap from "../components/static-map";
-import Favicon from "../public/yext-favicon.ico";
+import Favicon from "../assets/images/yext-favicon.ico";
 import "../index.css";
 
 /**

@@ -17,7 +17,7 @@ import {
 import PageLayout from "../components/page-layout";
 import Card from "../components/card";
 import { ExternalImage } from "../types/ExternalImage";
-import Favicon from "../public/yext-favicon.ico";
+import Favicon from "../assets/images/yext-favicon.ico";
 
 /**
  * Not required depending on your use case.
