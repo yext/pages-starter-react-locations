@@ -6,10 +6,8 @@ export default defineConfig({
   base: "/subdirectory/",
   plugins: [react(), yextSSG()],
   build: {
-    rollupOptions: {
-      output: {
-        assetFileNames: () => "subdirectory/assets/[name]-[hash].[ext]",
-      },
+    build: {
+      assetsDir: "subdirectory/assets",
     },
   },
 });
