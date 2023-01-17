@@ -4,11 +4,4 @@ import yextSSG from "@yext/pages/vite-plugin";
 
 export default defineConfig({
   plugins: [react(), yextSSG()],
-  build: {
-    rollupOptions: {
-      output: {
-        assetFileNames: () => "subdirectory/assets/[name]-[hash].[ext]",
-      },
-    },
-  },
 });
