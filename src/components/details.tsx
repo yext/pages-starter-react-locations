@@ -1,5 +1,4 @@
 import * as React from "react";
-import Cta from "./Cta";
 import { Address } from "@yext/pages/components";
 
 const Details = (props: any) => {

@@ -13,7 +13,7 @@ const StaticMap = (props: Coordinates) => {
     return (
       <>
         < div className="w-full">
-          It looks like you need a Maps API key. Grab an API Key from a Google Maps
+          It looks like you need a Maps API key. Grab an API Key from Google Maps
           and add it to your .env file
         </div >
       </>
