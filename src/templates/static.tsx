@@ -14,8 +14,8 @@ import {
   TemplateProps,
   TemplateRenderProps,
 } from "@yext/pages";
-import PageLayout from "../components/PageLayout";
-import Card from "../components/Card";
+import PageLayout from "../components/page-layout";
+import Card from "../components/card";
 import { ExternalImage } from "../types/ExternalImage";
 import Favicon from "../public/yext-favicon.ico";
 
@@ -75,7 +75,7 @@ type ExternalImageRenderData = TemplateRenderProps & {
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
-export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
+ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
   document,
@@ -107,7 +107,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 
 /**
  * This is the main template. It can have any name as long as it's the default export.
- * The props passed in here are the direct result from `transformProps`.
+ * The props passed in here are the direct result from `getStaticProps`.
  */
 const Static: Template<ExternalImageRenderData> = ({
   relativePrefixToRoot,
@@ -115,10 +115,11 @@ const Static: Template<ExternalImageRenderData> = ({
   document,
   externalImage,
 }) => {
+  const { _site } = document;
 
   return (
     <>
-      <PageLayout>
+      <PageLayout _site={_site}>
         <div className="centered-container">
           <div className="bg-red-900 text-5xl font-bold text-white p-10 flex items-center justify-center flex-col gap-x-14 gap-y-10 md:flex-row">
             <h1>Welcome to Turtlehead Tacos</h1>
