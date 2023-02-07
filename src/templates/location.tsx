@@ -28,6 +28,7 @@ import StaticMap from "../components/StaticMap";
 import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
 import HelperTool from "../components/HelperTool";
+import { isProduction } from "@yext/pages/util";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -174,7 +175,7 @@ const Location: Template<TemplateRenderProps> = ({
         </div>
       </PageLayout>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}
-      <HelperTool data={document} />
+      {!isProduction && <HelperTool data={document} />}
     </>
   );
 };
