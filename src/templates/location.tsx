@@ -134,10 +134,8 @@ const Location: Template<TemplateRenderProps> = ({
   document,
 }) => {
   const {
-    _site,
     name,
     address,
-    openTime,
     hours,
     mainPhone,
     geocodedCoordinate,
