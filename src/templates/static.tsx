@@ -14,8 +14,8 @@ import {
   TemplateProps,
   TemplateRenderProps,
 } from "@yext/pages";
-import PageLayout from "../components/page-layout";
-import Card from "../components/card";
+import PageLayout from "../components/PageLayout";
+import Card from "../components/Card";
 import { ExternalImage } from "../types/ExternalImage";
 import Favicon from "../public/yext-favicon.ico";
 
@@ -68,14 +68,13 @@ type ExternalImageRenderData = TemplateRenderProps & {
   externalImage: ExternalImage;
 };
 
-
 /**
  * This allows the user to define a function which will take in their template
  * data and produce a HeadConfig object. When the site is generated, the HeadConfig
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
- export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
+export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
   document,
@@ -95,19 +94,18 @@ type ExternalImageRenderData = TemplateRenderProps & {
       {
         type: "link",
         attributes: {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: Favicon
+          rel: "icon",
+          type: "image/x-icon",
+          href: Favicon,
         },
-      }
+      },
     ],
   };
 };
 
-
 /**
  * This is the main template. It can have any name as long as it's the default export.
- * The props passed in here are the direct result from `getStaticProps`.
+ * The props passed in here are the direct result from `transformProps`.
  */
 const Static: Template<ExternalImageRenderData> = ({
   relativePrefixToRoot,
@@ -115,11 +113,9 @@ const Static: Template<ExternalImageRenderData> = ({
   document,
   externalImage,
 }) => {
-  const { _site } = document;
-
   return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout>
         <div className="centered-container">
           <div className="bg-red-900 text-5xl font-bold text-white p-10 flex items-center justify-center flex-col gap-x-14 gap-y-10 md:flex-row">
             <h1>Welcome to Turtlehead Tacos</h1>

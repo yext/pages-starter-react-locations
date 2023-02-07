@@ -1,7 +1,7 @@
 /**
  * This is an example of how to create a template that makes use of streams data.
  * The stream data originates from Yext's Knowledge Graph. When a template in
- * concert with a stream is built by the Yext Sites system, a static html page
+ * concert with a stream is built by the Yext Pages system, a static html page
  * is generated for every corresponding (based on the filter) stream document.
  *
  * Another way to think about it is that a page will be generated using this
@@ -19,12 +19,12 @@ import {
   TemplateRenderProps,
 } from "@yext/pages";
 import * as React from "react";
-import Banner from "../components/banner";
-import Details from "../components/details";
-import Hours from "../components/hours";
-import List from "../components/list";
-import PageLayout from "../components/page-layout";
-import StaticMap from "../components/static-map";
+import Banner from "../components/Banner";
+import Details from "../components/Details";
+import Hours from "../components/Hours";
+import List from "../components/List";
+import PageLayout from "../components/PageLayout";
+import StaticMap from "../components/StaticMap";
 import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
 
@@ -64,8 +64,8 @@ export const config: TemplateConfig = {
 /**
  * Defines the path that the generated file will live at for production.
  *
- * NOTE: This currently has no impact on the local dev path. Local dev urls currently
- * take on the form: featureName/entityId
+ * NOTE: To preview production URLs locally, you must return document.slug from this function
+ * and ensure that each entity has the slug field pouplated.
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   return document.slug
@@ -111,11 +111,11 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
       {
         type: "link",
         attributes: {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: Favicon
+          rel: "icon",
+          type: "image/x-icon",
+          href: Favicon,
         },
-      }
+      },
     ],
   };
 };
@@ -135,10 +135,8 @@ const Location: Template<TemplateRenderProps> = ({
   document,
 }) => {
   const {
-    _site,
     name,
     address,
-    openTime,
     hours,
     mainPhone,
     geocodedCoordinate,
@@ -148,7 +146,7 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout>
         <Banner name={name} address={address} />
         <div className="centered-container">
           <div className="section">

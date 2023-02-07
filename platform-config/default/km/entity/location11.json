@@ -10,18 +10,11 @@
       "postalCode": "60607",
       "region": "IL"
     },
-    "c_featuredFAQs": [
-      "faq-1",
-      "faq-2"
-    ],
-    "categoryIds": [
-      "152"
-    ],
+    "c_featuredFAQs": ["faq-1", "faq-2"],
+    "categoryIds": ["152"],
     "covidMessaging": "We are open!",
     "description": "[[name]] is a taco restaurant chain located in [[address.city]], [[address.region]]. We\u0027re serving all your favorite menu items, from classic tacos and burritos, to new favorites like the Turtlehead Taco Ultimate Taco and Cheesy Turtlehead Deluxe. Order ahead online or on the mobile app for pick up at the restaurant or get it delivered.",
-    "emails": [
-      "turtlehead@tacos.com"
-    ],
+    "emails": ["turtlehead@tacos.com"],
     "facebookPageUrl": "https://www.facebook.com/YextInc/",
     "hours": {
       "friday": {

@@ -4,9 +4,7 @@
   "primaryLocale": "en",
   "content": {
     "c_itemCategory": "DRINKS",
-    "c_relatedMenu": [
-      "menu"
-    ],
+    "c_relatedMenu": ["menu"],
     "name": "Jarritos",
     "photoGallery": [
       {
