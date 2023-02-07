@@ -11,7 +11,7 @@ const PageLayout = ({ children }: Props) => {
     <div className="min-h-screen">
       <Header />
       {children}
-      <Footer ></Footer>
+      <Footer></Footer>
     </div>
   );
 };

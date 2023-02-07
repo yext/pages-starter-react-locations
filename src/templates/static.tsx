@@ -68,7 +68,6 @@ type ExternalImageRenderData = TemplateRenderProps & {
   externalImage: ExternalImage;
 };
 
-
 /**
  * This allows the user to define a function which will take in their template
  * data and produce a HeadConfig object. When the site is generated, the HeadConfig
@@ -95,15 +94,14 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
       {
         type: "link",
         attributes: {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: Favicon
+          rel: "icon",
+          type: "image/x-icon",
+          href: Favicon,
         },
-      }
+      },
     ],
   };
 };
-
 
 /**
  * This is the main template. It can have any name as long as it's the default export.
@@ -115,7 +113,6 @@ const Static: Template<ExternalImageRenderData> = ({
   document,
   externalImage,
 }) => {
-
   return (
     <>
       <PageLayout>

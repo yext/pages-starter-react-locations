@@ -5,21 +5,20 @@ type Coordinates = {
   longitude: string;
 };
 
-const mapsApiKey = YEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+const mapsApiKey = YEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
 const StaticMap = (props: Coordinates) => {
   const { latitude, longitude } = props;
   if (!mapsApiKey) {
     return (
       <>
-        < div className="w-full">
-          It looks like you need a Maps API key. Grab an API Key from Google Maps
-          and add it to your .env file
-        </div >
+        <div className="w-full">
+          It looks like you need a Maps API key. Grab an API Key from Google
+          Maps and add it to your .env file
+        </div>
       </>
-    )
+    );
   }
-
 
   return (
     <>

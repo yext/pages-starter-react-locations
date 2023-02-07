@@ -4,9 +4,7 @@
   "primaryLocale": "en",
   "content": {
     "c_itemCategory": "QUESADILLAS",
-    "c_relatedMenu": [
-      "menu"
-    ],
+    "c_relatedMenu": ["menu"],
     "name": "Pollo Asado",
     "photoGallery": [
       {
