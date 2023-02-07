@@ -1,5 +1,5 @@
 import * as React from "react";
-import Cta from "./cta";
+import Cta from "./Cta";
 
 export type Address = {
   line1: string;
