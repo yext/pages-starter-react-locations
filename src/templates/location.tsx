@@ -147,7 +147,7 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout>
         <Banner name={name} address={address} />
         <div className="centered-container">
           <div className="section">
