@@ -144,6 +144,7 @@ const Location: Template<TemplateRenderProps> = ({
     geocodedCoordinate,
     services,
     description,
+    siteDomain,
   } = document;
 
   return (
@@ -175,7 +176,7 @@ const Location: Template<TemplateRenderProps> = ({
         </div>
       </PageLayout>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}
-      {!isProduction && <HelperTool data={document} />}
+      {!isProduction(siteDomain) && <HelperTool data={document} />}
     </>
   );
 };

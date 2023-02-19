@@ -10,14 +10,18 @@ const HelperTool = ({ data }: HelperToolProps) => {
   const { uid, businessId } = data;
   const [isOpen, setIsOpen] = useState(true);
 
-  const editUrl = `https://sandbox.yext.com/s/${businessId}/entity/edit3?entityIds=${uid}`;
+  const editUrl =
+    // change YEXT_PUBLIC_UNIVERSE to production in the .env file if you are using a production account
+    YEXT_PUBLIC_UNIVERSE === "sandbox"
+      ? `https://sandbox.yext.com/s/${businessId}/entity/edit3?entityIds=${uid}`
+      : `https://yext.com/s/${businessId}/entity/edit3?entityIds=${uid}`;
 
   const onCloseClick = () => {
     setIsOpen(false);
   };
 
   return (
-    <div className="fixed top-24 right-4 z-50">
+    <div className="fixed bottom-24 right-4 z-50">
       <div className="flex bg-white rounded-lg shadow-lg px-6 py-4">
         <a
           className="text-blue-400 hover:underline"
@@ -25,7 +29,7 @@ const HelperTool = ({ data }: HelperToolProps) => {
           rel="noreferrer"
           target="_blank"
         >
-          Edit Entity
+          Edit
         </a>
         <button
           className="ml-8 text-gray-400 hover:text-gray-500"
