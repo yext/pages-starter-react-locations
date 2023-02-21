@@ -2,11 +2,11 @@ import * as React from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
-type HelperToolProps = {
+type EditToolProps = {
   data: Record<string, any>;
 };
 
-const HelperTool = ({ data }: HelperToolProps) => {
+const EditTool = ({ data }: EditToolProps) => {
   const { uid, businessId } = data;
   const [isOpen, setIsOpen] = useState(true);
 
@@ -20,7 +20,7 @@ const HelperTool = ({ data }: HelperToolProps) => {
     setIsOpen(false);
   };
 
-  return (
+  return isOpen ? (
     <div className="fixed bottom-24 right-4 z-50">
       <div className="flex bg-white rounded-lg shadow-lg px-6 py-4">
         <a
@@ -39,7 +39,7 @@ const HelperTool = ({ data }: HelperToolProps) => {
         </button>
       </div>
     </div>
-  );
+  ) : null;
 };
 
-export default HelperTool;
+export default EditTool;

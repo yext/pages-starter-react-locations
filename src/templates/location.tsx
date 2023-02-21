@@ -27,7 +27,7 @@ import PageLayout from "../components/PageLayout";
 import StaticMap from "../components/StaticMap";
 import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
-import HelperTool from "../components/HelperTool";
+import EditTool from "../components/EditTool";
 import { isProduction } from "@yext/pages/util";
 
 /**
@@ -72,9 +72,8 @@ export const config: TemplateConfig = {
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   return document.slug
     ? document.slug
-    : `${document.locale}/${document.address.region}/${document.address.city}/${
-        document.address.line1
-      }-${document.id.toString()}`;
+    : `${document.locale}/${document.address.region}/${document.address.city}/${document.address.line1
+    }-${document.id.toString()}`;
 };
 
 /**
@@ -176,7 +175,7 @@ const Location: Template<TemplateRenderProps> = ({
         </div>
       </PageLayout>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}
-      {!isProduction(siteDomain) && <HelperTool data={document} />}
+      {!isProduction(siteDomain) && <EditTool data={document} />}
     </>
   );
 };
