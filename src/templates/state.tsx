@@ -160,11 +160,12 @@ const State: Template<TemplateRenderProps> = ({
   return (
     <>
       <PageLayout>
+        <Banner name={(c_addressRegionDisplayName ? c_addressRegionDisplayName : name)} />
         <div className="centered-container">
           <Breadcrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot} />
           <div className="section space-y-14 px-10">
               <div className="space-y-6">
-                <h1 className="text-center">Turtlehead Tacos Locations - {name}</h1>
+                <h1 className="text-3xl font-semibold text-center">Turtlehead Tacos Locations - {name}</h1>
                 <p className="text-2xl text-center">{description}</p>
               </div>
               <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
