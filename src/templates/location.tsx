@@ -57,6 +57,7 @@ export const config: TemplateConfig = {
       "geocodedCoordinate",
       "services",
       "photoGallery",
+      "dm_directoryParents"
     ],
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -147,6 +148,7 @@ const Location: Template<TemplateRenderProps> = ({
     services,
     description,
     siteDomain,
+    dm_directoryParents
   } = document;
 
   return (
@@ -154,7 +156,7 @@ const Location: Template<TemplateRenderProps> = ({
       <PageLayout>
         <Banner name={name} address={address} />
         <div className="centered-container">
-          <Breadcrumbs name={name} baseUrl={relativePrefixToRoot} />
+          <Breadcrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot} />
           <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
             <Details address={address} phone={mainPhone} services={services} />
             {hours && <Hours title={"Restaurant Hours"} hours={hours} />}

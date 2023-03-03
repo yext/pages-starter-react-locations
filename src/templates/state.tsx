@@ -161,7 +161,7 @@ const State: Template<TemplateRenderProps> = ({
     <>
       <PageLayout>
         <div className="centered-container">
-          <Breadcrumbs name={name} baseUrl={relativePrefixToRoot} />
+          <Breadcrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot} />
           <div className="section space-y-14 px-10">
               <div className="space-y-6">
                 <h1 className="text-center">Turtlehead Tacos Locations - {name}</h1>
