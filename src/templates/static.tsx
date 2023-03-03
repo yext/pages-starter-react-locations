@@ -17,7 +17,7 @@ import {
 import PageLayout from "../components/PageLayout";
 import Card from "../components/Card";
 import { ExternalImage } from "../types/ExternalImage";
-import Favicon from "../public/yext-favicon.ico";
+import Favicon from "../assets/images/yext-favicon.ico";
 
 /**
  * Not required depending on your use case.
@@ -113,6 +113,7 @@ const Static: Template<ExternalImageRenderData> = ({
   document,
   externalImage,
 }) => {
+
   return (
     <>
       <PageLayout>

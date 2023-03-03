@@ -1,0 +1,7 @@
+{
+  "$id": "ce_state",
+  "$schema": "https://schema.yext.com/config/km/entity-type/v2",
+  "description": "Use this entity type to add the states for which your locations are located.",
+  "displayName": "State",
+  "pluralDisplayName": "States"
+}

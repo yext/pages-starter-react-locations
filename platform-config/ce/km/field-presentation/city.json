@@ -1,0 +1,63 @@
+{
+  "$id": "ce_city",
+  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+  "entityType": "ce_city",
+  "displayName": "City",
+  "presentationEntries": [
+    {
+      "displayName": "Content",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Core Information",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "name",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "entityId",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "description"
+        },
+        {
+          "id": "richTextDescription"
+        },
+        {
+          "id": "slug"
+        },
+        {
+          "id": "c_addressRegionAbbreviation"
+        },
+        {
+          "id": "c_addressRegionDisplayName"
+        },
+        {
+          "id": "c_addressCountryAbbreviation"
+        },
+        {
+          "id": "c_addressCountryDisplayName"
+        }
+      ]
+    },
+    {
+      "displayName": "Other",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Internal Use Only",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "folder"
+        },
+        {
+          "id": "labels"
+        }
+      ]
+    }
+  ]
+}

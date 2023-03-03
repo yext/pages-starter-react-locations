@@ -1,23 +1,22 @@
 import * as React from "react";
 import { twMerge } from "tailwind-merge";
 
-type Cta = {
+type Props = {
   buttonText: string;
-  url: string;
+  url?: string;
   style?: string;
 };
 
-const Cta = (props: Cta) => {
-  const { buttonText, url, style } = props;
-
+const Cta = ({ buttonText, url, style } : Props) => {
   return (
     <a
+      key={buttonText}
       href={url}
       className={twMerge(
-        " py-4 px-6 text-base font-bold text-white rounded-lg",
+        "py-4 px-6 text-base font-bold rounded-lg hover:scale-[1.02] duration-250",
         style
       )}
-      target="_blank"
+      target=""
       rel="noopener noreferrer"
     >
       {buttonText}

@@ -30,17 +30,17 @@ import Hours from "../components/Hours";
 import PageLayout from "../components/PageLayout";
 import StaticMap from "../components/StaticMap";
 import EditTool from "../components/EditTool";
-
+import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input'
 
 /**
  * Required when Knowledge Graph data is used for a template.
  */
 export const config: TemplateConfig = {
   stream: {
-    $id: "location-stream",
+    $id: "state-stream",
     // Defines the scope of entities that qualify for this stream.
     filter: {
-      entityTypes: ["location"],
+      entityTypes: ["ce_state"],
     },
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
@@ -49,14 +49,15 @@ export const config: TemplateConfig = {
       "uid",
       "meta",
       "name",
-      "address",
-      "mainPhone",
       "description",
-      "hours",
       "slug",
-      "geocodedCoordinate",
-      "services",
-      "photoGallery",
+      "c_addressRegionDisplayName",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.meta",
+      "dm_directoryChildren.name",
+      "dm_directoryChildren.slug",
+      "dm_directoryChildren.dm_directoryChildrenCount"
     ],
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -72,11 +73,8 @@ export const config: TemplateConfig = {
  * NOTE: To preview production URLs locally, you must return document.slug from this function
  * and ensure that each entity has the slug field pouplated.
  */
-export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.slug
-    ? document.slug
-    : `${document.locale}/${document.address.region}/${document.address.city}/${document.address.line1
-    }-${document.id.toString()}`;
+export const getPath: GetPath<TemplateProps> = ({document}) => {
+  return `${document.slug.toString()}`;
 };
 
 /**
@@ -86,7 +84,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
  * a new deploy.
  */
 export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
-  return [`index-old/${document.locale}/${document.id.toString()}`];
+  return [`alias/${document.locale}/${document.id.toString()}`];
 };
 
 /**
@@ -105,13 +103,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
-      {
-        type: "meta",
-        attributes: {
-          name: "description",
-          content: document.description,
-        },
-      },
       {
         type: "link",
         attributes: {
@@ -133,33 +124,52 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Location: Template<TemplateRenderProps> = ({
+const State: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
   document,
 }) => {
   const {
     name,
-    address,
-    hours,
-    mainPhone,
-    geocodedCoordinate,
-    services,
     description,
+    slug,
     siteDomain,
+    c_addressRegionDisplayName,
+    dm_directoryParents,
+    dm_directoryChildren
   } = document;
+
+  let sortedChildren;
+  let childrenDivs;
+  if (dm_directoryChildren) {
+        sortedChildren = dm_directoryChildren.sort(function(a:any, b:any) {
+        a = a.name;
+        b = b.name;
+        return (a < b) ? -1 :(a > b) ? 1 : 0;
+    });
+        childrenDivs = dm_directoryChildren.map((entity:any) => (
+          <div>
+            <a key="uRL" href={relativePrefixToRoot + entity.slug} className="font-bold text-2xl text-blue-700 hover:underline">
+              {entity.name} ({entity.dm_directoryChildrenCount})
+            </a>
+          </div>
+    ));
+  }
+
 
   return (
     <>
       <PageLayout>
-        <Banner name={name} address={address} />
         <div className="centered-container">
           <Breadcrumbs name={name} baseUrl={relativePrefixToRoot} />
-          <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
-            <Details address={address} phone={mainPhone} services={services} />
-            {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
-            {description && <About name={name} description={description} />}
-            {geocodedCoordinate && <StaticMap latitude={geocodedCoordinate.latitude} longitude={geocodedCoordinate.longitude} />}
+          <div className="section space-y-14 px-10">
+              <div className="space-y-6">
+                <h1 className="text-center">Turtlehead Tacos Locations - {name}</h1>
+                <p className="text-2xl text-center">{description}</p>
+              </div>
+              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {childrenDivs}
+              </div>
           </div>
         </div>
       </PageLayout>
@@ -169,4 +179,4 @@ const Location: Template<TemplateRenderProps> = ({
   );
 };
 
-export default Location;
+export default State;

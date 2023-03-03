@@ -1,0 +1,7 @@
+{
+  "$id": "ce_root",
+  "$schema": "https://schema.yext.com/config/km/entity-type/v2",
+  "description": "Use this entity type to define the root of your directory tree. All entities in your tree should be related to an entity of this type.",
+  "displayName": "Root",
+  "pluralDisplayName": "Roots"
+}

@@ -1,22 +1,27 @@
 import * as React from "react";
 import { Address } from "@yext/pages/components";
+import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input';
+import List from "../components/List";
 
-const Details = (props: any) => {
-  const { address, phone } = props;
+type Props = {
+  address: any;
+  phone?: string;
+  services?: string[];
+};
+
+const Details = ({ address, phone, services} : Props) => {
 
   return (
     <>
-      <div className="grid">
-        <div className="text-xl font-semibold">Store Details</div>
-        <div className="grid grid-cols-2 py-4">
-          <div>
-            <Address address={address} />
-            <div className="pt-4">
-              <a href="#">{phone}</a>
-            </div>
-          </div>
+      <div className="border-b border-gray-300 bg-gray-100 shadow-md rounded-lg p-2 px-4 py-5 sm:p-6">
+        <div className="grid gap-y-3">
+          <div className="text-xl font-semibold">Store Details</div>
+          <Address address={address} lines={[['line1', 'line2'],[ 'city', ",", 'region']]} />
+          {phone && <a href={`tel:${phone}`} className="hover:underline">{formatPhoneNumber(phone)}</a>}
+          {services && <List list={services} />}
         </div>
       </div>
+
     </>
   );
 };
