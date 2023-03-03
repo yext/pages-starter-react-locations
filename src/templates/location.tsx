@@ -159,7 +159,7 @@ const Location: Template<TemplateRenderProps> = ({
       <PageLayout>
         <Banner name={name} address={address} />
         <div className="centered-container">
-          <Breadcrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot} />
+          {dm_directoryParents && <Breadcrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot} />}
           <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
             <Details address={address} phone={mainPhone} services={services} />
             {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
