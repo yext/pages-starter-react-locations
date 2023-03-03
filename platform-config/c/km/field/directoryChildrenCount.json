@@ -1,0 +1,14 @@
+{
+  "$id": "dm_directoryChildrenCount",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Directory Children Count",
+  "group": "NONE",
+  "localization": "OVERRIDABLE",
+  "type": {
+    "stringType": {
+      "stereotype": "SIMPLE",
+      "maxLength": 100000
+    }
+  },
+  "typeId": "string"
+}
