@@ -8,7 +8,7 @@ type Props = {
 };
 
 const navigation = [
-  { name: 'Home', href: '#' },
+  { name: 'Home', href: '/' },
   { name: 'About', href: '#' },
 ]
 

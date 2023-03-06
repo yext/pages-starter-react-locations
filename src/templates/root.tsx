@@ -47,7 +47,7 @@ export const config: TemplateConfig = {
  * Defines the path that the generated file will live at for production.
 */
 export const getPath: GetPath<TemplateProps> = ({document}) => {
-    return `index.html`;
+    return `root.html`;
  };
 
 /**
