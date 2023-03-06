@@ -18,6 +18,7 @@ import {
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
+  TransformProps,
 } from "@yext/pages";
 import { isProduction } from "@yext/pages/util";
 import "../index.css";
@@ -26,6 +27,8 @@ import About from "../components/About";
 import Banner from "../components/Banner";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Details from "../components/Details";
+import DirectoryStateGrid from "../components/DirectoryStateGrid";
+import { directoryStateGridFields } from "../components/DirectoryStateGrid";
 import Hours from "../components/Hours";
 import PageLayout from "../components/PageLayout";
 import StaticMap from "../components/StaticMap";
@@ -51,13 +54,7 @@ export const config: TemplateConfig = {
       "name",
       "description",
       "slug",
-      "c_addressRegionDisplayName",
-      "dm_directoryParents.name",
-      "dm_directoryParents.slug",
-      "dm_directoryParents.meta",
-      "dm_directoryChildren.name",
-      "dm_directoryChildren.slug",
-      "dm_directoryChildren.dm_directoryChildrenCount"
+      ...directoryStateGridFields,
     ],
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -116,6 +113,27 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 /**
+ * Required only when data needs to be retrieved from an external (non-Knowledge Graph) source.
+ * If the page is truly static this function is not necessary.
+ *
+ * This function will be run during generation and pass in directly as props to the default
+ * exported function.
+ */
+export const transformProps: TransformProps<any> = async (data) => {
+  const { dm_directoryParents, name } = data.document;
+
+  (dm_directoryParents || []).push({ name: name, slug: "" });
+
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      dm_directoryParents: dm_directoryParents,
+    },
+  };
+};
+
+/**
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct stream document defined by `config`.
  *
@@ -139,39 +157,19 @@ const State: Template<TemplateRenderProps> = ({
     dm_directoryChildren
   } = document;
 
-  let sortedChildren;
-  let childrenDivs;
-  if (dm_directoryChildren) {
-        sortedChildren = dm_directoryChildren.sort(function(a:any, b:any) {
-        a = a.name;
-        b = b.name;
-        return (a < b) ? -1 :(a > b) ? 1 : 0;
-    });
-        childrenDivs = dm_directoryChildren.map((entity:any) => (
-          <div>
-            <a key="uRL" href={relativePrefixToRoot + entity.slug} className="font-bold text-2xl text-blue-700 hover:underline">
-              {entity.name} ({entity.dm_directoryChildrenCount})
-            </a>
-          </div>
-    ));
-  }
-
 
   return (
     <>
       <PageLayout>
         <Banner name={(c_addressRegionDisplayName ? c_addressRegionDisplayName : name)} />
         <div className="centered-container">
-          <Breadcrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot} />
-          <div className="section space-y-14 px-10">
-              <div className="space-y-6">
-                <h1 className="text-3xl font-semibold text-center">Turtlehead Tacos Locations - {name}</h1>
-                <p className="text-2xl text-center">{description}</p>
-              </div>
-              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {childrenDivs}
-              </div>
-          </div>
+          <Breadcrumbs breadcrumbs={dm_directoryParents} baseUrl={relativePrefixToRoot} />
+          <DirectoryStateGrid
+            name={name}
+            description={description}
+            directoryChildren={dm_directoryChildren}
+            relativePrefixToRoot={relativePrefixToRoot} 
+          />
         </div>
       </PageLayout>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}

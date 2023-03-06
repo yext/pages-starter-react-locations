@@ -1,6 +1,7 @@
 import * as React from "react";
 
 export interface FooterProps {
+  _site?: any;
   logo?: string;
   paragraph?: string;
 }
@@ -88,7 +89,7 @@ const navigation = {
 
 
 const Footer = (props: FooterProps) => {
-  const { logo, paragraph } = props;
+  const { _site, logo, paragraph } = props;
 
   // const bgStyling = {
   //   backgroundColor: `${backgroundColor}`

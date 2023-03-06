@@ -18,6 +18,7 @@ import {
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
+  TransformProps,
 } from "@yext/pages";
 import { isProduction } from "@yext/pages/util";
 import "../index.css";
@@ -129,6 +130,27 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 /**
+ * Required only when data needs to be retrieved from an external (non-Knowledge Graph) source.
+ * If the page is truly static this function is not necessary.
+ *
+ * This function will be run during generation and pass in directly as props to the default
+ * exported function.
+ */
+export const transformProps: TransformProps<any> = async (data) => {
+  const { dm_directoryParents, name } = data.document;
+
+  (dm_directoryParents || []).push({ name: name, slug: "" });
+
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      dm_directoryParents: dm_directoryParents,
+    },
+  };
+};
+
+/**
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct stream document defined by `config`.
  *
@@ -159,7 +181,7 @@ const Location: Template<TemplateRenderProps> = ({
       <PageLayout>
         <Banner name={name} address={address} />
         <div className="centered-container">
-          {dm_directoryParents && <Breadcrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot} />}
+          <Breadcrumbs breadcrumbs={dm_directoryParents} baseUrl={relativePrefixToRoot} />
           <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
             <Details address={address} phone={mainPhone} services={services} />
             {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
