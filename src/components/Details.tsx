@@ -17,7 +17,7 @@ const Details = ({ address, phone, services} : Props) => {
         <div className="grid gap-y-3">
           <div className="text-xl font-semibold">Store Details</div>
           <Address address={address} lines={[['line1', 'line2'],[ 'city', ",", 'region']]} />
-          {phone && <a href={`tel:${phone}`} className="hover:underline">{formatPhoneNumber(phone)}</a>}
+          {phone && <span><a href={`tel:${phone}`} className="hover:underline">{formatPhoneNumber(phone)}</a></span>}
           {services && <List list={services} />}
         </div>
       </div>

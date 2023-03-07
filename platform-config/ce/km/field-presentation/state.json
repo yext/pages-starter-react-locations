@@ -5,20 +5,17 @@
   "displayName": "State",
   "presentationEntries": [
     {
-      "displayName": "Content",
-      "entryType": "DIVIDER"
-    },
-    {
-      "displayName": "Core Information",
+      "displayName": "Core",
       "entryType": "SECTION",
       "fields": [
         {
-          "id": "name",
-          "visibleOnAdd": true
+          "id": "name"
         },
         {
-          "id": "entityId",
-          "visibleOnAdd": true
+          "id": "entityId"
+        },
+        {
+          "id": "slug"
         },
         {
           "id": "description"
@@ -27,35 +24,34 @@
           "id": "richTextDescription"
         },
         {
-          "id": "slug"
+          "id": "c_addressCountryAbbreviation"
+        },
+        {
+          "id": "c_addressCountryDisplayName"
         },
         {
           "id": "c_addressRegionAbbreviation"
         },
         {
           "id": "c_addressRegionDisplayName"
-        },
-        {
-          "id": "c_addressCountryAbbreviation"
-        },
-        {
-          "id": "c_addressCountryDisplayName"
         }
       ]
     },
     {
-      "displayName": "Other",
-      "entryType": "DIVIDER"
-    },
-    {
-      "displayName": "Internal Use Only",
+      "displayName": "Directory Manager",
       "entryType": "SECTION",
       "fields": [
         {
-          "id": "folder"
+          "id": "dm_directoryParents"
         },
         {
-          "id": "labels"
+          "id": "dm_directoryChildren"
+        },
+        {
+          "id": "dm_directoryChildrenCount"
+        },
+        {
+          "id": "dm_directoryManagerId"
         }
       ]
     }

@@ -5,45 +5,32 @@
   "displayName": "Root",
   "presentationEntries": [
     {
-      "displayName": "Content",
-      "entryType": "DIVIDER"
-    },
-    {
-      "displayName": "Core Information",
+      "displayName": "Core",
       "entryType": "SECTION",
       "fields": [
         {
-          "id": "name",
-          "visibleOnAdd": true
+          "id": "name"
         },
         {
-          "id": "entityId",
-          "visibleOnAdd": true
+          "id": "entityId"
+        },
+        {
+          "id": "slug"
         },
         {
           "id": "description"
         },
         {
           "id": "richTextDescription"
-        },
-        {
-          "id": "slug"
         }
       ]
     },
     {
-      "displayName": "Other",
-      "entryType": "DIVIDER"
-    },
-    {
-      "displayName": "Internal Use Only",
+      "displayName": "Directory Manager",
       "entryType": "SECTION",
       "fields": [
         {
-          "id": "folder"
-        },
-        {
-          "id": "labels"
+          "id": "dm_directoryChildren"
         }
       ]
     }
