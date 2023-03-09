@@ -58,10 +58,6 @@ export const config: TemplateConfig = {
       "geocodedCoordinate",
       "services",
       "photoGallery",
-      "dm_directoryParents.name",
-      "dm_directoryParents.slug",
-      "dm_directoryParents.meta",
-      "dm_directoryParents.c_addressRegionDisplayName",    
     ],
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -175,6 +171,7 @@ const Location: Template<TemplateRenderProps> = ({
     siteDomain,
     dm_directoryParents
   } = document;
+  console.log(siteDomain);
 
   return (
     <>

@@ -16,17 +16,15 @@ import {
   GetHeadConfig,
   HeadConfig,
 } from "@yext/pages";
-import { ExternalImage } from "../types/ExternalImage";
-
 
 /**
  * Required when Knowledge Graph data is used for a template.
  */
 export const config: TemplateConfig = {
   stream: {
-    $id: "root",
+    $id: "root-stream",
     filter: {
-      entityIds: ["us-directory"],
+      entityTypes: ["ce_root"],
     },
     fields: [
       "id",
@@ -47,7 +45,7 @@ export const config: TemplateConfig = {
  * Defines the path that the generated file will live at for production.
 */
 export const getPath: GetPath<TemplateProps> = ({document}) => {
-    return `root.html`;
+  return document.slug;
  };
 
 /**
