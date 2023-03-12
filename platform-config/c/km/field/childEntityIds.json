@@ -7,7 +7,7 @@
   "type": {
     "listType": {
       "typeId": "string",
-      "maxLength": 1000,
+      "maxLength": 5000,
       "type": {
         "stringType": {
           "maxLength": 100000,

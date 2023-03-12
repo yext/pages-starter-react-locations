@@ -171,7 +171,8 @@ const Location: Template<TemplateRenderProps> = ({
     siteDomain,
     dm_directoryParents
   } = document;
-  console.log(siteDomain);
+
+  console.log(dm_directoryParents)
 
   return (
     <>
