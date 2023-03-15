@@ -42,12 +42,9 @@ import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-inp
 export const config: TemplateConfig = {
   stream: {
     $id: "city-stream",
-    // Defines the scope of entities that qualify for this stream.
     filter: {
       entityTypes: ["ce_city"],
     },
-    // Specifies the exact data that each generated document will contain. This data is passed in
-    // directly as props to the default exported function.
     fields: [
       "id",
       "uid",
@@ -57,7 +54,6 @@ export const config: TemplateConfig = {
       "slug",
       ...directoryCityGridFields,
     ],
-    // The entity language profiles that documents will be generated for.
     localization: {
       locales: ["en"],
       primary: false,

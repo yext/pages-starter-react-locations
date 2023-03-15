@@ -115,9 +115,7 @@
     "paymentOptions": [
       "AMERICANEXPRESS",
       "APPLEPAY",
-      "BITCOIN",
       "CASH",
-      "CHECK",
       "MASTERCARD",
       "PAYPAL",
       "VISA"

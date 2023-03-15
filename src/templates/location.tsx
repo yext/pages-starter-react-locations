@@ -29,6 +29,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import Details from "../components/Details";
 import Hours from "../components/Hours";
 import PageLayout from "../components/PageLayout";
+import PaymentOptions from "../components/PaymentOptions";
 import StaticMap from "../components/StaticMap";
 import EditTool from "../components/EditTool";
 
@@ -40,11 +41,12 @@ export const config: TemplateConfig = {
   stream: {
     $id: "location-stream",
     // Defines the scope of entities that qualify for this stream.
+    // You can use entityTypes, savedFilterIds, and/or entityIds
     filter: {
       entityTypes: ["location"],
     },
-    // Specifies the exact data that each generated document will contain. This data is passed in
-    // directly as props to the default exported function.
+    // Specifies the exact data that each generated document will contain. 
+    // This data is passed in directly as props to the default exported function.
     fields: [
       "id",
       "uid",
@@ -58,12 +60,20 @@ export const config: TemplateConfig = {
       "geocodedCoordinate",
       "services",
       "photoGallery",
+      "paymentOptions",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.meta",
+      "dm_directoryParents.c_addressRegionDisplayName",
     ],
     // The entity language profiles that documents will be generated for.
     localization: {
       locales: ["en"],
       primary: false,
     },
+    transform: {
+      replaceOptionValuesWithDisplayNames: ["paymentOptions"],
+    }
   },
 };
 
@@ -169,10 +179,8 @@ const Location: Template<TemplateRenderProps> = ({
     services,
     description,
     siteDomain,
-    dm_directoryParents
+    dm_directoryParents,
   } = document;
-
-  console.log(dm_directoryParents)
 
   return (
     <>
@@ -184,7 +192,6 @@ const Location: Template<TemplateRenderProps> = ({
             <Details address={address} phone={mainPhone} services={services} />
             {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
             {description && <About name={name} description={description} />}
-            {geocodedCoordinate && <StaticMap latitude={geocodedCoordinate.latitude} longitude={geocodedCoordinate.longitude} />}
           </div>
         </div>
       </PageLayout>
