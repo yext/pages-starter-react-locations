@@ -8,6 +8,7 @@
  * template for every eligible entity in your Knowledge Graph.
  */
 
+import * as React from "react";
 import {
   GetHeadConfig,
   GetPath,
@@ -17,27 +18,34 @@ import {
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
+  TransformProps,
 } from "@yext/pages";
-import * as React from "react";
+import { isProduction } from "@yext/pages/util";
+import "../index.css";
+import Favicon from "../assets/images/yext-favicon.ico";
+import About from "../components/About";
 import Banner from "../components/Banner";
+import Breadcrumbs from "../components/Breadcrumbs";
 import Details from "../components/Details";
 import Hours from "../components/Hours";
-import List from "../components/List";
 import PageLayout from "../components/PageLayout";
 import StaticMap from "../components/StaticMap";
-import Favicon from "../public/yext-favicon.ico";
-import "../index.css";
 import EditTool from "../components/EditTool";
-import { isProduction } from "@yext/pages/util";
+
 
 /**
  * Required when Knowledge Graph data is used for a template.
  */
 export const config: TemplateConfig = {
   stream: {
-    $id: "my-stream-id-1",
-    // Specifies the exact data that each generated document will contain. This data is passed in
-    // directly as props to the default exported function.
+    $id: "location-stream",
+    // Defines the scope of entities that qualify for this stream.
+    // You can use entityTypes, savedFilterIds, and/or entityIds
+    filter: {
+      entityTypes: ["location"],
+    },
+    // Specifies the exact data that each generated document will contain. 
+    // This data is passed in directly as props to the default exported function.
     fields: [
       "id",
       "uid",
@@ -50,16 +58,20 @@ export const config: TemplateConfig = {
       "slug",
       "geocodedCoordinate",
       "services",
+      "photoGallery",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.meta",
+      "dm_directoryParents.c_addressRegionDisplayName",
     ],
-    // Defines the scope of entities that qualify for this stream.
-    filter: {
-      entityTypes: ["location"],
-    },
     // The entity language profiles that documents will be generated for.
     localization: {
       locales: ["en"],
       primary: false,
     },
+    transform: {
+      replaceOptionValuesWithDisplayNames: ["paymentOptions"],
+    }
   },
 };
 
@@ -83,7 +95,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
  * a new deploy.
  */
 export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
-  return [`index-old/${document.id.toString()}`];
+  return [`index-old/${document.locale}/${document.id.toString()}`];
 };
 
 /**
@@ -122,6 +134,27 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 /**
+ * Required only when data needs to be retrieved from an external (non-Knowledge Graph) source.
+ * If the page is truly static this function is not necessary.
+ *
+ * This function will be run during generation and pass in directly as props to the default
+ * exported function.
+ */
+export const transformProps: TransformProps<any> = async (data) => {
+  const { dm_directoryParents, name } = data.document;
+
+  (dm_directoryParents || []).push({ name: name, slug: "" });
+
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      dm_directoryParents: dm_directoryParents,
+    },
+  };
+};
+
+/**
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct stream document defined by `config`.
  *
@@ -144,6 +177,8 @@ const Location: Template<TemplateRenderProps> = ({
     services,
     description,
     siteDomain,
+    paymentOptions,
+    dm_directoryParents,
   } = document;
 
   return (
@@ -151,26 +186,11 @@ const Location: Template<TemplateRenderProps> = ({
       <PageLayout>
         <Banner name={name} address={address} />
         <div className="centered-container">
-          <div className="section">
-            <div className="grid grid-cols-2 gap-x-10 gap-y-10">
-              <div className="bg-gray-100 p-2">
-                <Details address={address} phone={mainPhone}></Details>
-                {services && <List list={services}></List>}
-              </div>
-              <div className="bg-gray-100 p-2">
-                {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
-              </div>
-              {geocodedCoordinate && (
-                <StaticMap
-                  latitude={geocodedCoordinate.latitude}
-                  longitude={geocodedCoordinate.longitude}
-                ></StaticMap>
-              )}
-              <div className="bg-gray-100 p-2">
-                <div className="text-xl font-semibold">{`About ${name}`}</div>
-                <p className="pt-4">{description}</p>
-              </div>
-            </div>
+          <Breadcrumbs breadcrumbs={dm_directoryParents} baseUrl={relativePrefixToRoot} />
+          <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
+            <Details address={address} phone={mainPhone} services={services} />
+            {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
+            {description && <About name={name} description={description} />}
           </div>
         </div>
       </PageLayout>

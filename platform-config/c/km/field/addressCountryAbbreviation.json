@@ -1,0 +1,13 @@
+{
+  "$id": "c_addressCountryAbbreviation",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Address Country Abbreviation",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "stringType": {
+      "stereotype": "SIMPLE"
+    }
+  },
+  "typeId": "string"
+}

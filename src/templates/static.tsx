@@ -17,7 +17,7 @@ import {
 import PageLayout from "../components/PageLayout";
 import Card from "../components/Card";
 import { ExternalImage } from "../types/ExternalImage";
-import Favicon from "../public/yext-favicon.ico";
+import Favicon from "../assets/images/yext-favicon.ico";
 
 /**
  * Not required depending on your use case.
@@ -27,6 +27,17 @@ export const config: TemplateConfig = {
   // Use this when you need to override the feature name.
   name: "turtlehead-tacos",
 };
+
+/**
+ * Defines the path that the generated file will live at for production.
+ *
+ * NOTE: This currently has no impact on the local dev path. Local dev urls currently
+ * take on the form: featureName/entityId
+ */
+export const getPath: GetPath<ExternalImageData> = () => {
+    return `index.html`;
+};
+
 
 /**
  * A local type for transformProps. This could live in src/types but it's generally
@@ -52,16 +63,6 @@ export const transformProps: TransformProps<ExternalImageData> = async (
     res.json()
   )) as ExternalImage;
   return { ...data, externalImage };
-};
-
-/**
- * Defines the path that the generated file will live at for production.
- *
- * NOTE: This currently has no impact on the local dev path. Local dev urls currently
- * take on the form: featureName/entityId
- */
-export const getPath: GetPath<ExternalImageData> = () => {
-  return `index.html`;
 };
 
 type ExternalImageRenderData = TemplateRenderProps & {
