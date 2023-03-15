@@ -29,7 +29,6 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import Details from "../components/Details";
 import Hours from "../components/Hours";
 import PageLayout from "../components/PageLayout";
-import PaymentOptions from "../components/PaymentOptions";
 import StaticMap from "../components/StaticMap";
 import EditTool from "../components/EditTool";
 
@@ -60,7 +59,6 @@ export const config: TemplateConfig = {
       "geocodedCoordinate",
       "services",
       "photoGallery",
-      "paymentOptions",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
       "dm_directoryParents.meta",
@@ -179,6 +177,7 @@ const Location: Template<TemplateRenderProps> = ({
     services,
     description,
     siteDomain,
+    paymentOptions,
     dm_directoryParents,
   } = document;
 

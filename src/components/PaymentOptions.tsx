@@ -2,7 +2,7 @@ import * as React from "react";
 
 type Props = {
   name?: string;
-  list?: string[];
+  list?: Array<string>;
 };
 
 const PaymentOptions = ({ list } : Props) => {
