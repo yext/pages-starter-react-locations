@@ -1,5 +1,5 @@
 /**
- * This is necessary to prevent IntelliSense from highlighting
+ * Trigger Rebuild: This is necessary to prevent IntelliSense from highlighting
  * the usages of import.meta.env in red due to the following issue,
  * which it looks like will be resolved in Vite v3.0.
  *
