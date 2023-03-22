@@ -6,6 +6,9 @@ module.exports = {
         orange: "#ff9500",
         "dark-orange": "#db8000",
       },
+      scale: {
+        '1.02': '1.02'
+      }
     },
   },
   plugins: [],

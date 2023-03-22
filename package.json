@@ -21,9 +21,12 @@
     "node": ">=17"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.12",
     "@heroicons/react": "^2.0.14",
+    "classnames": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-phone-number-input": "^3.2.19",
     "tailwind-merge": "^1.6.2"
   },
   "devDependencies": {
@@ -32,7 +35,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "@vitejs/plugin-react": "^2.1.0",
-    "@yext/pages": "1.0.0-beta.16",
+    "@yext/pages": "1.0.0-beta.20",
     "autoprefixer": "^10.4.8",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.7",

@@ -1,0 +1,1249 @@
+{
+  "$id": "ce_location",
+  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+  "entityType": "location",
+  "displayName": "Location",
+  "presentationEntries": [
+    {
+      "displayName": "Content",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Contenuti"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Innehåll"
+        },
+        {
+          "localeCode": "tr",
+          "value": "İçerik"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Contenu"
+        },
+        {
+          "localeCode": "ja",
+          "value": "コンテンツ"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Obsah"
+        },
+        {
+          "localeCode": "de",
+          "value": "Inhalt"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Tartalom"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Sisältö"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Obsah"
+        },
+        {
+          "localeCode": "es",
+          "value": "Contenido"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Inhoud"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Conteúdo"
+        }
+      ],
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Core Information",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Informazioni essenziali"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Huvudinformation"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Temel Bilgiler"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Informations principales"
+        },
+        {
+          "localeCode": "ja",
+          "value": "基本情報"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Klíčové informace"
+        },
+        {
+          "localeCode": "de",
+          "value": "Grundlegende Informationen"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Alapadatok"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Keskeiset tiedot"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Základné informácie"
+        },
+        {
+          "localeCode": "es",
+          "value": "Información principal"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Kerninformatie"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Informação principal"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "name",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "categories",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "address",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "addressHidden"
+        },
+        {
+          "id": "mainPhone",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "entityId",
+          "visibleOnAdd": true
+        }
+      ]
+    },
+    {
+      "displayName": "Business Details",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Dettagli azienda"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Företagsinformation"
+        },
+        {
+          "localeCode": "tr",
+          "value": "İşletme Ayrıntıları"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Détails de l\u0027entreprise"
+        },
+        {
+          "localeCode": "ja",
+          "value": "ビジネスの詳細"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Podrobnosti o podniku"
+        },
+        {
+          "localeCode": "de",
+          "value": "Unternehmensdetails"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Vállalkozás részletei"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Yrityksen tiedot"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Podrobnosti o podniku"
+        },
+        {
+          "localeCode": "es",
+          "value": "Detalles del negocio"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Bedrijfsgegevens"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Detalhes da empresa"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "description"
+        },
+        {
+          "id": "hours"
+        },
+        {
+          "id": "additionalHoursText"
+        },
+        {
+          "id": "phoneticName"
+        },
+        {
+          "id": "paymentOptions"
+        },
+        {
+          "id": "priceRange"
+        },
+        {
+          "id": "geomodifier"
+        },
+        {
+          "id": "pickupAndDeliveryServices"
+        },
+        {
+          "id": "neighborhood"
+        },
+        {
+          "id": "blackOwnedBusiness"
+        },
+        {
+          "id": "what3WordsAddress"
+        },
+        {
+          "id": "covidMessaging"
+        },
+        {
+          "id": "proofOfVaccinationRequired"
+        },
+        {
+          "id": "fullyVaccinatedStaff"
+        },
+        {
+          "id": "featuredMessage"
+        },
+        {
+          "id": "c_featuredFAQs"
+        }
+      ]
+    },
+    {
+      "displayName": "Contact, Websites, and Apps",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Contatti, siti web e app"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Kontakt, webbplatser och appar"
+        },
+        {
+          "localeCode": "tr",
+          "value": "İletişim, Web Siteleri ve Uygulamalar"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Contacts, sites Internet et applications"
+        },
+        {
+          "localeCode": "ja",
+          "value": "連絡先、ウェブサイト、アプリ"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Kontakt, webové stránky a aplikace"
+        },
+        {
+          "localeCode": "de",
+          "value": "Kontakt, Websites und Apps"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Kapcsolat, webhelyek és alkalmazások"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Yhteystiedot, verkkosivustot ja sovellukset"
+        },
+        {
+          "localeCode": "en",
+          "value": "Contact, Websites and Apps"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Kontakt, webové stránky a aplikácie"
+        },
+        {
+          "localeCode": "es",
+          "value": "Contacto, sitios web y apps"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Contact, websites en apps"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Contacto, websites e aplicações"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "emails"
+        },
+        {
+          "id": "menuUrl"
+        },
+        {
+          "id": "orderUrl"
+        },
+        {
+          "id": "reservationUrl"
+        },
+        {
+          "id": "websiteUrl"
+        },
+        {
+          "id": "localPhone"
+        },
+        {
+          "id": "alternatePhone"
+        },
+        {
+          "id": "tollFreePhone"
+        },
+        {
+          "id": "mobilePhone"
+        },
+        {
+          "id": "fax"
+        },
+        {
+          "id": "ttyPhone"
+        },
+        {
+          "id": "iosAppUrl"
+        },
+        {
+          "id": "androidAppUrl"
+        },
+        {
+          "id": "covid19InformationUrl"
+        }
+      ]
+    },
+    {
+      "displayName": "Media",
+      "displayNameTranslations": [
+        {
+          "localeCode": "tr",
+          "value": "Medya"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Médias"
+        },
+        {
+          "localeCode": "ja",
+          "value": "メディア"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Média"
+        },
+        {
+          "localeCode": "de",
+          "value": "Medium"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Média"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Médiá"
+        },
+        {
+          "localeCode": "es",
+          "value": "Multimedia"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Meios de comunicação"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "logo"
+        },
+        {
+          "id": "photoGallery"
+        },
+        {
+          "id": "videos"
+        }
+      ]
+    },
+    {
+      "defaultCollapsed": true,
+      "displayName": "Social Media",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Social media"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Social media"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Sosyal Medya"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Réseaux sociaux"
+        },
+        {
+          "localeCode": "ja",
+          "value": "ソーシャルメディア"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Sociální sítě"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Közösségi média"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Sosiaalinen media"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Sociálne siete"
+        },
+        {
+          "localeCode": "es",
+          "value": "Redes sociales"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Sociale Media"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Redes sociais"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "twitterHandle"
+        },
+        {
+          "id": "facebookPageUrl"
+        },
+        {
+          "id": "instagramHandle"
+        },
+        {
+          "id": "linkedInUrl"
+        }
+      ]
+    },
+    {
+      "defaultCollapsed": true,
+      "displayName": "Additional Attributes",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Attributi aggiuntivi"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Tillkommande attribut"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Ek Özellikler"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Caractéristiques supplémentaires"
+        },
+        {
+          "localeCode": "ja",
+          "value": "追加属性"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Další atributy"
+        },
+        {
+          "localeCode": "de",
+          "value": "Weitere Attribute"
+        },
+        {
+          "localeCode": "hu",
+          "value": "További attribútumok"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Lisämääreet"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Dodatočné vlastnosti"
+        },
+        {
+          "localeCode": "es",
+          "value": "Atributos adicionales"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Aanvullende eigenschappen"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Atributos adicionais"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "yearEstablished"
+        },
+        {
+          "id": "products"
+        },
+        {
+          "id": "services"
+        },
+        {
+          "id": "specialities"
+        },
+        {
+          "id": "associations"
+        },
+        {
+          "id": "brands"
+        },
+        {
+          "id": "languages"
+        },
+        {
+          "id": "keywords"
+        }
+      ]
+    },
+    {
+      "displayName": "Landing Pages",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Landing Page"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Açılış Sayfaları"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Landing pages"
+        },
+        {
+          "localeCode": "ja",
+          "value": "ランディングページ"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Úvodní stránky"
+        },
+        {
+          "localeCode": "de",
+          "value": "Landingpages"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Kezdőlapok"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Landingspagina\u0027s"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Páginas iniciais"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "landingPageUrl"
+        }
+      ]
+    },
+    {
+      "displayName": "Additional Hours",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Orari aggiuntivi"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Ytterligare öppettider"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Ek Saatler"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Horaires supplémentaires"
+        },
+        {
+          "localeCode": "ja",
+          "value": "追加営業時間"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Další provozní doba"
+        },
+        {
+          "localeCode": "de",
+          "value": "Zusätzliche Geschäftszeiten"
+        },
+        {
+          "localeCode": "hu",
+          "value": "További órák"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Lisäaukioloajat"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Doplnkové hodiny"
+        },
+        {
+          "localeCode": "es",
+          "value": "Horas adicionales"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Extra openingstijden"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Horas adicionais"
+        }
+      ],
+      "entryType": "DIVIDER"
+    },
+    {
+      "defaultCollapsed": true,
+      "displayName": "Accessibility",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Accessibilità"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Tillgänglighet"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Ulaşılabilirlik"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Accessibilité"
+        },
+        {
+          "localeCode": "ja",
+          "value": "アクセシビリティ"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Přístupnost"
+        },
+        {
+          "localeCode": "de",
+          "value": "Barrierefreiheit"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Akadálymentesítés"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Esteettömyys"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Prístupnosť"
+        },
+        {
+          "localeCode": "es",
+          "value": "Accesibilidad"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Toegankelijkheid"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Acessibilidade"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "onlineServiceHours"
+        },
+        {
+          "id": "seniorHours"
+        },
+        {
+          "id": "accessHours"
+        }
+      ]
+    },
+    {
+      "defaultCollapsed": true,
+      "displayName": "Order Pickup",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Ritiro dell\u0027ordine"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Avhämtning av beställning"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Sipariş Alma"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Retrait des commandes"
+        },
+        {
+          "localeCode": "ja",
+          "value": "注文のピックアップ"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Vyzvednutí objednávky"
+        },
+        {
+          "localeCode": "de",
+          "value": "Abholung der Bestellung"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Rendelés átvétele"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Tilauksen nouto"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Vyzdvihnutie po objednaní"
+        },
+        {
+          "localeCode": "es",
+          "value": "Recogida de pedidos"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Bestelling afhalen"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Recolha de pedido"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "pickupHours"
+        },
+        {
+          "id": "driveThroughHours"
+        }
+      ]
+    },
+    {
+      "defaultCollapsed": true,
+      "displayName": "Food and Drink",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Cibo e bevande"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Mat och dryck"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Yiyecek ve içecek"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Plats et boissons"
+        },
+        {
+          "localeCode": "ja",
+          "value": "食事とドリンク"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Jídlo a pití"
+        },
+        {
+          "localeCode": "de",
+          "value": "Speisen und Getränke"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Étel és ital"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Ruoka ja juoma"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Jedlo a pitie"
+        },
+        {
+          "localeCode": "es",
+          "value": "Comida y bebida"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Eten en drinken"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Comida e bebida"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "kitchenHours"
+        },
+        {
+          "id": "brunchHours"
+        },
+        {
+          "id": "happyHours"
+        },
+        {
+          "id": "dineInHours"
+        }
+      ]
+    },
+    {
+      "defaultCollapsed": true,
+      "displayName": "Takeout and Delivery",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Asporto e consegna"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Avhämtning och leverans"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Paketleme ve Teslimat"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Vente à emporter et livraison"
+        },
+        {
+          "localeCode": "ja",
+          "value": "テイクアウトと配達"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Vyzvednutí a donáška"
+        },
+        {
+          "localeCode": "de",
+          "value": "Essen zum Mitnehmen und Lieferung"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Elvitel és kiszállítás"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Nouto ja toimitus"
+        },
+        {
+          "localeCode": "en",
+          "value": "Takeaway and Delivery"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Vyzdvihnutie a donáška"
+        },
+        {
+          "localeCode": "es",
+          "value": "Comida para llevar y entrega a domicilio"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Afhalen en bezorgen"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Takeaway e entrega"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "takeoutHours"
+        },
+        {
+          "id": "deliveryHours"
+        }
+      ]
+    },
+    {
+      "displayName": "Publisher Specific",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Specifico per publisher"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Utgivarspecifik"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Yayıncıya Özel"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Spécifique à l\u0027annuaire"
+        },
+        {
+          "localeCode": "ja",
+          "value": "パブリッシャー固有"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Pro konkrétní vydavatele"
+        },
+        {
+          "localeCode": "de",
+          "value": "Publisher-spezifisch"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Tudakozóspecifikus"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Julkaisusivustokohtainen"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Vzťahujúce sa na zverejňovateľa"
+        },
+        {
+          "localeCode": "es",
+          "value": "Específico del medio digital"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Specifiek voor uitgever"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Específicas do editor"
+        }
+      ],
+      "entryType": "SECTION"
+    },
+    {
+      "displayName": "Other",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Altro"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Annan"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Diğer"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Autre"
+        },
+        {
+          "localeCode": "ja",
+          "value": "その他"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Jiné"
+        },
+        {
+          "localeCode": "de",
+          "value": "Sonstige"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Egyéb"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Muu"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Iné"
+        },
+        {
+          "localeCode": "es",
+          "value": "Otro"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Overig"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Outro"
+        }
+      ],
+      "entryType": "DIVIDER"
+    },
+    {
+      "defaultCollapsed": true,
+      "displayName": "Internal Use Only",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Solo per uso interno"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Endast för internt bruk"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Yalnızca Dahili Kullanım"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Usage interne uniquement"
+        },
+        {
+          "localeCode": "ja",
+          "value": "内部使用項目"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Pouze k interním účelům"
+        },
+        {
+          "localeCode": "de",
+          "value": "Nur zur internen Verwendung"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Csak belső használatra"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Vain sisäiseen käyttöön"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Len pre interné potreby"
+        },
+        {
+          "localeCode": "es",
+          "value": "Solo para uso interno"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Alleen voor intern gebruik"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Apenas para utilização interna"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "closed"
+        },
+        {
+          "id": "folder"
+        },
+        {
+          "id": "labels"
+        },
+        {
+          "id": "isoRegionCode"
+        },
+        {
+          "id": "deliverListingsWithoutGeocode"
+        },
+        {
+          "id": "timezone"
+        },
+        {
+          "id": "slug"
+        }
+      ]
+    },
+    {
+      "displayName": "Settings",
+      "displayNameTranslations": [
+        {
+          "localeCode": "it",
+          "value": "Impostazioni"
+        },
+        {
+          "localeCode": "sv",
+          "value": "Inställningar"
+        },
+        {
+          "localeCode": "tr",
+          "value": "Ayarlar"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Paramètres"
+        },
+        {
+          "localeCode": "ja",
+          "value": "設定"
+        },
+        {
+          "localeCode": "cs",
+          "value": "Nastavení"
+        },
+        {
+          "localeCode": "de",
+          "value": "Einstellungen"
+        },
+        {
+          "localeCode": "hu",
+          "value": "Beállítások"
+        },
+        {
+          "localeCode": "fi",
+          "value": "Asetukset"
+        },
+        {
+          "localeCode": "sk",
+          "value": "Nastavenia"
+        },
+        {
+          "localeCode": "es",
+          "value": "Ajustes"
+        },
+        {
+          "localeCode": "nl",
+          "value": "Instellingen"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Definições"
+        }
+      ],
+      "entryType": "DIVIDER"
+    },
+    {
+      "defaultCollapsed": true,
+      "displayName": "Knowledge Assistant",
+      "displayNameTranslations": [
+        {
+          "localeCode": "tr",
+          "value": "Bilgi Asistanı"
+        },
+        {
+          "localeCode": "fr",
+          "value": "Assistant Knowledge"
+        },
+        {
+          "localeCode": "ja",
+          "value": "ナレッジアシスタント"
+        },
+        {
+          "localeCode": "pt",
+          "value": "Assistente de informação"
+        }
+      ],
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "primaryConversationContact"
+        },
+        {
+          "id": "holidayHoursConversationEnabled"
+        },
+        {
+          "id": "reviewResponseConversationEnabled"
+        },
+        {
+          "id": "nudgeEnabled"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "artifactStructure": {
+    "assets": [
+      {
+        "root": "dist",
+        "pattern": "assets/**/*"
+      }
+    ],
+    "features": "sites-config/features.json",
+    "plugins": [
+      {
+        "pluginName": "Generator",
+        "sourceFiles": [
+          {
+            "root": "dist/plugin",
+            "pattern": "*{.ts,.json}"
+          },
+          {
+            "root": "dist",
+            "pattern": "assets/{server,static,renderer}/**/*{.js,.css}"
+          }
+        ],
+        "event": "ON_PAGE_GENERATE",
+        "functionName": "Generate"
+      }
+    ]
+  },
+  "dependencies": {
+    "installDepsCmd": "npm install",
+    "requiredFiles": ["package.json", "package-lock.json", ".npmrc"]
+  },
+  "buildArtifacts": {
+    "buildCmd": "npm run build:local"
+  },
+  "livePreview": {
+    "serveSetupCmd": ":"
+  }
+}
