@@ -7,7 +7,8 @@
     "description",
     "richTextDescription",
     "slug",
-    "dm_directoryChildren"
+    "dm_directoryChildren",
+    "dm_childEntityIds"
   ],
   "required": []
 }
