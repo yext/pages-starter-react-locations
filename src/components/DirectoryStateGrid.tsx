@@ -26,7 +26,7 @@ const DirectoryStateGrid = ({
   let sortedChildren;
   let childrenDivs;
   if (directoryChildren) {
-    sortedChildren = directoryChildren.sort(sortByName);
+    sortedChildren = directoryChildren?.sort(sortByName) || [];
     childrenDivs = sortedChildren.map((child: DirectoryChild) => (
       <div key={child.slug}>
         <a

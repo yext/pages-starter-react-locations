@@ -13,7 +13,8 @@
     "slug",
     "dm_directoryChildren",
     "dm_directoryManagerId",
-    "dm_directoryParents"
+    "dm_directoryParents",
+    "dm_childEntityIds"
   ],
   "required": []
 }

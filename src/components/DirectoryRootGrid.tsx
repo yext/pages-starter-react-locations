@@ -22,7 +22,7 @@ const DirectoryRootGrid = ({
   directoryChildren,
   relativePrefixToRoot,
 }: DirectoryRootProps) => {
-  const sortedChildren = directoryChildren.sort(sortChildrenByName);
+  const sortedChildren = directoryChildren?.sort(sortChildrenByName) || [];
   const childrenDivs = sortedChildren.map((child: DirectoryChild) => (
     <div key={child.slug}>
       <a
