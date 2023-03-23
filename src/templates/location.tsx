@@ -5,7 +5,7 @@
  * is generated for every corresponding (based on the filter) stream document.
  *
  * Another way to think about it is that a page will be generated using this
- * template for every eligible entity in your Knowledge Graph
+ * template for every eligible entity in your Knowledge Graph.
  */
 
 import * as React from "react";
