@@ -28,10 +28,8 @@ import Banner from "../components/Banner";
 import Details from "../components/Details";
 import Hours from "../components/Hours";
 import PageLayout from "../components/PageLayout";
-import StaticMap from "../components/StaticMap";
 import EditTool from "../components/EditTool";
 import BreadCrumbs from "../components/Breadcrumbs";
-
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -44,7 +42,7 @@ export const config: TemplateConfig = {
     filter: {
       entityTypes: ["location"],
     },
-    // Specifies the exact data that each generated document will contain. 
+    // Specifies the exact data that each generated document will contain.
     // This data is passed in directly as props to the default exported function.
     fields: [
       "id",
@@ -71,7 +69,7 @@ export const config: TemplateConfig = {
     },
     transform: {
       replaceOptionValuesWithDisplayNames: ["paymentOptions"],
-    }
+    },
   },
 };
 
@@ -84,8 +82,9 @@ export const config: TemplateConfig = {
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   return document.slug
     ? document.slug
-    : `${document.locale}/${document.address.region}/${document.address.city}/${document.address.line1
-    }-${document.id.toString()}`;
+    : `${document.locale}/${document.address.region}/${document.address.city}/${
+        document.address.line1
+      }-${document.id.toString()}`;
 };
 
 /**
@@ -181,7 +180,10 @@ const Location: Template<TemplateRenderProps> = ({
       <PageLayout>
         <Banner name={name} address={address} />
         <div className="centered-container">
-          <BreadCrumbs breadcrumbs={dm_directoryParents} baseUrl={relativePrefixToRoot} />
+          <BreadCrumbs
+            breadcrumbs={dm_directoryParents}
+            baseUrl={relativePrefixToRoot}
+          />
           <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
             <Details address={address} phone={mainPhone} services={services} />
             {hours && <Hours title={"Restaurant Hours"} hours={hours} />}

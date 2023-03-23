@@ -3,9 +3,9 @@ import * as React from "react";
 export interface AboutProps {
   name?: string;
   description?: string;
-};
+}
 
-const About = ({ name, description }: Props) => {
+const About = ({ name, description }: AboutProps) => {
   const about = name === null ? "About" : `About ${name}`;
   return (
     <>

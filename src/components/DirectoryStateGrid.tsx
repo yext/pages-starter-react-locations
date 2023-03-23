@@ -2,7 +2,6 @@ import * as React from "react";
 import { DirectoryParent } from "../types/DirectoryParent";
 import { DirectoryChild } from "../types/DirectoryChild";
 
-
 interface DirectoryGridProps {
   name?: string;
   description?: string;
@@ -11,17 +10,30 @@ interface DirectoryGridProps {
   relativePrefixToRoot?: string;
 }
 
+const sortByName = (
+  a: DirectoryParent | DirectoryChild,
+  b: DirectoryParent | DirectoryChild
+) => {
+  return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+};
 
-const DirectoryStateGrid = ({ name, description, directoryChildren, relativePrefixToRoot }: DirectoryGridProps) => {
+const DirectoryStateGrid = ({
+  name,
+  description,
+  directoryChildren,
+  relativePrefixToRoot,
+}: DirectoryGridProps) => {
   let sortedChildren;
   let childrenDivs;
   if (directoryChildren) {
-    sortedChildren = directoryChildren.sort(function (a: DirectoryChild, b: DirectoryChild) {
-      return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0;
-    });
-    childrenDivs = directoryChildren.map((child: DirectoryChild) => (
+    sortedChildren = directoryChildren.sort(sortByName);
+    childrenDivs = sortedChildren.map((child: DirectoryChild) => (
       <div key={child.slug}>
-        <a key="uRL" href={relativePrefixToRoot + child.slug} className="font-bold text-2xl text-blue-700 hover:underline">
+        <a
+          key="uRL"
+          href={relativePrefixToRoot + child.slug}
+          className="font-bold text-2xl text-blue-700 hover:underline"
+        >
           {child.name} ({child.dm_childEntityIds?.length || 0})
         </a>
       </div>
@@ -31,7 +43,9 @@ const DirectoryStateGrid = ({ name, description, directoryChildren, relativePref
     <>
       <div className="section space-y-14 px-10">
         <div className="space-y-6">
-          {name && <h1 className="text-3xl font-semibold text-center">{name}</h1>}
+          {name && (
+            <h1 className="text-3xl font-semibold text-center">{name}</h1>
+          )}
           {description && <p className="text-2xl text-center">{description}</p>}
         </div>
         {directoryChildren && (

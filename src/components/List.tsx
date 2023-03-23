@@ -1,14 +1,15 @@
 import * as React from "react";
 
-type Props = {
+export interface ListProps {
   name?: string;
   list?: string[];
-};
+}
 
-const List = ({ name, list } : Props) => {
-
+const List = ({ name, list }: ListProps) => {
   let listItems;
-  if (list) { listItems = list.map((item) => <li key={item}>{item}</li>); }
+  if (list) {
+    listItems = list.map((item) => <li key={item}>{item}</li>);
+  }
 
   return (
     <>

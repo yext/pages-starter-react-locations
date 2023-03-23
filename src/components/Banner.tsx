@@ -5,7 +5,7 @@ import Cta from "./Cta";
 export interface BannerProps {
   name?: string;
   address?: Address;
-};
+}
 
 const renderPrettyAddress = (address?: Address) => {
   return (

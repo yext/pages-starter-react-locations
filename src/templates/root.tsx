@@ -29,7 +29,7 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.name",
       "dm_directoryChildren.slug",
       "dm_directoryChildren.c_addressRegionDisplayName",
-      "dm_directoryChildren.dm_childEntityIds"
+      "dm_directoryChildren.dm_childEntityIds",
     ],
     localization: {
       locales: ["en"],
@@ -39,10 +39,12 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.slug
+  return document.slug;
 };
 
-export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = (): HeadConfig => {
+export const getHeadConfig: GetHeadConfig<
+  TemplateRenderProps
+> = (): HeadConfig => {
   return {
     title: "Home Page",
     charset: "UTF-8",
@@ -51,29 +53,27 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = (): HeadConfig 
       {
         type: "meta",
         attributes: {
-          description: "This is a description for the Turtlehead Tacos directory home page.",
+          description:
+            "This is a description for the Turtlehead Tacos directory home page.",
         },
       },
       {
         type: "link",
         attributes: {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: Favicon
+          rel: "icon",
+          type: "image/x-icon",
+          href: Favicon,
         },
-      }
+      },
     ],
   };
 };
 
-
 const Index: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
-  document }) => {
-  const {
-    dm_directoryChildren,
-  } = document;
-
+  document,
+}) => {
+  const { dm_directoryChildren } = document;
 
   return (
     <>

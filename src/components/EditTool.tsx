@@ -2,9 +2,9 @@ import * as React from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
-type EditToolProps = {
+export interface EditToolProps {
   data: Record<string, any>;
-};
+}
 
 const EditTool = ({ data }: EditToolProps) => {
   const { uid, businessId } = data;

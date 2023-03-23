@@ -75,7 +75,9 @@ type ExternalImageRenderData = TemplateRenderProps & {
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
-export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = (): HeadConfig => {
+export const getHeadConfig: GetHeadConfig<
+  TemplateRenderProps
+> = (): HeadConfig => {
   return {
     title: "Static Page Example",
     charset: "UTF-8",
@@ -104,9 +106,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = (): HeadConfig 
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `transformProps`.
  */
-const Static: Template<ExternalImageRenderData> = ({
-  externalImage,
-}) => {
+const Static: Template<ExternalImageRenderData> = ({ externalImage }) => {
   return (
     <>
       <PageLayout>

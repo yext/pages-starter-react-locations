@@ -1,10 +1,10 @@
 import * as React from "react";
 
-type Hours = {
+export interface HoursProps {
   title?: string;
   hours: Week;
   children?: React.ReactNode;
-};
+}
 
 interface Week extends Record<string, any> {
   monday?: Day;
@@ -136,7 +136,7 @@ const DayRow = (props: DayRow) => {
   );
 };
 
-const Hours = (props: Hours) => {
+const Hours = (props: HoursProps) => {
   const { title, hours } = props;
 
   return (

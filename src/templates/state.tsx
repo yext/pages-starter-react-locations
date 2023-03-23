@@ -39,7 +39,7 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.name",
       "dm_directoryChildren.slug",
       "dm_directoryChildren.dm_childEntityIds",
-      "dm_childEntityIds"
+      "dm_childEntityIds",
     ],
     localization: {
       locales: ["en"],
@@ -100,17 +100,24 @@ const State: Template<TemplateRenderProps> = ({
     siteDomain,
     c_addressRegionDisplayName,
     dm_directoryParents,
-    dm_directoryChildren
+    dm_directoryChildren,
   } = document;
 
   return (
     <>
       <PageLayout>
-        <Banner name={(c_addressRegionDisplayName ? c_addressRegionDisplayName : name)} />
+        <Banner
+          name={c_addressRegionDisplayName ? c_addressRegionDisplayName : name}
+        />
         <div className="centered-container">
-          <Breadcrumbs breadcrumbs={dm_directoryParents} baseUrl={relativePrefixToRoot} />
+          <Breadcrumbs
+            breadcrumbs={dm_directoryParents}
+            baseUrl={relativePrefixToRoot}
+          />
           <DirectoryStateGrid
-            name={c_addressRegionDisplayName ? c_addressRegionDisplayName : name}
+            name={
+              c_addressRegionDisplayName ? c_addressRegionDisplayName : name
+            }
             description={description}
             directoryChildren={dm_directoryChildren}
             relativePrefixToRoot={relativePrefixToRoot}

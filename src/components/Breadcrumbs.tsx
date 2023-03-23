@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ReactNode } from "react";
-import { ChevronRightIcon, HomeIcon } from '@heroicons/react/20/solid';
+import { HomeIcon } from "@heroicons/react/20/solid";
 import { Link } from "@yext/pages/components";
 import classNames from "classnames";
 
@@ -19,17 +19,17 @@ export interface BreadCrumbsProps {
   className?: string;
   separator?: ReactNode;
   baseUrl: string;
-};
+}
 
 const Breadcrumb = (props: BreadCrumbProps) => {
   const { name, slug } = props;
 
   if (slug) {
     return (
-      <Link
-        href={slug}
-      >
-        <span className="font-bold hover:underline hover:cursor-pointer">{name}</span>
+      <Link href={slug}>
+        <span className="font-bold hover:underline hover:cursor-pointer">
+          {name}
+        </span>
       </Link>
     );
   }
@@ -38,13 +38,7 @@ const Breadcrumb = (props: BreadCrumbProps) => {
 };
 
 const BreadCrumbs = (props: BreadCrumbsProps) => {
-  const {
-    name,
-    breadcrumbs,
-    className,
-    separator = ">",
-    baseUrl
-  } = props;
+  const { breadcrumbs, className, separator = ">", baseUrl } = props;
 
   return (
     <nav className="section flex" aria-label="Breadcrumb">
@@ -73,9 +67,7 @@ const BreadCrumbs = (props: BreadCrumbsProps) => {
                       {...props}
                     />
                   )}
-                  {!isLast && (
-                    <span className="pl-4">{separator}</span>
-                  )}
+                  {!isLast && <span className="pl-4">{separator}</span>}
                 </li>
               );
             })}
@@ -83,8 +75,6 @@ const BreadCrumbs = (props: BreadCrumbsProps) => {
         </nav>
       )}
     </nav>
-
-
   );
 };
 

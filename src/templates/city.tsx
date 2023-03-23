@@ -18,7 +18,7 @@ import {
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
-  TransformProps
+  TransformProps,
 } from "@yext/pages";
 import { isProduction } from "@yext/pages/util";
 import "../index.css";
@@ -28,7 +28,6 @@ import DirectoryCityGrid from "../components/DirectoryCityGrid";
 import PageLayout from "../components/PageLayout";
 import EditTool from "../components/EditTool";
 import Breadcrumbs from "../components/Breadcrumbs";
-
 
 export const config: TemplateConfig = {
   stream: {
@@ -51,7 +50,7 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.name",
       "dm_directoryChildren.address",
       "dm_directoryChildren.mainPhone",
-      "dm_directoryChildren.slug"
+      "dm_directoryChildren.slug",
     ],
     localization: {
       locales: ["en"],
@@ -69,7 +68,8 @@ export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-  document }): HeadConfig => {
+  document,
+}): HeadConfig => {
   return {
     title: document.name,
     charset: "UTF-8",
@@ -110,7 +110,7 @@ const City: Template<TemplateRenderProps> = ({
     description,
     siteDomain,
     dm_directoryParents,
-    dm_directoryChildren
+    dm_directoryChildren,
   } = document;
 
   return (

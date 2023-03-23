@@ -4,9 +4,7 @@
   "content": {
     "description": "Welcome to [[name]], located in the great state of [[c_addressRegionDisplayName]]!"
   },
-  "entityTypes": [
-    "ce_city"
-  ],
+  "entityTypes": ["ce_city"],
   "localeCode": "en",
   "name": "City Template"
 }

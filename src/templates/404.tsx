@@ -21,10 +21,9 @@ export const getPath: GetPath<TemplateProps> = () => {
   return `404.html`;
 };
 
-
-export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-
-}): HeadConfig => {
+export const getHeadConfig: GetHeadConfig<
+  TemplateRenderProps
+> = (): HeadConfig => {
   return {
     title: "404 Page",
     charset: "UTF-8",
@@ -49,7 +48,7 @@ const FourOhFour: Template<TemplateRenderProps> = () => {
         <Banner name={"404 - Page not found"} />
         <div className="centered-container">
           <div className="flex justify-center items-center text-2xl bg-gray-200 h-60 rounded-md shadow-md">
-            <p>Oops! This page doesn't exist.</p>
+            <p>This page does not exist.</p>
           </div>
         </div>
       </PageLayout>
