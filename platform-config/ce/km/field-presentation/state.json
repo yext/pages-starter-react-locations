@@ -1,0 +1,56 @@
+{
+  "$id": "ce_state",
+  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+  "entityType": "ce_state",
+  "displayName": "State",
+  "presentationEntries": [
+    {
+      "displayName": "Core",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "name"
+        },
+        {
+          "id": "entityId"
+        },
+        {
+          "id": "slug"
+        },
+        {
+          "id": "description"
+        },
+        {
+          "id": "richTextDescription"
+        },
+        {
+          "id": "c_addressCountryAbbreviation"
+        },
+        {
+          "id": "c_addressCountryDisplayName"
+        },
+        {
+          "id": "c_addressRegionAbbreviation"
+        },
+        {
+          "id": "c_addressRegionDisplayName"
+        }
+      ]
+    },
+    {
+      "displayName": "Directory Manager",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "dm_directoryParents"
+        },
+        {
+          "id": "dm_directoryChildren"
+        },
+        {
+          "id": "dm_directoryManagerId"
+        }
+      ]
+    }
+  ]
+}

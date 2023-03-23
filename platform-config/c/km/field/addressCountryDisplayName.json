@@ -1,0 +1,13 @@
+{
+  "$id": "c_addressCountryDisplayName",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Address Country Display Name",
+  "group": "NONE",
+  "localization": "LOCALE_SPECIFIC",
+  "type": {
+    "stringType": {
+      "stereotype": "SIMPLE"
+    }
+  },
+  "typeId": "string"
+}

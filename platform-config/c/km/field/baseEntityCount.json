@@ -1,0 +1,14 @@
+{
+  "$id": "dm_baseEntityCount",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Base Entity Count",
+  "group": "NONE",
+  "localization": "LOCALE_SPECIFIC",
+  "type": {
+    "stringType": {
+      "stereotype": "SIMPLE",
+      "maxLength": 100000
+    }
+  },
+  "typeId": "string"
+}

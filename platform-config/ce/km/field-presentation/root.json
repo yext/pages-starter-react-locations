@@ -1,0 +1,38 @@
+{
+  "$id": "ce_root",
+  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+  "entityType": "ce_root",
+  "displayName": "Root",
+  "presentationEntries": [
+    {
+      "displayName": "Core",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "name"
+        },
+        {
+          "id": "entityId"
+        },
+        {
+          "id": "slug"
+        },
+        {
+          "id": "description"
+        },
+        {
+          "id": "richTextDescription"
+        }
+      ]
+    },
+    {
+      "displayName": "Directory Manager",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "dm_directoryChildren"
+        }
+      ]
+    }
+  ]
+}

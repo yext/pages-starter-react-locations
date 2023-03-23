@@ -1,18 +1,21 @@
 import * as React from "react";
 
-type List = {
+export interface ListProps {
   name?: string;
-  list: string[];
-};
+  list?: string[];
+}
 
-const List = (props: List) => {
-  const { list } = props;
-  const listItems = list.map((item) => <li key={item}>{item}</li>);
+const List = ({ name, list }: ListProps) => {
+  let listItems;
+  if (list) {
+    listItems = list.map((item) => <li key={item}>{item}</li>);
+  }
+
   return (
     <>
       <div>
-        <div className="text-xl font-semibold mb-4">Services</div>
-        <ul className="list-disc pl-6 space-y-2">{listItems}</ul>
+        <div className="text-xl font-semibold mb-4">{name}</div>
+        {listItems && <ul className="list-disc pl-6 space-y-2">{listItems}</ul>}
       </div>
     </>
   );

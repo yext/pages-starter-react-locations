@@ -1,0 +1,19 @@
+{
+  "$id": "ce_state.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "State-default",
+  "entityType": "ce_state",
+  "fields": [
+    "c_addressCountryAbbreviation",
+    "c_addressCountryDisplayName",
+    "c_addressRegionAbbreviation",
+    "c_addressRegionDisplayName",
+    "description",
+    "richTextDescription",
+    "slug",
+    "dm_directoryChildren",
+    "dm_directoryManagerId",
+    "dm_directoryParents"
+  ],
+  "required": []
+}
