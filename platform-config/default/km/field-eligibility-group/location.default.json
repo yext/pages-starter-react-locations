@@ -3,6 +3,6 @@
   "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
   "name": "Location-default",
   "entityType": "location",
-  "fields": ["c_featuredFAQs"],
+  "fields": ["c_featuredFAQs", "dm_directoryParents"],
   "required": []
 }

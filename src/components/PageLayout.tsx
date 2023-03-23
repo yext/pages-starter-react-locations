@@ -2,16 +2,17 @@ import * as React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-type Props = {
+export interface PageLayoutProps {
   children?: React.ReactNode;
-};
+  _site?: any;
+}
 
-const PageLayout = ({ children }: Props) => {
+const PageLayout = ({ children, _site }: PageLayoutProps) => {
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header _site={_site} />
       {children}
-      <Footer></Footer>
+      <Footer _site={_site} />
     </div>
   );
 };

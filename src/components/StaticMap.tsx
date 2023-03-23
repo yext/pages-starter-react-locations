@@ -1,13 +1,13 @@
 import * as React from "react";
 
-type Coordinates = {
+export interface StaticMapProps {
   latitude: string;
   longitude: string;
-};
+}
 
 const mapsApiKey = YEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
-const StaticMap = (props: Coordinates) => {
+const StaticMap = (props: StaticMapProps) => {
   const { latitude, longitude } = props;
   if (!mapsApiKey) {
     return (

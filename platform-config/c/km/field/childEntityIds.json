@@ -1,0 +1,20 @@
+{
+  "$id": "dm_childEntityIds",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Child Entity Ids",
+  "group": "NONE",
+  "localization": "LOCALE_SPECIFIC",
+  "type": {
+    "listType": {
+      "typeId": "string",
+      "maxLength": 5000,
+      "type": {
+        "stringType": {
+          "maxLength": 100000,
+          "stereotype": "SIMPLE"
+        }
+      }
+    }
+  },
+  "typeId": "list"
+}
