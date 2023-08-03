@@ -41,7 +41,7 @@
         }
       }
     ],
-    "richTextDescription": "Marinated pork"
+    "description": "Marinated pork"
   },
   "entityType": "ce_menuItem",
   "labels": []

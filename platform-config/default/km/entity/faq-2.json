@@ -3,11 +3,70 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "answer": "To see if we deliver to you, visit our [delivery address lookup](http:///index.html) page and enter your address. We are actively expanding our delivery radius to support the growing need for delivery, so be sure to check back often.",
-    "name": "How can I find out if Turtlehead Tacos delivers to my address?",
-    "question": "How can I find out if Turtlehead Tacos delivers to my address?",
-    "slug": "[[entityId]]"
+    "answerV2": {
+      "json": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "To see if we deliver to you, visit our ",
+                  "type": "text",
+                  "version": 1
+                },
+                {
+                  "children": [
+                    {
+                      "detail": 0,
+                      "format": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "text": "delivery address lookup",
+                      "type": "text",
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "target": "_blank",
+                  "type": "link",
+                  "url": "http://index.html/",
+                  "version": 1
+                },
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": " page and enter your address. We are actively expanding our delivery radius to support the growing need for delivery, so be sure to check back often.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      }
+    },
+    "name": "How can I find out if Taco Galaxy delivers to my address?",
+    "question": "How can I find out if Taco Galaxy delivers to my address?"
   },
   "entityType": "faq",
+  "folder": "yext/root",
   "labels": []
 }

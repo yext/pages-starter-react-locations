@@ -41,7 +41,7 @@
         }
       }
     ],
-    "richTextDescription": "Grilled chicken"
+    "description": "Grilled chicken"
   },
   "entityType": "ce_menuItem",
   "labels": []
