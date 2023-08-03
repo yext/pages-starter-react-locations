@@ -3,11 +3,41 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "answer": "It\u0027s easy! Place your pick\\-up order online or using the Turtlehead Tacos app. Describe the car you\u0027re driving in the Special Instructions box when ordering. Drive up to the Turtlehead Tacos bakery\\-cafe, park, and stay in your car. We\u0027ll keep an eye out for you and bring your order curbside. Or, you can also drive up and call the posted phone number to place your order if you prefer.",
-    "name": "How does Turtlehead Tacos curbside pickup work?",
-    "question": "How does Turtlehead Tacos curbside pickup work?",
-    "slug": "[[entityId]]"
+    "answerV2": {
+      "json": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "It\u0027s easy! Place your pick-up order online or using the Taco Galaxy app. Describe the car you\u0027re driving in the Special Instructions box when ordering. Drive up to the Taco Galaxy bakery-cafe, park, and stay in your car. We\u0027ll keep an eye out for you and bring your order curbside. Or, you can also drive up and call the posted phone number to place your order if you prefer.",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      }
+    },
+    "name": "How does Taco Galaxy curbside pickup work?",
+    "question": "How does Taco Galaxy curbside pickup work?"
   },
   "entityType": "faq",
+  "folder": "yext/root",
   "labels": []
 }

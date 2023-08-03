@@ -6,7 +6,7 @@
   "fields": [
     "c_relatedMenuItems",
     "photoGallery",
-    "richTextDescription",
+    "description",
     "slug"
   ],
   "required": []

@@ -5,7 +5,6 @@
   "entityType": "ce_root",
   "fields": [
     "description",
-    "richTextDescription",
     "slug",
     "dm_directoryChildren",
     "dm_childEntityIds"
