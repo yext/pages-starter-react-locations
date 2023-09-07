@@ -1,4 +1,3 @@
-import * as React from "react";
 import { twMerge } from "tailwind-merge";
 
 export interface CtaProps {

@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Address } from "@yext/pages/components";
 import { formatPhoneNumber } from "react-phone-number-input";
 import List from "../components/List";

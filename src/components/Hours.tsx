@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export interface HoursProps {
   title?: string;
   hours: Week;
