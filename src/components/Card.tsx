@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export interface CardProps {
   title: string;
   url: string;
@@ -12,6 +10,7 @@ const Card = ({ title, url }: CardProps) => {
         <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
           <div className="p-5">
             <a href="#">
+              å
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 External Asset Fetched at Build Time
               </h5>
