@@ -10,7 +10,8 @@
     "prod": "pages prod",
     "build:local": "pages build",
     "fmt": "prettier -w .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "generate-notices": "generate-license-file --input package.json --output ./THIRD-PARTY-NOTICES --overwrite"
   },
   "engines": {
     "node": ">=17"
