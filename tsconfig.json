@@ -4,7 +4,7 @@
     "strict": true,
     "moduleResolution": "Node",
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "outDir": "./dist",
     "module": "esnext"
   },
