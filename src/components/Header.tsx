@@ -1,3 +1,4 @@
+import * as React from "react";
 import Cta from "./Cta";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";

@@ -8,6 +8,7 @@
  * template for every eligible entity in your Knowledge Graph.
  */
 
+import * as React from "react";
 import {
   GetHeadConfig,
   GetPath,

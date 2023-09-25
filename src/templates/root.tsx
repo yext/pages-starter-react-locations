@@ -1,3 +1,4 @@
+import * as React from "react";
 import PageLayout from "../components/PageLayout";
 import Banner from "../components/Banner";
 import DirectoryRootGrid from "../components/DirectoryRootGrid";

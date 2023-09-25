@@ -1,3 +1,5 @@
+import * as React from "react";
+
 export interface PaymentOptionsProps {
   name?: string;
   list?: Array<string>;
