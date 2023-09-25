@@ -6,7 +6,8 @@
   "license": "BSD-3-Clause",
   "type": "module",
   "scripts": {
-    "dev": "yext pages build && yext pages generate-test-data && pages dev",
+    "dev": "pages dev",
+    "prod": "pages prod",
     "build:local": "pages build",
     "build": "yext pages build && yext pages generate-test-data && yext pages render",
     "build:serve": "npm run build && yext pages serve",
@@ -23,7 +24,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.12",
     "@heroicons/react": "^2.0.14",
-    "classnames": "^2.3.2",
+    "@yext/sites-components": "1.0.0-rc.4",
+    "clsx": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-phone-number-input": "^3.2.19",
