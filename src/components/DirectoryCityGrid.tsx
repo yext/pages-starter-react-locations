@@ -1,4 +1,4 @@
-import { Address } from "@yext/pages/components";
+import { Address } from "@yext/sites-components";
 import { formatPhoneNumber } from "react-phone-number-input";
 import { DirectoryParent } from "../types/DirectoryParent";
 import { DirectoryChild } from "../types/DirectoryChild";

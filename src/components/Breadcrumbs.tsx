@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { HomeIcon } from "@heroicons/react/20/solid";
-import { Link } from "@yext/pages/components";
-import classNames from "classnames";
+import { Link } from "@yext/sites-components";
+import { clsx } from "clsx";
 
 export interface BreadCrumbProps {
   name: string;
@@ -42,10 +42,7 @@ const BreadCrumbs = (props: BreadCrumbsProps) => {
   return (
     <nav className="section flex" aria-label="Breadcrumb">
       {breadcrumbs?.length && (
-        <nav
-          className={classNames("Breadcrumbs", className)}
-          aria-label="Breadcrumb"
-        >
+        <nav className={clsx("Breadcrumbs", className)} aria-label="Breadcrumb">
           <ol className="flex space-x-4">
             {breadcrumbs.map(({ name, slug }, idx) => {
               const isLast = idx === breadcrumbs.length - 1;
