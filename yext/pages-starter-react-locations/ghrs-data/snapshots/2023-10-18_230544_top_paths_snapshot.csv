@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/yext/pages-starter-react-locations/tree/main/src,50,15
+/yext/pages-starter-react-locations,44,31
+/yext/pages-starter-react-locations/tree/main/src/components,26,7
+/yext/pages-starter-react-locations/tree/main/src/templates,21,7
+/yext/pages-starter-react-locations/blob/main/src/templates/state.tsx,16,3
+/yext/pages-starter-react-locations/blob/main/src/components/DirectoryRootGrid.tsx,14,3
+/yext/pages-starter-react-locations/blob/main/src/templates/root.tsx,14,3
+/yext/pages-starter-react-locations/blob/main/src/templates/static.tsx,13,5
+/yext/pages-starter-react-locations/blob/main/src/components/DirectoryCityGrid.tsx,12,4
+/yext/pages-starter-react-locations/blob/main/src/types/DirectoryParent.ts,12,3
