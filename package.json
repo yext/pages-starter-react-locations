@@ -6,23 +6,18 @@
   "license": "BSD-3-Clause",
   "type": "module",
   "scripts": {
-    "dev": "yext pages build && yext pages generate-test-data && pages dev",
-    "build:local": "pages build",
-    "build": "yext pages build && yext pages generate-test-data && yext pages render",
-    "build:serve": "npm run build && yext pages serve",
-    "serve": "yext pages serve",
-    "features": "pages generate features",
-    "fmt": "prettier -w .",
-    "lint": "eslint .",
-    "clean": "rm -rf .artifact-output .yext/ dist/ localData sites-rendered-output",
-    "generate-notices": "generate-license-file --input package.json --output ./THIRD-PARTY-NOTICES --overwrite"
+    "dev": "pages dev",
+    "prod": "pages prod",
+    "build": "pages build",
+    "build:local": "pages build"
   },
   "engines": {
-    "node": ">=17"
+    "node": "^18.0.0 || >=20.0.0"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.12",
     "@heroicons/react": "^2.0.14",
+    "@yext/sites-components": "1.0.0-rc.5",
     "classnames": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -34,8 +29,8 @@
     "@types/react-dom": "^17.0.17",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
-    "@vitejs/plugin-react": "^2.1.0",
-    "@yext/pages": "1.0.0-beta.21",
+    "@yext/pages": "1.0.0-rc.6",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.8",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.7",
@@ -44,6 +39,6 @@
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.8",
     "typescript": "^4.8.3",
-    "vite": "^3.1.0"
+    "vite": "4.4.9"
   }
 }
