@@ -8,8 +8,7 @@
   "scripts": {
     "dev": "pages dev",
     "prod": "pages prod",
-    "build": "pages build",
-    "build:local": "pages build"
+    "build": "pages build"
   },
   "engines": {
     "node": "^18.0.0 || >=20.0.0"

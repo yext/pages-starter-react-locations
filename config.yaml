@@ -1,5 +1,5 @@
 buildConfiguration:
-  buildCommand: npm run build:local
+  buildCommand: npm run build
   installDependenciesStep:
     command: npm install
     requiredFiles:
