@@ -48,7 +48,7 @@ type ExternalImageData = TemplateProps & { externalImage: ExternalImage };
 export const transformProps: TransformProps<ExternalImageData> = async (
   data
 ) => {
-  const url = YEXT_PUBLIC_EXTERNAL_IMAGE_API_BASE_URL + "/2";
+  const url = `https://jsonplaceholder.typicode.com/photos/2`;
   const externalImage = (await fetch(url).then((res: any) =>
     res.json()
   )) as ExternalImage;
