@@ -1,3 +1,7 @@
+**This repo has been moved**
+
+See https://github.com/yextsolutions/pages-starter-react-locations
+
 # SITE-STARTER-REACT-BASIC
 
 This repository provides a basic example of how to start developing a React site on the Yext Pages system.
